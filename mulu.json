@@ -1,0 +1,1469 @@
+compulsory_upper_volume = {
+    "title": "必修 上册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {"title": "沁园春·长沙", "author": "毛泽东", "page": 2},
+          {"title": "立在地球边上放号", "author": "郭沫若", "page": 4},
+          {"title": "红烛", "author": "闻一多", "page": 4},
+          {"title": "峨日朵雪峰之侧", "author": "昌耀", "page": 6},
+          {"title": "致云雀", "author": "雪莱", "page": 7},
+          {"title": "百合花", "author": "茹志鹃", "page": 12},
+          {"title": "哦，香雪", "author": "铁凝", "page": 19}
+        ],
+        "unit_task_page": 29
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {"title": "喜看稻菽千重浪 ——记首届国家最高科技奖获得者袁隆平", "author": "沈英甲", "page": 32},
+          {"title": "心有一团火，温暖众人心", "author": "林为民", "page": 38},
+          {"title": "“探界者”钟扬", "author": "叶雨婷", "page": 43},
+          {"title": "以工匠精神雕琢时代品质", "author": "李斌", "page": 51},
+          {"title": "芣苢", "author": "《诗经·周南》", "page": 53},
+          {"title": "插秧歌", "author": "杨万里", "page": 53}
+        ],
+        "unit_task_page": 55
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {"title": "短歌行", "author": "曹操", "page": 58},
+          {"title": "归园田居（其一）", "author": "陶渊明", "page": 59},
+          {"title": "梦游天姥吟留别", "author": "李白", "page": 60},
+          {"title": "登高", "author": "杜甫", "page": 61},
+          {"title": "琵琶行并序", "author": "白居易", "page": 62},
+          {"title": "念奴娇·赤壁怀古", "author": "苏轼", "page": 65},
+          {"title": "永遇乐·京口北固亭怀古", "author": "辛弃疾", "page": 66},
+          {"title": "声声慢（寻寻觅觅）", "author": "李清照", "page": 67}
+        ],
+        "unit_task_page": 69
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "家乡文化生活",
+            "subsections": [
+              {"title": "记录家乡的人和物", "page": 72},
+              {"title": "家乡文化生活现状调查", "page": 73},
+              {"title": "参与家乡文化建设", "page": 74}
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "第五单元",
+        "chapters": [
+          {"title": "整本书阅读《乡土中国》", "page": 80}
+        ]
+      },
+      {
+        "unit": "第六单元",
+        "chapters": [
+          {"title": "劝学", "author": "《荀子》", "page": 84},
+          {"title": "师说", "author": "韩愈", "page": 85},
+          {"title": "反对党八股（节选）", "author": "毛泽东", "page": 88},
+          {"title": "拿来主义", "author": "鲁迅", "page": 94},
+          {"title": "读书：目的和前提", "author": "黑塞", "page": 97},
+          {"title": "上图书馆", "author": "王佐良", "page": 100}
+        ],
+        "unit_task_page": 103
+      },
+      {
+        "unit": "第七单元",
+        "chapters": [
+          {"title": "故都的秋", "author": "郁达夫", "page": 106},
+          {"title": "荷塘月色", "author": "朱自清", "page": 109},
+          {"title": "我与地坛（节选）", "author": "史铁生", "page": 112},
+          {"title": "赤壁赋", "author": "苏轼", "page": 118},
+          {"title": "登泰山记", "author": "姚鼐", "page": 120}
+        ],
+        "unit_task_page": 123
+      },
+      {
+        "unit": "第八单元",
+        "chapters": [
+          {
+            "title": "词语积累与词语解释",
+            "subsections": [
+              {"title": "丰富词语积累", "page": 126},
+              {"title": "把握古今词义的联系与区别", "page": 127},
+              {"title": "词义的辨析和词语的使用", "page": 128}
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {"title": "静女", "author": "《诗经·邶风》", "page": 140},
+          {"title": "涉江采芙蓉", "author": "《古诗十九首》", "page": 141},
+          {"title": "虞美人（春花秋月何时了）", "author": "李煜", "page": 142},
+          {"title": "鹊桥仙（纤云弄巧）", "author": "秦观", "page": 143}
+        ]
+      }
+    ]
+  }
+  
+  import json
+  
+  json_data = json.dumps(compulsory_upper_volume, ensure_ascii=False, indent=2)
+  json_data
+  
+
+compulsory_lower_volume = {
+    "title": "必修 下册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {"title": "子路、曾皙、冉有、公西华侍坐", "author": "《论语》", "page": 2},
+          {"title": "齐桓晋文之事", "author": "《孟子》", "page": 4},
+          {"title": "庖丁解牛", "author": "《庄子》", "page": 8},
+          {"title": "烛之武退秦师", "author": "《左传》", "page": 10},
+          {"title": "鸿门宴", "author": "司马迁", "page": 13}
+        ],
+        "unit_task_page": 18
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {"title": "窦娥冤（节选）", "author": "关汉卿", "page": 22},
+          {"title": "雷雨（节选）", "author": "曹禺", "page": 26},
+          {"title": "哈姆莱特（节选）", "author": "莎士比亚", "page": 37}
+        ],
+        "unit_task_page": 43
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {"title": "青蒿素：人类征服疾病的一小步", "author": "屠呦呦", "page": 46},
+          {"title": "一名物理学家的教育历程", "author": "加来道雄", "page": 50},
+          {"title": "中国建筑的特征", "author": "梁思成", "page": 55},
+          {"title": "说“木叶”", "author": "林庚", "page": 61}
+        ],
+        "unit_task_page": 67
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "信息时代的语文生活",
+            "subsections": [
+              {"title": "认识多媒介", "page": 70},
+              {"title": "善用多媒介", "page": 71},
+              {"title": "辨识媒介信息", "page": 71}
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "第五单元",
+        "chapters": [
+          {"title": "在《人民报》创刊纪念会上的演说", "author": "马克思", "page": 80},
+          {"title": "在马克思墓前的讲话", "author": "恩格斯", "page": 82},
+          {"title": "谏逐客书", "author": "李斯", "page": 85},
+          {"title": "与妻书", "author": "林觉民", "page": 87}
+        ],
+        "unit_task_page": 91
+      },
+      {
+        "unit": "第六单元",
+        "chapters": [
+          {"title": "祝福", "author": "鲁迅", "page": 94},
+          {"title": "林教头风雪山神庙", "author": "施耐庵", "page": 107},
+          {"title": "装在套子里的人", "author": "契诃夫", "page": 113},
+          {"title": "促织", "author": "蒲松龄", "page": 119},
+          {"title": "变形记（节选）", "author": "卡夫卡", "page": 123}
+        ],
+        "unit_task_page": 135
+      },
+      {
+        "unit": "第七单元",
+        "chapters": [
+          {"title": "《红楼梦》", "page": 138}
+        ]
+      },
+      {
+        "unit": "第八单元",
+        "chapters": [
+          {"title": "谏太宗十思疏", "author": "魏征", "page": 144},
+          {"title": "答司马谏议书", "author": "王安石", "page": 146},
+          {"title": "阿房宫赋", "author": "杜牧", "page": 148},
+          {"title": "六国论", "author": "苏洵", "page": 150}
+        ],
+        "unit_task_page": 152
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {"title": "登岳阳楼", "author": "杜甫", "page": 155},
+          {"title": "桂枝香·金陵怀古", "author": "王安石", "page": 156},
+          {"title": "念奴娇·过洞庭", "author": "张孝祥", "page": 157},
+          {"title": "游园（【皂罗袍】）", "author": "汤显祖", "page": 158}
+        ]
+      }
+    ]
+  }
+  
+  import json
+  
+  json_data = json.dumps(compulsory_lower_volume, ensure_ascii=False, indent=2)
+  json_data
+  
+
+selection_must_read_upper_volume = {
+    "title": "选择性必修 上册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {"title": "中国人民站起来了", "author": "毛泽东", "page": 2},
+          {"title": "长征胜利万岁", "author": "杨成武", "page": 6},
+          {"title": "大战中的插曲", "author": "聂荣臻", "page": 11},
+          {"title": "别了，“不列颠尼亚”", "author": "周婷 杨兴", "page": 16},
+          {"title": "县委书记的榜样——焦裕禄", "author": "穆青 冯健 周原", "page": 18},
+          {"title": "在民族复兴的历史丰碑上——2020中国抗疫记", "author": "钟华论", "page": 29}
+        ],
+        "unit_task_page": 41
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {"title": "《论语》十二章", "author": "《论语》", "page": 44},
+          {"title": "大学之道", "author": "《礼记》", "page": 45},
+          {"title": "人皆有不忍人之心", "author": "《孟子》", "page": 46},
+          {"title": "《老子》四章", "author": "《老子》", "page": 48},
+          {"title": "五石之瓠", "author": "《庄子》", "page": 49},
+          {"title": "兼爱", "author": "《墨子》", "page": 51}
+        ],
+        "unit_task_page": 53
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {"title": "大卫·科波菲尔（节选）", "author": "狄更斯", "page": 56},
+          {"title": "复活（节选）", "author": "列夫·托尔斯泰", "page": 67},
+          {"title": "老人与海（节选）", "author": "海明威", "page": 73},
+          {"title": "百年孤独（节选）", "author": "加西亚·马尔克斯", "page": 84}
+        ],
+        "unit_task_page": 91
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "逻辑的力量",
+            "subsections": [
+              {"title": "发现潜藏的逻辑谬误", "page": 94},
+              {"title": "运用有效的推理形式", "page": 95},
+              {"title": "采用合理的论证方法", "page": 97}
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {"title": "无衣", "author": "《诗经·秦风》", "page": 102},
+          {"title": "春江花月夜", "author": "张若虚", "page": 103},
+          {"title": "将进酒", "author": "李白", "page": 105},
+          {"title": "江城子·乙卯正月二十日夜记梦", "author": "苏轼", "page": 106}
+        ]
+      }
+    ]
+  }
+  
+  import json
+  
+  json_data = json.dumps(selection_must_read_upper_volume, ensure_ascii=False, indent=2)
+  json_data
+  
+
+selection_must_read_middle_volume = {
+    "title": "选择性必修 中册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {"title": "子路、曾皙、冉有、公西华侍坐", "author": "《论语》", "page": 2},
+          {"title": "齐桓晋文之事", "author": "《孟子》", "page": 4},
+          {"title": "庖丁解牛", "author": "《庄子》", "page": 8},
+          {"title": "烛之武退秦师", "author": "《左传》", "page": 10},
+          {"title": "鸿门宴", "author": "司马迁", "page": 13}
+        ],
+        "unit_task_page": 18
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {"title": "窦娥冤（节选）", "author": "关汉卿", "page": 22},
+          {"title": "雷雨（节选）", "author": "曹禺", "page": 26},
+          {"title": "哈姆莱特（节选）", "author": "莎士比亚", "page": 37}
+        ],
+        "unit_task_page": 43
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {"title": "青蒿素：人类征服疾病的一小步", "author": "屠呦呦", "page": 46},
+          {"title": "一名物理学家的教育历程", "author": "加来道雄", "page": 50},
+          {"title": "中国建筑的特征", "author": "梁思成", "page": 55},
+          {"title": "说“木叶”", "author": "林庚", "page": 61}
+        ],
+        "unit_task_page": 67
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "信息时代的语文生活",
+            "subsections": [
+              {"title": "认识多媒介", "page": 70},
+              {"title": "善用多媒介", "page": 71},
+              {"title": "辨识媒介信息", "page": 71}
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "第五单元",
+        "chapters": [
+          {"title": "在《人民报》创刊纪念会上的演说", "author": "马克思", "page": 80},
+          {"title": "在马克思墓前的讲话", "author": "恩格斯", "page": 82}
+        ],
+        "unit_task_page": 91
+      },
+      {
+        "unit": "第六单元",
+        "chapters": [
+          {"title": "祝福", "author": "鲁迅", "page": 94},
+          {"title": "林教头风雪山神庙", "author": "施耐庵", "page": 107},
+          {"title": "装在套子里的人", "author": "契诃夫", "page": 113},
+          {"title": "促织", "author": "蒲松龄", "page": 119},
+          {"title": "变形记（节选）", "author": "卡夫卡", "page": 123}
+        ],
+        "unit_task_page": 135
+      },
+      {
+        "unit": "第七单元",
+        "chapters": [
+          {"title": "谏太宗十思疏", "author": "魏征", "page": 144},
+          {"title": "答司马谏议书", "author": "王安石", "page": 146},
+          {"title": "阿房宫赋", "author": "杜牧", "page": 148},
+          {"title": "六国论", "author": "苏洵", "page": 150}
+        ],
+        "unit_task_page": 152
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {"title": "登岳阳楼", "author": "杜甫", "page": 155},
+          {"title": "桂枝香·金陵怀古", "author": "王安石", "page": 156},
+          {"title": "念奴娇·过洞庭", "author": "张孝祥", "page": 157},
+          {"title": "游园（【皂罗袍】）", "author": "汤显祖", "page": 158}
+        ]
+      }
+    ]
+  }
+  
+  import json
+  
+  json_data = json.dumps(selection_must_read_middle_volume, ensure_ascii=False, indent=2)
+  json_data
+  
+
+
+selection_must_read_volume = {
+    "title": "选择性必修 下册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {"title": "社会历史的决定性基础", "author": "恩格斯", "page": 2},
+          {"title": "改造我们的学习", "author": "毛泽东", "page": 7},
+          {"title": "人的正确思想是从哪里来的？", "author": "毛泽东", "page": 13},
+          {"title": "实践是检验真理的唯一标准", "author": "《光明日报》特约评论员", "page": 15},
+          {"title": "修辞立其诚", "author": "张岱年", "page": 23},
+          {"title": "怜悯是人的天性", "author": "卢梭", "page": 25},
+          {"title": "人应当坚持正义", "author": "柏拉图", "page": 30}
+        ],
+        "unit_task_page": 35
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {"title": "记念刘和珍君", "author": "鲁迅", "page": 38},
+          {"title": "为了忘却的记念", "author": "鲁迅", "page": 43},
+          {"title": "包身工", "author": "夏衍", "page": 52},
+          {"title": "荷花淀", "author": "孙犁", "page": 61},
+          {"title": "小二黑结婚（节选）", "author": "赵树理", "page": 66},
+          {"title": "党费", "author": "王愿坚", "page": 71}
+        ],
+        "unit_task_page": 80
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {"title": "屈原列传", "author": "司马迁", "page": 82},
+          {"title": "苏武传", "author": "班固", "page": 87},
+          {"title": "过秦论", "author": "贾谊", "page": 93},
+          {"title": "五代史伶官传序", "author": "欧阳修", "page": 96}
+        ],
+        "unit_task_page": 99
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {"title": "玩偶之家（节选）", "author": "易卜生", "page": 102},
+          {"title": "迷娘（之一）", "author": "歌德", "page": 117},
+          {"title": "致大海", "author": "普希金", "page": 118},
+          {"title": "自己之歌（节选）", "author": "惠特曼", "page": 122},
+          {"title": "树和天空", "author": "特朗斯特罗姆", "page": 123}
+        ],
+        "unit_task_page": 124
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {"title": "燕歌行并序", "author": "高适", "page": 126},
+          {"title": "李凭箜篌引", "author": "李贺", "page": 128},
+          {"title": "锦瑟", "author": "李商隐", "page": 129},
+          {"title": "书愤", "author": "陆游", "page": 130}
+        ]
+      }
+    ]
+  }
+  
+  import json
+  
+  json_data = json.dumps(selection_must_read_volume, ensure_ascii=False, indent=2)
+  json_data
+
+  {
+    "title": "必修 上册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {
+            "title": "沁园春·长沙",
+            "author": "毛泽东",
+            "page": 2
+          },
+          {
+            "title": "立在地球边上放号",
+            "author": "郭沫若",
+            "page": 4
+          },
+          {
+            "title": "红烛",
+            "author": "闻一多",
+            "page": 4
+          },
+          {
+            "title": "峨日朵雪峰之侧",
+            "author": "昌耀",
+            "page": 6
+          },
+          {
+            "title": "致云雀",
+            "author": "雪莱",
+            "page": 7
+          },
+          {
+            "title": "百合花",
+            "author": "茹志鹃",
+            "page": 12
+          },
+          {
+            "title": "哦，香雪",
+            "author": "铁凝",
+            "page": 19
+          }
+        ],
+        "unit_task_page": 29
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {
+            "title": "喜看稻菽千重浪 ——记首届国家最高科技奖获得者袁隆平",
+            "author": "沈英甲",
+            "page": 32
+          },
+          {
+            "title": "心有一团火，温暖众人心",
+            "author": "林为民",
+            "page": 38
+          },
+          {
+            "title": "“探界者”钟扬",
+            "author": "叶雨婷",
+            "page": 43
+          },
+          {
+            "title": "以工匠精神雕琢时代品质",
+            "author": "李斌",
+            "page": 51
+          },
+          {
+            "title": "芣苢",
+            "author": "《诗经·周南》",
+            "page": 53
+          },
+          {
+            "title": "插秧歌",
+            "author": "杨万里",
+            "page": 53
+          }
+        ],
+        "unit_task_page": 55
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {
+            "title": "短歌行",
+            "author": "曹操",
+            "page": 58
+          },
+          {
+            "title": "归园田居（其一）",
+            "author": "陶渊明",
+            "page": 59
+          },
+          {
+            "title": "梦游天姥吟留别",
+            "author": "李白",
+            "page": 60
+          },
+          {
+            "title": "登高",
+            "author": "杜甫",
+            "page": 61
+          },
+          {
+            "title": "琵琶行并序",
+            "author": "白居易",
+            "page": 62
+          },
+          {
+            "title": "念奴娇·赤壁怀古",
+            "author": "苏轼",
+            "page": 65
+          },
+          {
+            "title": "永遇乐·京口北固亭怀古",
+            "author": "辛弃疾",
+            "page": 66
+          },
+          {
+            "title": "声声慢（寻寻觅觅）",
+            "author": "李清照",
+            "page": 67
+          }
+        ],
+        "unit_task_page": 69
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "家乡文化生活",
+            "subsections": [
+              {
+                "title": "记录家乡的人和物",
+                "page": 72
+              },
+              {
+                "title": "家乡文化生活现状调查",
+                "page": 73
+              },
+              {
+                "title": "参与家乡文化建设",
+                "page": 74
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "第五单元",
+        "chapters": [
+          {
+            "title": "整本书阅读《乡土中国》",
+            "page": 80
+          }
+        ]
+      },
+      {
+        "unit": "第六单元",
+        "chapters": [
+          {
+            "title": "劝学",
+            "author": "《荀子》",
+            "page": 84
+          },
+          {
+            "title": "师说",
+            "author": "韩愈",
+            "page": 85
+          },
+          {
+            "title": "反对党八股（节选）",
+            "author": "毛泽东",
+            "page": 88
+          },
+          {
+            "title": "拿来主义",
+            "author": "鲁迅",
+            "page": 94
+          },
+          {
+            "title": "读书：目的和前提",
+            "author": "黑塞",
+            "page": 97
+          },
+          {
+            "title": "上图书馆",
+            "author": "王佐良",
+            "page": 100
+          }
+        ],
+        "unit_task_page": 103
+      },
+      {
+        "unit": "第七单元",
+        "chapters": [
+          {
+            "title": "故都的秋",
+            "author": "郁达夫",
+            "page": 106
+          },
+          {
+            "title": "荷塘月色",
+            "author": "朱自清",
+            "page": 109
+          },
+          {
+            "title": "我与地坛（节选）",
+            "author": "史铁生",
+            "page": 112
+          },
+          {
+            "title": "赤壁赋",
+            "author": "苏轼",
+            "page": 118
+          },
+          {
+            "title": "登泰山记",
+            "author": "姚鼐",
+            "page": 120
+          }
+        ],
+        "unit_task_page": 123
+      },
+      {
+        "unit": "第八单元",
+        "chapters": [
+          {
+            "title": "词语积累与词语解释",
+            "subsections": [
+              {
+                "title": "丰富词语积累",
+                "page": 126
+              },
+              {
+                "title": "把握古今词义的联系与区别",
+                "page": 127
+              },
+              {
+                "title": "词义的辨析和词语的使用",
+                "page": 128
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {
+            "title": "静女",
+            "author": "《诗经·邶风》",
+            "page": 140
+          },
+          {
+            "title": "涉江采芙蓉",
+            "author": "《古诗十九首》",
+            "page": 141
+          },
+          {
+            "title": "虞美人（春花秋月何时了）",
+            "author": "李煜",
+            "page": 142
+          },
+          {
+            "title": "鹊桥仙（纤云弄巧）",
+            "author": "秦观",
+            "page": 143
+          }
+        ]
+      }
+    ]
+  }
+  
+
+
+  {
+    "title": "必修 下册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {
+            "title": "子路、曾皙、冉有、公西华侍坐",
+            "author": "《论语》",
+            "page": 2
+          },
+          {
+            "title": "齐桓晋文之事",
+            "author": "《孟子》",
+            "page": 4
+          },
+          {
+            "title": "庖丁解牛",
+            "author": "《庄子》",
+            "page": 8
+          },
+          {
+            "title": "烛之武退秦师",
+            "author": "《左传》",
+            "page": 10
+          },
+          {
+            "title": "鸿门宴",
+            "author": "司马迁",
+            "page": 13
+          }
+        ],
+        "unit_task_page": 18
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {
+            "title": "窦娥冤（节选）",
+            "author": "关汉卿",
+            "page": 22
+          },
+          {
+            "title": "雷雨（节选）",
+            "author": "曹禺",
+            "page": 26
+          },
+          {
+            "title": "哈姆莱特（节选）",
+            "author": "莎士比亚",
+            "page": 37
+          }
+        ],
+        "unit_task_page": 43
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {
+            "title": "青蒿素：人类征服疾病的一小步",
+            "author": "屠呦呦",
+            "page": 46
+          },
+          {
+            "title": "一名物理学家的教育历程",
+            "author": "加来道雄",
+            "page": 50
+          },
+          {
+            "title": "中国建筑的特征",
+            "author": "梁思成",
+            "page": 55
+          },
+          {
+            "title": "说“木叶”",
+            "author": "林庚",
+            "page": 61
+          }
+        ],
+        "unit_task_page": 67
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "信息时代的语文生活",
+            "subsections": [
+              {
+                "title": "认识多媒介",
+                "page": 70
+              },
+              {
+                "title": "善用多媒介",
+                "page": 71
+              },
+              {
+                "title": "辨识媒介信息",
+                "page": 71
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "第五单元",
+        "chapters": [
+          {
+            "title": "在《人民报》创刊纪念会上的演说",
+            "author": "马克思",
+            "page": 80
+          },
+          {
+            "title": "在马克思墓前的讲话",
+            "author": "恩格斯",
+            "page": 82
+          },
+          {
+            "title": "谏逐客书",
+            "author": "李斯",
+            "page": 85
+          },
+          {
+            "title": "与妻书",
+            "author": "林觉民",
+            "page": 87
+          }
+        ],
+        "unit_task_page": 91
+      },
+      {
+        "unit": "第六单元",
+        "chapters": [
+          {
+            "title": "祝福",
+            "author": "鲁迅",
+            "page": 94
+          },
+          {
+            "title": "林教头风雪山神庙",
+            "author": "施耐庵",
+            "page": 107
+          },
+          {
+            "title": "装在套子里的人",
+            "author": "契诃夫",
+            "page": 113
+          },
+          {
+            "title": "促织",
+            "author": "蒲松龄",
+            "page": 119
+          },
+          {
+            "title": "变形记（节选）",
+            "author": "卡夫卡",
+            "page": 123
+          }
+        ],
+        "unit_task_page": 135
+      },
+      {
+        "unit": "第七单元",
+        "chapters": [
+          {
+            "title": "《红楼梦》",
+            "page": 138
+          }
+        ]
+      },
+      {
+        "unit": "第八单元",
+        "chapters": [
+          {
+            "title": "谏太宗十思疏",
+            "author": "魏征",
+            "page": 144
+          },
+          {
+            "title": "答司马谏议书",
+            "author": "王安石",
+            "page": 146
+          },
+          {
+            "title": "阿房宫赋",
+            "author": "杜牧",
+            "page": 148
+          },
+          {
+            "title": "六国论",
+            "author": "苏洵",
+            "page": 150
+          }
+        ],
+        "unit_task_page": 152
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {
+            "title": "登岳阳楼",
+            "author": "杜甫",
+            "page": 155
+          },
+          {
+            "title": "桂枝香·金陵怀古",
+            "author": "王安石",
+            "page": 156
+          },
+          {
+            "title": "念奴娇·过洞庭",
+            "author": "张孝祥",
+            "page": 157
+          },
+          {
+            "title": "游园（【皂罗袍】）",
+            "author": "汤显祖",
+            "page": 158
+          }
+        ]
+      }
+    ]
+  }
+  
+
+
+  {
+    "title": "选择性必修 上册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {
+            "title": "中国人民站起来了",
+            "author": "毛泽东",
+            "page": 2
+          },
+          {
+            "title": "长征胜利万岁",
+            "author": "杨成武",
+            "page": 6
+          },
+          {
+            "title": "大战中的插曲",
+            "author": "聂荣臻",
+            "page": 11
+          },
+          {
+            "title": "别了，“不列颠尼亚”",
+            "author": "周婷 杨兴",
+            "page": 16
+          },
+          {
+            "title": "县委书记的榜样——焦裕禄",
+            "author": "穆青 冯健 周原",
+            "page": 18
+          },
+          {
+            "title": "在民族复兴的历史丰碑上——2020中国抗疫记",
+            "author": "钟华论",
+            "page": 29
+          }
+        ],
+        "unit_task_page": 41
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {
+            "title": "《论语》十二章",
+            "author": "《论语》",
+            "page": 44
+          },
+          {
+            "title": "大学之道",
+            "author": "《礼记》",
+            "page": 45
+          },
+          {
+            "title": "人皆有不忍人之心",
+            "author": "《孟子》",
+            "page": 46
+          },
+          {
+            "title": "《老子》四章",
+            "author": "《老子》",
+            "page": 48
+          },
+          {
+            "title": "五石之瓠",
+            "author": "《庄子》",
+            "page": 49
+          },
+          {
+            "title": "兼爱",
+            "author": "《墨子》",
+            "page": 51
+          }
+        ],
+        "unit_task_page": 53
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {
+            "title": "大卫·科波菲尔（节选）",
+            "author": "狄更斯",
+            "page": 56
+          },
+          {
+            "title": "复活（节选）",
+            "author": "列夫·托尔斯泰",
+            "page": 67
+          },
+          {
+            "title": "老人与海（节选）",
+            "author": "海明威",
+            "page": 73
+          },
+          {
+            "title": "百年孤独（节选）",
+            "author": "加西亚·马尔克斯",
+            "page": 84
+          }
+        ],
+        "unit_task_page": 91
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "逻辑的力量",
+            "subsections": [
+              {
+                "title": "发现潜藏的逻辑谬误",
+                "page": 94
+              },
+              {
+                "title": "运用有效的推理形式",
+                "page": 95
+              },
+              {
+                "title": "采用合理的论证方法",
+                "page": 97
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {
+            "title": "无衣",
+            "author": "《诗经·秦风》",
+            "page": 102
+          },
+          {
+            "title": "春江花月夜",
+            "author": "张若虚",
+            "page": 103
+          },
+          {
+            "title": "将进酒",
+            "author": "李白",
+            "page": 105
+          },
+          {
+            "title": "江城子·乙卯正月二十日夜记梦",
+            "author": "苏轼",
+            "page": 106
+          }
+        ]
+      }
+    ]
+  }
+  
+
+
+{
+  "title": "选择性必修 中册",
+  "sections": [
+    {
+      "unit": "第一单元",
+      "chapters": [
+        {
+          "title": "子路、曾皙、冉有、公西华侍坐",
+          "author": "《论语》",
+          "page": 2
+        },
+        {
+          "title": "齐桓晋文之事",
+          "author": "《孟子》",
+          "page": 4
+        },
+        {
+          "title": "庖丁解牛",
+          "author": "《庄子》",
+          "page": 8
+        },
+        {
+          "title": "烛之武退秦师",
+          "author": "《左传》",
+          "page": 10
+        },
+        {
+          "title": "鸿门宴",
+          "author": "司马迁",
+          "page": 13
+        }
+      ],
+      "unit_task_page": 18
+    },
+    {
+      "unit": "第二单元",
+      "chapters": [
+        {
+          "title": "窦娥冤（节选）",
+          "author": "关汉卿",
+          "page": 22
+        },
+        {
+          "title": "雷雨（节选）",
+          "author": "曹禺",
+          "page": 26
+        },
+        {
+          "title": "哈姆莱特（节选）",
+          "author": "莎士比亚",
+          "page": 37
+        }
+      ],
+      "unit_task_page": 43
+    },
+    {
+      "unit": "第三单元",
+      "chapters": [
+        {
+          "title": "青蒿素：人类征服疾病的一小步",
+          "author": "屠呦呦",
+          "page": 46
+        },
+        {
+          "title": "一名物理学家的教育历程",
+          "author": "加来道雄",
+          "page": 50
+        },
+        {
+          "title": "中国建筑的特征",
+          "author": "梁思成",
+          "page": 55
+        },
+        {
+          "title": "说“木叶”",
+          "author": "林庚",
+          "page": 61
+        }
+      ],
+      "unit_task_page": 67
+    },
+    {
+      "unit": "第四单元",
+      "chapters": [
+        {
+          "title": "信息时代的语文生活",
+          "subsections": [
+            {
+              "title": "认识多媒介",
+              "page": 70
+            },
+            {
+              "title": "善用多媒介",
+              "page": 71
+            },
+            {
+              "title": "辨识媒介信息",
+              "page": 71
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit": "第五单元",
+      "chapters": [
+        {
+          "title": "在《人民报》创刊纪念会上的演说",
+          "author": "马克思",
+          "page": 80
+        },
+        {
+          "title": "在马克思墓前的讲话",
+          "author": "恩格斯",
+          "page": 82
+        }
+      ],
+      "unit_task_page": 91
+    },
+    {
+      "unit": "第六单元",
+      "chapters": [
+        {
+          "title": "祝福",
+          "author": "鲁迅",
+          "page": 94
+        },
+        {
+          "title": "林教头风雪山神庙",
+          "author": "施耐庵",
+          "page": 107
+        },
+        {
+          "title": "装在套子里的人",
+          "author": "契诃夫",
+          "page": 113
+        },
+        {
+          "title": "促织",
+          "author": "蒲松龄",
+          "page": 119
+        },
+        {
+          "title": "变形记（节选）",
+          "author": "卡夫卡",
+          "page": 123
+        }
+      ],
+      "unit_task_page": 135
+    },
+    {
+      "unit": "第七单元",
+      "chapters": [
+        {
+          "title": "谏太宗十思疏",
+          "author": "魏征",
+          "page": 144
+        },
+        {
+          "title": "答司马谏议书",
+          "author": "王安石",
+          "page": 146
+        },
+        {
+          "title": "阿房宫赋",
+          "author": "杜牧",
+          "page": 148
+        },
+        {
+          "title": "六国论",
+          "author": "苏洵",
+          "page": 150
+        }
+      ],
+      "unit_task_page": 152
+    },
+    {
+      "unit": "古诗词诵读",
+      "chapters": [
+        {
+          "title": "登岳阳楼",
+          "author": "杜甫",
+          "page": 155
+        },
+        {
+          "title": "桂枝香·金陵怀古",
+          "author": "王安石",
+          "page": 156
+        },
+        {
+          "title": "念奴娇·过洞庭",
+          "author": "张孝祥",
+          "page": 157
+        },
+        {
+          "title": "游园（【皂罗袍】）",
+          "author": "汤显祖",
+          "page": 158
+        }
+      ]
+    }
+  ]
+}
+
+
+
+  {
+    "title": "选择性必修 下册",
+    "sections": [
+      {
+        "unit": "第一单元",
+        "chapters": [
+          {
+            "title": "社会历史的决定性基础",
+            "author": "恩格斯",
+            "page": 2
+          },
+          {
+            "title": "改造我们的学习",
+            "author": "毛泽东",
+            "page": 7
+          },
+          {
+            "title": "人的正确思想是从哪里来的？",
+            "author": "毛泽东",
+            "page": 13
+          },
+          {
+            "title": "实践是检验真理的唯一标准",
+            "author": "《光明日报》特约评论员",
+            "page": 15
+          },
+          {
+            "title": "修辞立其诚",
+            "author": "张岱年",
+            "page": 23
+          },
+          {
+            "title": "怜悯是人的天性",
+            "author": "卢梭",
+            "page": 25
+          },
+          {
+            "title": "人应当坚持正义",
+            "author": "柏拉图",
+            "page": 30
+          }
+        ],
+        "unit_task_page": 35
+      },
+      {
+        "unit": "第二单元",
+        "chapters": [
+          {
+            "title": "记念刘和珍君",
+            "author": "鲁迅",
+            "page": 38
+          },
+          {
+            "title": "为了忘却的记念",
+            "author": "鲁迅",
+            "page": 43
+          },
+          {
+            "title": "包身工",
+            "author": "夏衍",
+            "page": 52
+          },
+          {
+            "title": "荷花淀",
+            "author": "孙犁",
+            "page": 61
+          },
+          {
+            "title": "小二黑结婚（节选）",
+            "author": "赵树理",
+            "page": 66
+          },
+          {
+            "title": "党费",
+            "author": "王愿坚",
+            "page": 71
+          }
+        ],
+        "unit_task_page": 80
+      },
+      {
+        "unit": "第三单元",
+        "chapters": [
+          {
+            "title": "屈原列传",
+            "author": "司马迁",
+            "page": 82
+          },
+          {
+            "title": "苏武传",
+            "author": "班固",
+            "page": 87
+          },
+          {
+            "title": "过秦论",
+            "author": "贾谊",
+            "page": 93
+          },
+          {
+            "title": "五代史伶官传序",
+            "author": "欧阳修",
+            "page": 96
+          }
+        ],
+        "unit_task_page": 99
+      },
+      {
+        "unit": "第四单元",
+        "chapters": [
+          {
+            "title": "玩偶之家（节选）",
+            "author": "易卜生",
+            "page": 102
+          },
+          {
+            "title": "迷娘（之一）",
+            "author": "歌德",
+            "page": 117
+          },
+          {
+            "title": "致大海",
+            "author": "普希金",
+            "page": 118
+          },
+          {
+            "title": "自己之歌（节选）",
+            "author": "惠特曼",
+            "page": 122
+          },
+          {
+            "title": "树和天空",
+            "author": "特朗斯特罗姆",
+            "page": 123
+          }
+        ],
+        "unit_task_page": 124
+      },
+      {
+        "unit": "古诗词诵读",
+        "chapters": [
+          {
+            "title": "燕歌行并序",
+            "author": "高适",
+            "page": 126
+          },
+          {
+            "title": "李凭箜篌引",
+            "author": "李贺",
+            "page": 128
+          },
+          {
+            "title": "锦瑟",
+            "author": "李商隐",
+            "page": 129
+          },
+          {
+            "title": "书愤",
+            "author": "陆游",
+            "page": 130
+          }
+        ]
+      }
+    ]
+  }
+  
