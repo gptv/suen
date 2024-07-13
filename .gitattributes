@@ -1,0 +1,2 @@
+fonts/HuWenMingChaoTi.woff filter=lfs diff=lfs merge=lfs -text
+fonts/HuWenMingChaoTi.woff2 filter=lfs diff=lfs merge=lfs -text
