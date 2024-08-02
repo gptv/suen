@@ -1,0 +1,18 @@
+<div id='discourse-comments'></div>
+
+<script type="text/javascript">
+  window.DiscourseEmbed = {
+    discourseUrl: 'https://forum.bdfzer.com/',
+    topicId: 1374
+  };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+or
+
+<iframe src="https://forum.bdfzer.com/t/welcome-to/5" style="width:100%; height:500px; border:none;"></iframe>
