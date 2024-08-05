@@ -1,5 +1,24 @@
+# 逐頁新建討論帖
 <div id='discourse-comments'></div>
+<meta name='discourse-username' content='suen'>
 
+<script type="text/javascript">
+  DiscourseEmbed = {
+    discourseUrl: 'https://forum.bdfzer.com/',
+    discourseEmbedUrl: 'https://sites.google.com/view/pkuschool/cover3/xbs1',
+    // className: 'CLASS_NAME',
+  };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+
+
+# 已有討論帖嵌入
+<div id='discourse-comments'></div>
 <script type="text/javascript">
   window.DiscourseEmbed = {
     discourseUrl: 'https://forum.bdfzer.com/',
@@ -13,6 +32,40 @@
   })();
 </script>
 
-or
+# 自動為每一頁面新建討論帖（error）
+<div id='discourse-comments'></div>
+<meta name='discourse-username' content='suen'>
 
-<iframe src="https://forum.bdfzer.com/t/welcome-to/5" style="width:100%; height:500px; border:none;"></iframe>
+<script type="text/javascript">
+  (function() {
+    // Assuming the Google Sites URL structure is known, capture a unique part of the URL
+    // For example, using part of the path that uniquely identifies the page
+    var identifier = window.location.pathname.split('/')[3]; // Adjust index based on actual URL structure if necessary
+
+    // Construct the target URL for Discourse embedding
+    var currentPageUrl = 'https://sites.google.com/view/pkuschool/' + encodeURIComponent(identifier);
+
+    // Log the constructed URL for verification
+    console.log('Constructed page URL for embedding:', currentPageUrl);
+
+    DiscourseEmbed = {
+      discourseUrl: 'https://forum.bdfzer.com/',
+      discourseEmbedUrl: currentPageUrl, // Use the constructed URL
+      // className: 'comment-style', // Optional: Use a CSS class for styling
+    };
+
+    console.log('DiscourseEmbed object:', DiscourseEmbed);
+
+    var d = document.createElement('script');
+    d.type = 'text/javascript';
+    d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    d.onload = function() {
+      console.log('Discourse script loaded successfully');
+    };
+    d.onerror = function() {
+      console.error('Error loading Discourse script');
+    };
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
