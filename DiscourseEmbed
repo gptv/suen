@@ -69,3 +69,10 @@
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
   })();
 </script>
+
+# Allow all origins
+location @discourse {. 
+    add_header Content-Security-Policy "frame-ancestors *"; # Allow embedding from any site
+    add_header Access-Control-Allow-Origin "*"; # CORS: Allow all origins
+    add_header Strict-Transport-Security 'max-age=31536000'; # Enforce HTTPS
+    limit_conn connperip 20;
