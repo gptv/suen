@@ -1,90 +1,13 @@
-Here’s a version of the blog post optimized for GitHub markdown, with sensitive information removed, and properly formatted for publication:
-
----
-
-# Automating Backups Locally: Discourse to Google Drive with Telegram Notifications
-
-## Introduction
-
-Backing up your data is critical when running a forum or website. Automating this process not only saves time but ensures that your data remains secure and up-to-date. This guide walks you through automating Discourse backups from a local machine, uploading them to Google Drive, and receiving real-time status notifications through Telegram.
-
-### What You Will Learn:
-- How to download Discourse backups from a remote server every **3 days**.
-- How to upload these backups to Google Drive every **7 days**.
-- How to configure **Telegram Bot** notifications for success or failure alerts.
-- How to use **`rclone`** for cloud synchronization.
-- How to automate SSH transfers with **`sshpass`**.
-
----
-
-## Step 1: Install and Configure `sshpass` for Unattended SSH Transfers
-
-`sshpass` enables you to perform SSH connections by passing the password via the command line, which is crucial for automation.
-
-### 1. Install `sshpass`:
-On macOS, you can install it via Homebrew:
-```bash
-brew install hudochenkov/sshpass/sshpass
-```
-
-### 2. Automate File Transfers with `sshpass`:
-Use the following command to automatically download the latest backup from your remote server:
-```bash
-sshpass -p "$VPS_PASSWORD" scp -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST:$VPS_BACKUP_DIR/$LATEST_BACKUP $LOCAL_BACKUP_DIR
-```
-
-This command allows for secure file transfers from your server to your local machine without manual password input.
-
----
-
-## Step 2: Set Up Google Drive API and Obtain Credentials
-
-Before uploading backups to Google Drive, you need to set up the Google Drive API and configure `rclone` to use it.
-
-### 1. Obtain Google Drive API Credentials:
-
-- **Create a Project**:  
-  Visit [Google Cloud Console](https://console.cloud.google.com/).  
-  Create a new project, then go to **API & Services > Credentials**.
-
-- **Enable Google Drive API**:  
-  In the left menu, click on **Library**.  
-  Search for **Google Drive API** and enable it.
-
-- **Create OAuth 2.0 Credentials**:  
-  Go back to **Credentials**, click **Create Credentials**, and choose **OAuth 2.0 Client IDs**.  
-  Set application type to **Desktop App**.
-
-- **Download JSON File**:  
-  After creating the OAuth 2.0 credentials, download the JSON file containing your **client_id** and **client_secret**.
-
-### 2. Configure `rclone` for Google Drive:
-
-On your local machine, configure `rclone`:
-```bash
-rclone config
-```
-- Select `n` to create a new remote.
-- Choose `drive` as the storage type.
-- Follow the instructions to upload your OAuth credentials.
-
----
-
-## Step 3: Write the Backup Script
-
-Below is the complete backup script that automates downloading backups every **3 days**, uploading them every **7 days**, sending Telegram notifications, and cleaning up old backups.
-
-```bash
 #!/bin/bash
 
-# Log file location
+# Set log file path
 LOG_FILE="$HOME/discourse_backup.log"
 
-# Telegram bot settings (replace with your bot token and chat ID)
-BOT_TOKEN="YOUR_BOT_TOKEN"
-CHAT_ID="YOUR_CHAT_ID"
+# Telegram bot settings
+BOT_TOKEN=""
+CHAT_ID=""
 
-# Function to send a Telegram message
+# Function to send a message via Telegram
 send_telegram_message() {
   local message=$1
   curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
@@ -92,20 +15,22 @@ send_telegram_message() {
        -d text="$message"
 }
 
-# Function to log and send notifications
+# Function to log messages and notify via Telegram
 log_and_notify() {
   local message=$1
   echo "$(date): $message" >> $LOG_FILE
   send_telegram_message "$message"
 }
 
-# VPS connection settings (replace with your actual credentials)
-VPS_USER="your_vps_user"
-VPS_HOST="your_vps_ip"
-VPS_PASSWORD="your_vps_password"
+# VPS connection settings
+VPS_USER="root"
+VPS_HOST=""
+VPS_PASSWORD=""
 VPS_BACKUP_DIR="/var/discourse/shared/standalone/backups/default"
 LOCAL_BACKUP_DIR="$HOME/discourse_backups"
-REMOTE_NAME="gdrive:DiscourseBackups"
+REMOTE_NAME="forumbackup:1SPw-YYAjD1-yloFfUPNT_eA_8Fc-5by2"  # Use folder ID
+
+# Maximum retry attempts for download and upload
 MAX_RETRIES=3
 
 # Ensure local backup directory exists
@@ -114,34 +39,34 @@ mkdir -p $LOCAL_BACKUP_DIR
 # Get the current timestamp
 CURRENT_DAY=$(date +%s)
 
-# Intervals: 3 days for download, 7 days for upload
-DOWNLOAD_INTERVAL=259200  # 3 days in seconds
-UPLOAD_INTERVAL=604800    # 7 days in seconds
+# Check if it's time to download a new backup
+log_and_notify "Starting backup check process..."
 
-# Read last download and upload dates
-LAST_DOWNLOAD_FILE="$HOME/.last_download"
-LAST_UPLOAD_FILE="$HOME/.last_upload"
+# Get the latest backup on the VPS
+LATEST_BACKUP=$(sshpass -p "$VPS_PASSWORD" ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "ls -t $VPS_BACKUP_DIR/*.tar.gz | head -n 1")
 
-# Check if a backup download is due (every 3 days)
-if [ ! -f "$LAST_DOWNLOAD_FILE" ] || [ $((CURRENT_DAY - $(cat $LAST_DOWNLOAD_FILE))) -ge $DOWNLOAD_INTERVAL ]; then
-    log_and_notify "Starting backup download process..."
+if [ -z "$LATEST_BACKUP" ]; then
+    log_and_notify "Failed to retrieve the latest backup file name from VPS."
+    exit 1
+fi
 
-    # Try downloading the latest backup
+LATEST_BACKUP_FILE=$(basename $LATEST_BACKUP)
+log_and_notify "Latest backup on VPS: $LATEST_BACKUP_FILE"
+
+# Check if the latest backup exists locally
+if [ -f "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE" ]; then
+    log_and_notify "Backup $LATEST_BACKUP_FILE already exists locally. No need to download."
+else
+    # Download the latest backup from VPS
+    log_and_notify "Downloading the latest backup from VPS..."
+
     for i in $(seq 1 $MAX_RETRIES); do
-        log_and_notify "Attempting to download the latest backup... Attempt $i"
+        log_and_notify "Attempting to download backup... Attempt $i"
 
-        LATEST_BACKUP=$(sshpass -p "$VPS_PASSWORD" ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "ls -t $VPS_BACKUP_DIR | head -n 1")
-
-        if [ -z "$LATEST_BACKUP" ]; then
-            log_and_notify "Failed to retrieve the latest backup file name."
-            continue
-        fi
-
-        sshpass -p "$VPS_PASSWORD" scp -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST:$VPS_BACKUP_DIR/$LATEST_BACKUP $LOCAL_BACKUP_DIR
+        sshpass -p "$VPS_PASSWORD" scp -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST:$VPS_BACKUP_DIR/$LATEST_BACKUP_FILE $LOCAL_BACKUP_DIR
 
         if [ $? -eq 0 ]; then
-            log_and_notify "Backup $LATEST_BACKUP downloaded successfully."
-            echo $CURRENT_DAY > $LAST_DOWNLOAD_FILE
+            log_and_notify "Backup $LATEST_BACKUP_FILE downloaded successfully to $LOCAL_BACKUP_DIR"
             break
         else
             log_and_notify "Download attempt $i failed."
@@ -149,64 +74,49 @@ if [ ! -f "$LAST_DOWNLOAD_FILE" ] || [ $((CURRENT_DAY - $(cat $LAST_DOWNLOAD_FIL
         fi
 
         if [ $i -eq $MAX_RETRIES ]; then
-            log_and_notify "Backup download failed after $MAX_RETRIES attempts."
+            log_and_notify "Failed to download backup after $MAX_RETRIES attempts."
             exit 1
         fi
     done
-else
-    log_and_notify "No download needed today. Next download in $((($DOWNLOAD_INTERVAL - (CURRENT_DAY - $(cat $LAST_DOWNLOAD_FILE))) / 86400)) days."
 fi
 
-# Check if a backup upload is due (every 7 days)
-if [ ! -f "$LAST_UPLOAD_FILE" ] || [ $((CURRENT_DAY - $(cat $LAST_UPLOAD_FILE))) -ge $UPLOAD_INTERVAL ]; then
-    log_and_notify "Starting backup upload to Google Drive..."
-
-    rclone copy $LOCAL_BACKUP_DIR/$LATEST_BACKUP $REMOTE_NAME
-
-    if [ $? -eq 0 ]; then
-        log_and_notify "Backup $LATEST_BACKUP uploaded successfully to Google Drive."
-        echo $CURRENT_DAY > $LAST_UPLOAD_FILE
-    else
-        log_and_notify "Backup upload to Google Drive failed."
-        exit 1
-    fi
+# Upload the backup to Google Drive if it's not already there
+log_and_notify "Checking if backup already exists on Google Drive..."
+if rclone lsf $REMOTE_NAME | grep -q "$LATEST_BACKUP_FILE"; then
+    log_and_notify "Backup $LATEST_BACKUP_FILE already exists on Google Drive. Skipping upload."
 else
-    log_and_notify "No upload needed today. Next upload in $((($UPLOAD_INTERVAL - (CURRENT_DAY - $(cat $LAST_UPLOAD_FILE))) / 86400)) days."
+    for i in $(seq 1 $MAX_RETRIES); do
+        log_and_notify "Attempting to upload backup to Google Drive... Attempt $i"
+
+        rclone -vv copy $LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE $REMOTE_NAME
+
+        if [ $? -eq 0 ]; then
+            log_and_notify "Backup $LATEST_BACKUP_FILE uploaded successfully to Google Drive"
+            break
+        else
+            log_and_notify "Upload attempt $i failed."
+            sleep 5
+        fi
+
+        if [ $i -eq $MAX_RETRIES ]; then
+            log_and_notify "Failed to upload backup after $MAX_RETRIES attempts."
+            exit 1
+        fi
+    done
 fi
 
-# Cleanup local backups, keeping only the two most recent
+# Cleanup local backups, retaining only the most recent file
+log_and_notify "Cleaning up local backups, retaining only the most recent one..."
 cd $LOCAL_BACKUP_DIR
-ls -t | tail -n +3 | xargs rm -f
+ls -t | tail -n +2 | xargs rm -f
+log_and_notify "Local cleanup completed. Only the most recent backup is retained locally."
 
-log_and_notify "Cleanup completed. Only the two most recent backups are retained."
+# Cleanup Google Drive backups, retaining only the most recent file
+log_and_notify "Cleaning up older backups on Google Drive..."
+rclone lsf $REMOTE_NAME --format "t" | sort -r | tail -n +2 | while read -r file; do
+    rclone delete $REMOTE_NAME/"$file"
+    log_and_notify "Deleted older backup on Google Drive: $file"
+done
+log_and_notify "Google Drive cleanup completed. Only the most recent backup is retained on Google Drive."
+
 log_and_notify "Backup process completed."
-```
-
----
-
-## Step 4: Automate with Cron
-
-Use `cron` to schedule the backup script to run daily.
-
-### 1. Open the `crontab` editor:
-```bash
-crontab -e
-```
-
-### 2. Add the following line to run the script every day at noon:
-```bash
-0 12 * * * /usr/local/bin/discourse_backup.sh
-```
-
-This ensures the script runs daily, and based on the time intervals set in the script, it will determine when to download and upload backups.
-
----
-
-## Step 5: Configure Telegram Bot for Notifications
-
-1. Create a Telegram bot via `BotFather` and obtain your API token.
-2. Use the API token in the script to send success or failure notifications when the backup process completes.
-
----
-
-This setup automates your backup process from start to finish—making sure your Discourse backups are regularly downloaded, uploaded to Google Drive, and that you are informed of the status via Telegram.
