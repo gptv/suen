@@ -4,58 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUEN-Links</title>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "nu39a0yt0w");
-    </script>
+    <title>北大附中孙玉磊</title>
+    <meta name="description" content="北大附中 孙玉磊 語文">
+    <meta name="keywords" content="北大附中, 孙玉磊, 語文">
     <style>
+        :root {
+            --primary-color: white;
+            --background-color: rgba(0, 0, 0, 0.7);
+            --hover-color: rgba(0, 0, 0, 0.9);
+        }
+
         body {
-            background-image: url('background.jpg'); /* 使用庫內的背景圖 */
+            background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            color: var(--primary-color);
+            text-align: center;
         }
 
         .container {
-            text-align: center;
             padding: 50px;
         }
 
-        h1 {
-            color: white;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 5px solid white;
-            margin-bottom: 20px;
+            border: 3px solid var(--primary-color);
+            margin-bottom: 15px;
         }
 
         .links {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
         }
 
         .link-button {
             display: block;
             width: 300px;
-            text-align: center;
-            margin: 10px 0;
             padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
+            background-color: var(--background-color);
+            color: var(--primary-color);
             text-decoration: none;
             font-size: 1.2em;
             border-radius: 10px;
@@ -63,30 +57,47 @@
         }
 
         .link-button:hover {
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: var(--hover-color);
+        }
+
+        @media (max-width: 600px) {
+            .link-button {
+                width: 90%;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="Avatar.jpeg" alt="Avatar" class="avatar"> <!-- 使用庫內的頭像圖片 -->
-        <h1></h1>
+        <img src="Avatar.jpeg" srcset="Avatar-small.jpeg 1x, Avatar.jpeg 2x" alt="Avatar" class="avatar" loading="lazy">
         <div class="links">
-            <a href="https://forum.bdfzer.com" class="link-button" target="_blank">彣彰典冊</a>
-            <a href="https://bdfzer.com" class="link-button" target="_blank">無何有鄉</a>
-            <a href="https://chinese.bdfzer.com" class="link-button" target="_blank">高中語文</a>
-            <a href="https://mf.bdfzer.com" class="link-button" target="_blank">高考詩文</a>
-            <a href="https://matters.town/@eduer" class="link-button" target="_blank">舊地心思</a>
-            <a href="https://gptv.github.io" class="link-button" target="_blank">無餘而說</a>
-            <a href="https://chatgpt.com/g/g-jn6Cmofno-chu-gao-zhong-yu-wen-zhu-jiao" class="link-button" target="_blank">GPTs - 語文助教</a>
-            <a href="https://github.com/gptv?tab=repositories" class="link-button" target="_blank">gptv - Repositories</a>
-            <a href="https://pkuschool.weebly.com" class="link-button" target="_blank">The Dalton Academy's Chinese</a>
-            <a href="https://medium.com/chinese-history" class="link-button" target="_blank">Chinese Great Books</a>
-            <a href="https://www.facebook.com/cycxc" class="link-button" target="_blank">Facebook</a>
-            <a href="https://x.com/ieduer" class="link-button" target="_blank">x-Me</a>
+            <a href="https://forum.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問彣彰典冊">彣彰典冊</a>
+            <a href="https://bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無何有鄉">無何有鄉</a>
+            <a href="https://chinese.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高中語文">高中語文</a>
+            <a href="https://mf.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高考詩文">高考詩文</a>
+            <a href="https://matters.town/@eduer" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問舊地心思">舊地心思</a>
+            <a href="https://gptv.github.io" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無餘而說">無餘而說</a>
+            <a href="https://chatgpt.com/g/g-jn6Cmofno-chu-gao-zhong-yu-wen-zhu-jiao" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問GPTs-語文助教">GPTs - 語文助教</a>
+            <a href="https://github.com/pkuschool" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問GitHub-Pkuschool">GitHub-Pkuschool</a>
+            <a href="https://pkuschool.weebly.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問The Dalton Academy's Chinese">The Dalton Academy's Chinese</a>
+            <a href="https://medium.com/chinese-history" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Chinese Great Books">Chinese Great Books</a>
+            <a href="https://www.facebook.com/cycxc" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Facebook">Facebook</a>
+            <a href="https://x.com/ieduer" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問x-Me">x-Me</a>
         </div>
     </div>
+
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "nu39a0yt0w");
+            }, 2000);
+        });
+    </script>
 </body>
 
 </html>
