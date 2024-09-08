@@ -5,123 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="北大附中 孙玉磊 語文">
     <meta name="keywords" content="北大附中, 孙玉磊, 語文, 成绩, 职业">
-    <link rel="icon" href="https://github.com/gptv/suen/blob/main/links/Avatar-small.jpeg" type="image/jpeg">
-    <title>家与校</title>
+    <link rel="icon" href="https://github.com/gptv/suen/blob/main/links/Avatar-small.jpeg?raw=true" type="image/jpeg">
+    <title>家校谈</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @font-face {
+            font-family: 'FangZhengKaiTi';
+            src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
         }
         body {
-            font-family: 'Noto Serif SC', serif;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.8; /* 增加行高 */
+            font-family: 'FangZhengKaiTi', 'Noto Serif SC', serif;
+            background-color: #e0f2f1;
+            color: #004d40;
+            line-height: 1.8;
             text-align: center;
-            font-size: 18px; /* 增加基础字体大小 */
+            font-size: 18px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        h1, h2 {
+            font-family: 'FangZhengKaiTi', 'Noto Serif SC', serif;
+        }
+        h1 {
+            font-size: 4em;
+            color: #00695c;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        h2 {
+            font-size: 2.4em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+        #section1 h2 { color: #d32f2f; border-bottom: 2px solid #d32f2f; }
+        #section2 h2 { color: #1976d2; border-bottom: 2px solid #1976d2; }
+        #section3 h2 { color: #388e3c; border-bottom: 2px solid #388e3c; }
+        #section4 h2 { color: #ffa000; border-bottom: 2px solid #ffa000; }
+        #section5 h2 { color: #7b1fa2; border-bottom: 2px solid #7b1fa2; }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+        .highlight {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #00695c;
+        }
+        #section5 .link-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        #section5 .link-button {
+            background-color: #e0f2f1;
+            color: #004d40;
+            padding: 10px 30px;
+            text-decoration: none;
+            border: 2px solid #004d40;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 1.1em;
+            min-width: 120px;
+        }
+        #section5 .link-button:hover {
+            background-color: #004d40;
+            color: #e0f2f1;
+        }
+        a {
+            color: #00695c;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #004d40;
         }
         .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        header {
-            padding: 40px 0;
-            background: linear-gradient(135deg, #1a5f7a, #57c5b6);
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            font-size: 3.5em;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
         section {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
             margin-bottom: 30px;
-            text-align: left;
-        }
-        h2 {
-            font-size: 2.2em; /* 稍微增加二级标题的大小 */
-            color: #2c3e50;
-            margin-bottom: 25px; /* 增加标题下方的间距 */
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 15px;
-        }
-        p {
-            margin-bottom: 20px; /* 增加段落间距 */
-            font-size: 1.1em; /* 相对于 body 的字体大小再增加一些 */
-        }
-        .highlight {
-            font-size: 1.4em; /* 稍微增加高亮文本的大小 */
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 1em;
-            color: #7f8c8d;
-        }
-        #section1 { background-color: #ecf0f1; }
-        #section2 { background-color: #e8f6f3; }
-        #section3 { background-color: #fdf2e9; }
-        #section4 { background-color: #e8f4f8; }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-        }
-        
-        a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #2980b9;
-        }
-        .footer a {
-            color: #4a90e2;
-        }
-        .iframe-container {
-            position: relative;
-            overflow: hidden;
-            padding-top: 56.25%;
-            margin-top: 20px;
-        }
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>家与校</h1>
+            <h1>家校谈</h1>
         </header>
 
         <section id="section1">
             <h2>1. 成绩</h2>
-            <p>排位可以找导师要，但需要清楚数字背后的真实意义。关于要分数的故事<a href="https://blog.bdfzer.com/2024/05/blog-post_24.html" target="_blank">点击这里查看</a>。</p>
-            <p>意义，真不大。本班，标准分，海淀，北京。排名的真实意义，是个人纵向变化。昨日之我与今日之我。</p>
+            <p>排位：可以找导师要，但需要清楚数字背后的真实意义。关于要分数的故事<a href="https://blog.bdfzer.com/2024/05/blog-post_24.html" target="_blank">点击这里查看</a>。</p>
+            <p>意义：真不大。本班/标准分/海淀/北京。排名的真实意义，是个人纵向变化。昨日之我与今日之我。</p>
         </section>
 
         <section id="section2">
             <h2>2. 日常</h2>
-            <p>不及，有些事只能家人说，有些事最好家长说。情绪、感情、张弛度。</p>
-            <p>平衡，关心成绩但更关心情绪，从考生到学生到人生，不同性格不同谈法。</p>
-            <p>有过，关心具体学科其实过了，而过，犹不及。解法：真有问题，让孩子找学科教师，听结果分析。</p>
+            <p>不及：有些事只能家人说，有些事最好家长说。情绪、感情、张弛度。</p>
+            <p>平衡：关心成绩但更关心情绪，从考生到学生到人生，不同性格不同谈法。</p>
+            <p>有过：关心具体学科其实过了，过，犹不及。解法：有问题让孩子找学科教师，听结果分析。看方向，不抢方向盘。</p>
         </section>
 
         <section id="section3">
@@ -129,7 +122,7 @@
             <p>真读书的家庭早已罕见，但如果能偶尔分享有质量的文字或故事，也是语文。</p>
             <p>买本《唐诗鉴赏辞典》《唐宋词鉴赏辞典》，无事乱翻，有事当砖。</p>
             <p>真题王道：现有日常成题类考题没什么意义。语文分数即便高三也会起伏。上次一类本次三类下次一类，常常。</p>
-            <p class="highlight">默写8分，网站 <a href="https://mf.bdfzer.com" target="_blank">mf.bdfzer.com</a>，可以做家庭抽查游戏，乖了奖励默一句，不乖奖励默两句，边玩边学。</p>
+            <p class="highlight">默写8分，网站 <a href="https://mf.bdfzer.com" target="_blank">mf.bdfzer.com</a>，可以做家庭���查游戏，乖了奖励默一句，不乖奖励默两句，边玩边学。</p>
         </section>
 
         <section id="section4">
@@ -140,12 +133,10 @@
         </section>
 
         <section id="section5">
-            <h2>5.更多</h2>
-            <div class="iframe-container">
-                <iframe src="https://blog.bdfzer.com/2024/01/blog-post_22.html" title="文章1"></iframe>
-            </div>
-            <div class="iframe-container">
-                <iframe src="https://blog.bdfzer.com/2024/01/blog-post_21.html" title="文章2"></iframe>
+            <h2>5. 考试与作文</h2>
+            <div class="link-container">
+                <a href="https://blog.bdfzer.com/2024/01/blog-post_22.html" class="link-button" target="_blank">考试</a>
+                <a href="https://blog.bdfzer.com/2024/01/blog-post_21.html" class="link-button" target="_blank">作文</a>
             </div>
         </section>
 
