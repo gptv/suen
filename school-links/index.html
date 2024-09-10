@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pkus-Links</title>
+    <meta name="description" content="北大附中 孙玉磊 語文">
+    <meta name="keywords" content="北大附中, 孙玉磊, 語文">
+    <link rel="icon" href="slogo.png" type="image/png">
+    <meta name="author" content="孙玉磊">
+    <style>
+        :root {
+            --primary-color: white;
+            --background-color: rgba(0, 0, 0, 0.7);
+            --hover-color: rgba(0, 0, 0, 0.9);
+        }
+
+        body {
+            background-image: url('pkus.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .container {
+            padding: 50px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            margin-bottom: 15px;
+            object-fit: cover;
+            display: inline-block; /* 確保圖片顯示為行內塊級元素 */
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .link-button {
+            display: block;
+            width: 300px;
+            padding: 15px;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .link-button:hover {
+            background-color: var(--hover-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .avatar {
+                width: 80px;
+                height: 80px;
+            }
+
+            .link-button {
+                width: 90%;
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="slogo.png" alt="Avatar" class="avatar" loading="lazy">
+        <div class="links">
+            <a href="https://pkuschool.yuque.com/infodesk/sbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生手册">学生手册</a>
+            <a href="https://pkuschool.yuque.com/infodesk/handbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生事务手册">学生事务手册</a>
+            <a href="https://chalk-c3.seiue.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問希悦">希悦</a>
+            <a href="https://www.office.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問M365">M365</a>
+            <a href="https://www.pkuschool.edu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問北大附中官網">北大附中官網</a>
+            <a href="https://www.duxiu.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問讀秀">讀秀</a>
+            <a href="https://c.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問日常計時">日常計時</a>
+            <a href="https://pkuschool.yuque.com/xqt6kg/gq1l46/wgq3l8qg6inpcuvx?singleDoc#GG6v" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問校曆">校曆</a>
+            <a href="https://www.bjhdedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問海淀區教委">海淀區教委</a>
+            <a href="http://www.moe.gov.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問教育部">教育部</a>
+            <a href="https://basic.smartedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問中小學智慧教育">中小學智慧教育</a>
+        </div>
+    </div>
+
+    </script>
+</body>
+
+</html>
