@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向死，而生</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .countdown-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 50%,
+                transparent 50%,
+                transparent 100%
+            );
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown-display {
+            font-size: 1.8rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        #sophomore-countdown { color: #ff6b6b; }
+        #graduation-countdown { color: #4ecdc4; }
+        #year-progress { color: #45aaf2; }
+        #holiday-countdown { color: #feca57; }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .countdown-container {
+                max-width: 100%;
+            }
+            .countdown-title {
+                font-size: 1rem;
+            }
+            .countdown-display {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .countdown-item {
+                padding: 15px;
+            }
+            .countdown-title {
+                font-size: 0.9rem;
+            }
+            .countdown-display {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* 针对大屏幕设备 */
+        @media (min-width: 1200px) {
+            .countdown-container {
+                max-width: 800px;
+            }
+            .countdown-title {
+                font-size: 1.5rem;
+            }
+            .countdown-display {
+                font-size: 2.2rem;
+            }
+        }
+
+        .logo {
+            width: 100px; /* 調整大小 */
+            height: auto;
+            margin-bottom: 20px; /* 在 logo 和倒計時項目之間添加間距 */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div id="sophomore-countdown" class="countdown-item">
+            <h2 class="countdown-title">高二倒計時</h2>
+            <div class="countdown-display"></div>
+        </div>
+        <div id="graduation-countdown" class="countdown-item">
+            <h2 class="countdown-title">高中畢業倒計時</h2>
+            <div class="countdown-display"></div>
+        </div>
+        <div id="year-progress" class="countdown-item">
+            <h2 class="countdown-title">2024年度剩餘</h2>
+            <div class="countdown-display"></div>
+        </div>
+        <div id="holiday-countdown" class="countdown-item">
+            <h2 class="countdown-title">年假倒計時</h2>
+            <div class="countdown-display"></div>
+        </div>
+    </div>
+    
+    <script>
+        function handleError(error) {
+            console.error('發生錯誤:', error);
+            document.body.innerHTML += `<p style="color: red;">錯誤: ${error.message}</p>`;
+        }
+
+        try {
+            const countdownDisplays = {
+                sophomore: document.querySelector('#sophomore-countdown .countdown-display'),
+                graduation: document.querySelector('#graduation-countdown .countdown-display'),
+                yearProgress: document.querySelector('#year-progress .countdown-display'),
+                holiday: document.querySelector('#holiday-countdown .countdown-display')
+            };
+
+            const sophomoreTime = new Date('2025-07-15T00:00:00').getTime();
+            const graduationTime = new Date('2026-06-10T17:00:00').getTime();
+            const holidayTime = new Date('2025-01-18T00:00:00').getTime();
+
+            function updateCountdowns() {
+                const now = new Date();
+
+                updateSingleCountdown(sophomoreTime, now.getTime(), countdownDisplays.sophomore, "高二開始了！");
+                updateSingleCountdown(graduationTime, now.getTime(), countdownDisplays.graduation, "高中畢業了！");
+                updateYearProgress(now, countdownDisplays.yearProgress);
+                updateSingleCountdown(holidayTime, now.getTime(), countdownDisplays.holiday, "年假開始了！");
+
+                document.querySelectorAll('.countdown-item').forEach((item, index) => {
+                    setTimeout(() => item.classList.add('show'), index * 200);
+                });
+            }
+
+            function updateSingleCountdown(targetTime, nowTime, display, endMessage) {
+                const timeLeft = targetTime - nowTime;
+
+                if (timeLeft <= 0) {
+                    display.textContent = endMessage;
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                display.textContent = `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+            }
+
+            function updateYearProgress(now, display) {
+                const yearStart = new Date(now.getFullYear(), 0, 1);
+                const yearEnd = new Date(now.getFullYear() + 1, 0, 1);
+                const yearProgress = ((now - yearStart) / (yearEnd - yearStart)) * 100;
+                display.textContent = `${(100 - yearProgress).toFixed(6)}%`;
+            }
+
+            setInterval(updateCountdowns, 1000);
+            updateCountdowns();
+
+            console.log('腳本執行完成，沒有錯誤');
+        } catch (error) {
+            handleError(error);
+        }
+    </script>
+</body>
+</html>
