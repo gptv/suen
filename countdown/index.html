@@ -130,12 +130,26 @@
         }
 
         .logo {
-            width: 100px; /* 調整大小 */
+            width: 100px; /* 默認大小 */
             height: auto;
-            margin-bottom: 20px; /* 在 logo 和倒計時項目之間添加間距 */
+            margin-bottom: 20px;
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* 移動端設置 */
+        @media (max-width: 768px) {
+            .logo {
+                width: 80px; /* 縮小移動端圖片 */
+            }
+        }
+
+        /* 針對大屏幕設備 */
+        @media (min-width: 1200px) {
+            .logo {
+                width: 150px; /* 放大網頁端圖片 */
+            }
         }
 
         .footer {
