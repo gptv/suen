@@ -26,10 +26,15 @@
             font-family: Arial, sans-serif;
             color: var(--primary-color);
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .container {
             padding: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .avatar {
@@ -65,8 +70,14 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                background-size: cover;
+                background-position: center;
+                background-attachment: scroll;
+            }
+
             .container {
-                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.5);
             }
 
             .avatar {
@@ -78,6 +89,10 @@
                 width: 90%;
                 font-size: 1em;
                 padding: 12px;
+            }
+
+            body {
+                background-attachment: scroll;
             }
         }
     </style>
