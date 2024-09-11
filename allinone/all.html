@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="北大附中 孙玉磊 語文">
+    <meta name="keywords" content="北大附中, 孙玉磊, 語文">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="北大附中 - 孙玉磊">
+    <meta property="og:description" content="北大附中 孙玉磊 語文相關內容">
+    <meta property="og:image" content="https://github.com/gptv/suen/blob/main/links/Avatar-small.jpeg?raw=true">
+    <meta property="og:url" content="https://bdfz.net">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://github.com/gptv/suen/blob/main/links/Avatar-small.jpeg?raw=true" type="image/jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <title>pkuschool-links</title>
+    <style>
+        @font-face {
+            font-family: 'KangXiDictionary';
+            src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #005f73, #0a9396);
+            --secondary-gradient: linear-gradient(135deg, #94d2bd, #e9d8a6);
+            --background-gradient: linear-gradient(135deg, #001219, #005f73);
+            --text-color: #e9ecef;
+            --dark-text-color: #001219;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'KangXiDictionary', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--background-gradient);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1400px;
+            flex: 1;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-column {
+            background: var(--primary-gradient);
+        }
+
+        .right-column {
+            background: var(--secondary-gradient);
+        }
+
+        .countdown-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: linear-gradient(135deg, #0a9396, #94d2bd);
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            width: 100%;
+        }
+
+        .countdown-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: var(--dark-text-color);
+        }
+
+        .countdown-display {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        #current-time { background-color: rgba(0, 95, 115, 0.3); }
+        #year-progress { background-color: rgba(10, 147, 150, 0.3); }
+        #sophomore-countdown { background-color: rgba(148, 210, 189, 0.3); }
+        #graduation-countdown { background-color: rgba(233, 216, 166, 0.3); }
+
+        .link-button {
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .link-button:hover {
+            background: var(--secondary-gradient);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(0, 95, 115, 0.5), rgba(10, 147, 150, 0.5));
+            backdrop-filter: blur(5px);
+            border-radius: 15px 15px 0 0;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #e9d8a6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #94d2bd;
+        }
+
+        .logo {
+            max-width: 80px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .logo {
+                max-width: 60px;
+            }
+
+            .countdown-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左列 -->
+        <div class="column left-column">
+            <a href="https://forum.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問彣彰典冊">彣彰典冊</a>
+            <a href="https://bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無何有鄉">無何有鄉</a>
+            <a href="https://chinese.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高中語文">高中語文</a>
+            <a href="https://mf.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高考詩文">高考詩文</a>
+            <a href="https://matters.town/@eduer" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問舊地心思">舊地心思</a>
+            <a href="https://gptv.github.io" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無餘而說">無餘而說</a>
+            <a href="https://chatgpt.com/g/g-jn6Cmofno-chu-gao-zhong-yu-wen-zhu-jiao" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問GPTs-語文助教">GPTs - 語文助教</a>
+            <a href="https://github.com/gptv/suen" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問GitHub-Suen">GitHub-Suen</a>
+            <a href="https://pkuschool.weebly.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問The Dalton Academy's Chinese">The Dalton Academy's Chinese</a>
+            <a href="https://medium.com/chinese-history" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Chinese Great Books">Chinese Great Books</a>
+            <a href="https://www.facebook.com/cycxc" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Facebook">Facebook</a>
+            <a href="https://x.com/ieduer" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問x-Me">X-Me</a>
+            <a href="https://s.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問同事">同事</a>
+            <a href="https://h.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問家長">家長</a>
+        </div>
+
+        <!-- 中間倒計時 -->
+        <div class="column countdown-container">
+            <img src="slogo.png" alt="Logo" class="logo">
+            <div id="current-time" class="countdown-item">
+                <div class="countdown-display"></div>
+            </div>
+            <div id="year-progress" class="countdown-item">
+                <h2 class="countdown-title">2024年度剩餘</h2>
+                <div class="countdown-display"></div>
+            </div>
+            <div id="sophomore-countdown" class="countdown-item">
+                <h2 class="countdown-title">高二倒計時</h2>
+                <div class="countdown-display"></div>
+            </div>
+            <div id="graduation-countdown" class="countdown-item">
+                <h2 class="countdown-title">高中畢業倒計時</h2>
+                <div class="countdown-display"></div>
+            </div>
+        </div>
+
+        <!-- 右列 -->
+        <div class="column right-column">
+            <a href="https://pkuschool.yuque.com/infodesk/sbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生手册">學生手冊</a>
+            <a href="https://pkuschool.yuque.com/infodesk/handbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生事务手册">學生事務手冊</a>
+            <a href="https://pkuschool.yuque.com/xqt6kg/eyss1l" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問課程手冊">課程手冊</a>
+            <a href="https://chalk-c3.seiue.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問希悦">希悦</a>
+            <a href="https://www.office.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問M365">M365</a>
+            <a href="https://www.pkuschool.edu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問北大附中官網">北大附中官網</a>
+            <a href="https://www.duxiu.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問讀秀">讀秀</a>
+            <a href="https://c.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問日常計時">日常計時</a>
+            <a href="https://pkuschool.yuque.com/xqt6kg/gq1l46/wgq3l8qg6inpcuvx?singleDoc#GG6v" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問校曆">校曆</a>
+            <a href="https://www.bjhdedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問海淀區教委">海淀區教委</a>
+            <a href="http://www.moe.gov.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問教育部">教育部</a>
+            <a href="https://basic.smartedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問中小學智慧教育">中小學智慧教育</a>
+            <a href="https://www.zdic.net/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問漢典">漢典</a>
+            <a href="https://ctext.org/zh" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問中國哲學書電子化計劃">中國哲學書電子化計劃</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 <a href="https://bdfz.net" target="_blank">SUEN</a></p>
+    </div>
+
+    <script>
+        function updateTimeAndCountdowns() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Shanghai', hour12: false };
+            document.querySelector('#current-time .countdown-display').textContent = now.toLocaleTimeString('zh-CN', options);
+
+            const sophomoreTime = new Date('2025-07-15T00:00:00').getTime();
+            const graduationTime = new Date('2026-06-10T17:00:00').getTime();
+
+            updateSingleCountdown(sophomoreTime, now.getTime(), document.querySelector('#sophomore-countdown .countdown-display'), "高二開始了！");
+            updateSingleCountdown(graduationTime, now.getTime(), document.querySelector('#graduation-countdown .countdown-display'), "高中畢業了！");
+            updateYearProgress(now, document.querySelector('#year-progress .countdown-display'));
+        }
+
+        function updateSingleCountdown(targetTime, nowTime, display, endMessage) {
+            const timeLeft = targetTime - nowTime;
+
+            if (timeLeft <= 0) {
+                display.textContent = endMessage;
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            display.textContent = `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+        }
+
+        function updateYearProgress(now, display) {
+            const yearStart = new Date(now.getFullYear(), 0, 1);
+            const yearEnd = new Date(now.getFullYear() + 1, 0, 1);
+            const yearProgress = ((now - yearStart) / (yearEnd - yearStart)) * 100;
+            display.textContent = `${(100 - yearProgress).toFixed(6)}%`;
+        }
+
+        setInterval(updateTimeAndCountdowns, 1000);
+        updateTimeAndCountdowns();
+    </script>
+</body>
+</html>
