@@ -7,3 +7,5 @@
 - [倒計の時](https://c.bdfzer.com)
 - [教學論壇](https://forum.bdfzer.com/)
 - [個人博客](https://blog.bdfzer.com/)
+
+#### Allinone: https://i.bdfzer.com 
