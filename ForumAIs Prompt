@@ -149,3 +149,89 @@ you are Cao Xueqin, the author of *Dream of the Red Chamber*. Every word, chapte
 You are also familiar with *Dream of the Red Chamber* questions from the modern Chinese college entrance examination (Gaokao) and are always ready to discuss them with students. When conversing, you often use your own phrasing and tone, occasionally speaking through the voices of your characters. With a witty and humorous style, you encourage students to engage with you continuously. At times, you may offer a bit of sharp, playful sarcasm. You frequently draw connections between the timeless ideas in your novel and the modern era, though you are not overly concerned with the flaws or limitations of the text.
 
 To keep the conversation lively, you enjoy making puns, wordplay, and clever jokes, especially those that relate to the themes and language of *Dream of the Red Chamber*.
+
+
+# 作文
+
+LLM Grading Instructions for Chinese Writing:
+
+Prompt:
+
+	1.	Read the student’s essay carefully.
+	2.	Evaluate the essay based on the following four dimensions, assigning a score out of 10 for each dimension (total score out of 40). Provide specific feedback for each dimension, including highlights and areas for improvement.
+
+Dimensions:
+
+1. Topic Understanding (40%)
+
+	•	Criteria:
+	1.	Understanding and adherence to the prompt
+	2.	Clarity of theme and logical thinking
+	3.	Coherence and richness of content
+	4.	Sophistication and fluency in expression
+	5.	Persuasiveness and depth of insights
+	•	Scoring: Provide a score out of 10.
+	•	Feedback:
+	•	Highlight: Describe what the student did well in understanding and expressing the topic.
+	•	Improvement: Point out any misunderstandings, lack of focus, or areas where the argument could be more persuasive.
+
+2. Information Organization (20%)
+
+	•	Criteria:
+	1.	Selection of relevant materials
+	2.	Integration and analysis of information
+	3.	Use of clear and relevant examples
+	4.	Ability to summarize key points
+	5.	Consistency and effectiveness of supporting materials
+	•	Scoring: Provide a score out of 10.
+	•	Feedback:
+	•	Highlight: Identify the strengths in how the student organized and presented information.
+	•	Improvement: Suggest ways to better integrate information, provide clearer examples, or enhance the overall organization.
+
+3. Structure and Organization (20%)
+
+	•	Criteria:
+	1.	Clear and logical structure
+	2.	Smooth transitions between paragraphs
+	3.	Effective use of headings and subheadings
+	4.	Balanced content distribution
+	5.	Comprehensive and thought-provoking conclusion
+	•	Scoring: Provide a score out of 10.
+	•	Feedback:
+	•	Highlight: Mention what the student did well in structuring their essay.
+	•	Improvement: Point out any structural issues, such as lack of coherence, ineffective use of transitions, or weak conclusions.
+
+4. Language Usage (20%)
+
+	•	Criteria:
+	1.	Correct and appropriate word choice
+	2.	Variety in sentence structures
+	3.	Grammar and punctuation accuracy
+	4.	Effective use of idiomatic expressions
+	5.	Vivid and engaging language
+	•	Scoring: Provide a score out of 10.
+	•	Feedback:
+	•	Highlight: Identify strong language usage, such as rich vocabulary or varied sentence structures.
+	•	Improvement: Suggest improvements in word choice, sentence structure, or areas with grammatical errors.
+
+Overall Score:
+
+	•	Calculate the total score out of 40 based on the scores given for each dimension.
+
+Example Grading Format:
+
+	•	Topic Understanding: 8/10
+	•	Highlight: The essay demonstrates a clear understanding of the topic with a well-structured argument.
+	•	Improvement: The conclusion could be more persuasive with additional supporting evidence.
+	•	Information Organization: 7/10
+	•	Highlight: Relevant materials are integrated effectively.
+	•	Improvement: More detailed examples could enhance the argument.
+	•	Structure and Organization: 6/10
+	•	Highlight: Logical flow between paragraphs.
+	•	Improvement: The use of subheadings could help clarify the main points.
+	•	Language Usage: 9/10
+	•	Highlight: Rich vocabulary and varied sentence structures make the essay engaging.
+	•	Improvement: Minor punctuation errors need correction.
+	•	Total Score: 30/40
+
+	https://www.ceec.edu.tw/files/file_pool/1/0j052620881099319348/1216%E5%9C%8B%E6%96%87%E4%BD%9C%E6%96%87%E5%88%86%E9%A0%85%E5%BC%8F%E8%A9%95%E5%88%86%E6%8C%87%E6%A8%99.pdf

@@ -197,6 +197,8 @@
             <a href="https://x.com/ieduer" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問x-Me">X-Me</a>
             <a href="https://s.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問同事">同事</a>
             <a href="https://h.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問家長">家長</a>
+            <a href="https://www.alipan.com/s/n3HJ3tY3nzZ" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問辭典">辭典</a>
+            <a href="https://pkuschool.yuque.com/qrvbic" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問語雀">語雀</a>
         </div>
 
         <!-- 中間倒計時 -->
@@ -217,6 +219,12 @@
                 <h2 class="countdown-title">高中畢業倒計時</h2>
                 <div class="countdown-display"></div>
             </div>
+
+            <!-- 修改人类诞生计时器 -->
+            <div id="human-timer" class="countdown-item">
+                <h2 class="countdown-title">人类诞生以来</h2>
+                <div class="countdown-display" id="humanTime"></div>
+            </div>
         </div>
 
         <!-- 右列 -->
@@ -224,17 +232,19 @@
             <a href="https://pkuschool.yuque.com/infodesk/sbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生手册">學生手冊</a>
             <a href="https://pkuschool.yuque.com/infodesk/handbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生事务手册">學生事務手冊</a>
             <a href="https://pkuschool.yuque.com/xqt6kg/eyss1l" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問課程手冊">課程手冊</a>
+            <a href="https://pkuschool.yuque.com/xqt6kg/gq1l46/wgq3l8qg6inpcuvx?singleDoc#GG6v" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問校曆">校曆</a>
+            <a href="https://www.pkuschool.edu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問北大附中官網">北大附中官網</a>
+            <a href="https://user.growp.net/user/gateway" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問校內門戶">校內門戶</a>
             <a href="https://chalk-c3.seiue.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問希悦">希悦</a>
             <a href="https://www.office.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問M365">M365</a>
-            <a href="https://www.pkuschool.edu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問北大附中官網">北大附中官網</a>
             <a href="https://www.duxiu.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問讀秀">讀秀</a>
-            <a href="https://c.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問日常計時">日常計時</a>
-            <a href="https://pkuschool.yuque.com/xqt6kg/gq1l46/wgq3l8qg6inpcuvx?singleDoc#GG6v" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問校曆">校曆</a>
             <a href="https://www.bjhdedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問海淀區教委">海淀區教委</a>
             <a href="http://www.moe.gov.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問教育部">教育部</a>
             <a href="https://basic.smartedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問中小學智慧教育">中小學智慧教育</a>
             <a href="https://www.zdic.net/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問漢典">漢典</a>
             <a href="https://ctext.org/zh" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問中國哲學書電子化計劃">中國哲學書電子化計劃</a>
+            <a href="https://c.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問日常計時">日常計時</a>
+            <a href="https://openai.com/news/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問OpenAI">OpenAI</a>
         </div>
     </div>
 
@@ -279,8 +289,32 @@
             display.textContent = `${(100 - yearProgress).toFixed(6)}%`;
         }
 
-        setInterval(updateTimeAndCountdowns, 1000);
-        updateTimeAndCountdowns();
+        // 修改人类诞生计时器函数
+        const humanOrigin = new Date().getTime() - (300000 * 365.25 * 24 * 60 * 60 * 1000);
+
+        function updateHumanTimer() {
+            const now = new Date().getTime();
+            const timeSinceHumanOrigin = now - humanOrigin;
+
+            const tenThousandYears = Math.floor(timeSinceHumanOrigin / (10000 * 365.25 * 24 * 60 * 60 * 1000));
+            const remainingTime = timeSinceHumanOrigin % (10000 * 365.25 * 24 * 60 * 60 * 1000);
+
+            const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            document.getElementById('humanTime').textContent = 
+                `${tenThousandYears} 万年 ${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+        }
+
+        function updateAllTimers() {
+            updateTimeAndCountdowns();
+            updateHumanTimer();
+        }
+
+        setInterval(updateAllTimers, 1000);
+        updateAllTimers();
     </script>
 </body>
 </html>
