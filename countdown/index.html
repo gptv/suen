@@ -83,10 +83,11 @@
             z-index: 2;
         }
 
-        #sophomore-countdown { color: #ff6b6b; }
-        #graduation-countdown { color: #4ecdc4; }
+        #freshman-sophomore-end-countdown { color: #6c5ce7; }
+        #freshman-graduation-countdown { color: #ff6b6b; }
+        #sophomore-graduation-countdown { color: #4ecdc4; }
         #year-progress { color: #45aaf2; }
-        #holiday-countdown { color: #feca57; }
+        #human-timer { color: #00b894; }
 
         /* 响应式设计 */
         @media (max-width: 768px) {
@@ -130,25 +131,25 @@
         }
 
         .logo {
-            width: 100px; /* 默認大小 */
+            width: 80px; /* 默认大小调小 */
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* 减小底部间距 */
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* 移動端設置 */
+        /* 移动端设置 */
         @media (max-width: 768px) {
             .logo {
-                width: 80px; /* 縮小移動端圖片 */
+                width: 60px; /* 缩小移动端图片 */
             }
         }
 
-        /* 針對大屏幕設備 */
+        /* 针对大屏幕设备 */
         @media (min-width: 1200px) {
             .logo {
-                width: 150px; /* 放大網頁端圖片 */
+                width: 100px; /* 调整网页端图片大小 */
             }
         }
 
@@ -176,26 +177,30 @@
 <body>
     <div class="countdown-container">
         <img src="logo.png" alt="Logo" class="logo">
-        <div id="sophomore-countdown" class="countdown-item">
-            <h2 class="countdown-title">高二倒計時</h2>
+        <div id="freshman-sophomore-end-countdown" class="countdown-item">
+            <h2 class="countdown-title">高一高二結束倒計時</h2>
             <div class="countdown-display"></div>
         </div>
-        <div id="graduation-countdown" class="countdown-item">
-            <h2 class="countdown-title">高中畢業倒計時</h2>
+        <div id="freshman-graduation-countdown" class="countdown-item">
+            <h2 class="countdown-title">高一畢業倒計時</h2>
+            <div class="countdown-display"></div>
+        </div>
+        <div id="sophomore-graduation-countdown" class="countdown-item">
+            <h2 class="countdown-title">高二畢業倒計時</h2>
             <div class="countdown-display"></div>
         </div>
         <div id="year-progress" class="countdown-item">
             <h2 class="countdown-title">2024年度剩餘</h2>
             <div class="countdown-display"></div>
         </div>
-        <div id="holiday-countdown" class="countdown-item">
-            <h2 class="countdown-title">年假倒計時</h2>
+        <div id="human-timer" class="countdown-item">
+            <h2 class="countdown-title">生民以來</h2>
             <div class="countdown-display"></div>
         </div>
     </div>
     
     <div class="footer">
-        <p>© 2024 <a href="https://bdfz.net" target="_blank">SUEN</a> | 高二語文</p>
+        <p>© 2024 <a href="https://bdfz.net" target="_blank">SUEN</a></p>
     </div>
 
     <script>
@@ -206,23 +211,26 @@
 
         try {
             const countdownDisplays = {
-                sophomore: document.querySelector('#sophomore-countdown .countdown-display'),
-                graduation: document.querySelector('#graduation-countdown .countdown-display'),
+                freshmanSophomoreEnd: document.querySelector('#freshman-sophomore-end-countdown .countdown-display'),
+                freshmanGraduation: document.querySelector('#freshman-graduation-countdown .countdown-display'),
+                sophomoreGraduation: document.querySelector('#sophomore-graduation-countdown .countdown-display'),
                 yearProgress: document.querySelector('#year-progress .countdown-display'),
-                holiday: document.querySelector('#holiday-countdown .countdown-display')
+                humanTimer: document.querySelector('#human-timer .countdown-display')
             };
 
-            const sophomoreTime = new Date('2025-07-15T00:00:00').getTime();
-            const graduationTime = new Date('2026-06-10T17:00:00').getTime();
-            const holidayTime = new Date('2025-01-18T00:00:00').getTime();
+            const freshmanSophomoreEndTime = new Date('2025-07-15T23:59:59').getTime();
+            const freshmanGraduationTime = new Date('2027-06-10T23:59:59').getTime();
+            const sophomoreGraduationTime = new Date('2026-06-10T23:59:59').getTime();
+            const humanOrigin = new Date().getTime() - (300000 * 365.25 * 24 * 60 * 60 * 1000);
 
             function updateCountdowns() {
                 const now = new Date();
 
-                updateSingleCountdown(sophomoreTime, now.getTime(), countdownDisplays.sophomore, "高二開始了！");
-                updateSingleCountdown(graduationTime, now.getTime(), countdownDisplays.graduation, "高中畢業了！");
+                updateSingleCountdown(freshmanSophomoreEndTime, now.getTime(), countdownDisplays.freshmanSophomoreEnd, "高一高二結束了！");
+                updateSingleCountdown(freshmanGraduationTime, now.getTime(), countdownDisplays.freshmanGraduation, "高一畢業了！");
+                updateSingleCountdown(sophomoreGraduationTime, now.getTime(), countdownDisplays.sophomoreGraduation, "高二畢業了！");
                 updateYearProgress(now, countdownDisplays.yearProgress);
-                updateSingleCountdown(holidayTime, now.getTime(), countdownDisplays.holiday, "年假開始了！");
+                updateHumanTimer(now.getTime(), countdownDisplays.humanTimer);
 
                 document.querySelectorAll('.countdown-item').forEach((item, index) => {
                     setTimeout(() => item.classList.add('show'), index * 200);
@@ -250,6 +258,19 @@
                 const yearEnd = new Date(now.getFullYear() + 1, 0, 1);
                 const yearProgress = ((now - yearStart) / (yearEnd - yearStart)) * 100;
                 display.textContent = `${(100 - yearProgress).toFixed(6)}%`;
+            }
+
+            function updateHumanTimer(nowTime, display) {
+                const timeSinceHumanOrigin = nowTime - humanOrigin;
+                const tenThousandYears = Math.floor(timeSinceHumanOrigin / (10000 * 365.25 * 24 * 60 * 60 * 1000));
+                const remainingTime = timeSinceHumanOrigin % (10000 * 365.25 * 24 * 60 * 60 * 1000);
+
+                const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+                display.textContent = `${tenThousandYears} 万年 ${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
             }
 
             setInterval(updateCountdowns, 1000);
