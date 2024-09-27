@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文%字</title>
+    <style>
+        body {
+            font-family: 'Noto Serif SC', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;  // 添加此行以垂直居中
+        }
+
+        .container {
+            width: auto;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            animation: glow 3s infinite;  // 將動畫應用到 container
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 6px 2px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        td:first-child {
+            border-radius: 5px 0 0 5px;  // 添加左側圓角
+        }
+
+        td:last-child {
+            border-radius: 0 5px 5px 0;  // 添加右側圓角
+        }
+
+        tr {
+            transition: all 0.3s ease;
+        }
+
+        tr:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .blog-link, .blog-name {
+            display: inline-block;  // 使鏈接和名字在同一行
+            vertical-align: middle;  // 垂直對齊
+        }
+
+        .blog-link {
+            cursor: help;
+            text-decoration: none;
+            color: #00ffff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-right: 10px;  // 在鏈接和名字之間添加小間距
+        }
+
+        .blog-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #00ffff;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .blog-name {
+            color: #ff69b4;
+            font-weight: bold;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px #ffd700; }
+            50% { box-shadow: 0 0 20px #ffd700; }
+            100% { box-shadow: 0 0 5px #ffd700; }
+        }
+
+        // 刪除 .top-border 相關樣式
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 0.5rem;
+            }
+
+            td {
+                padding: 4px 1px;
+                font-size: 0.7rem;
+            }
+
+            .blog-link, .blog-name {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <!-- 刪除了表頭行 -->
+        </table>
+    </div>
+
+    <script>
+        const blogData = [
+            { link: "bdfzer.com", name: "随机键盘", comment: "網站名字像隨便砸鍵盤砸出來的，內容毫無個性，像高中生作業展示，無聊得讓人想直接關掉瀏覽器。" },
+            { link: "2025overture.blogspot.com", name: "2025序曲", comment: "2025 Overture 這名字聽上去超前，但內容卻像涼掉的菜，長篇大論無聊透頂，作者對自己的文筆還迷之自信。" },
+            { link: "xiecifang.blogspot.com", name: "写词坊", comment: "博客名文藝范兒十足，結果內容像是課堂筆記，全是些支離破碎的隨筆，讓人一頭霧水。" },
+            { link: "xucheems.blogspot.com", name: "虚无主义", comment: "這位寫手大概認為自己是哲學家，每篇文章都充滿了空洞的深度思考，但看完只會讓人覺得是時間浪費。" },
+            { link: "121092119.blogspot.com", name: "数字迷宫", comment: "哇，這是一個什麼樣的亂碼標題？內容雖然努力想表達點什麼，但卻淹沒在一堆令人難以理解的雜亂思緒中。" },
+            { link: "309204lullaby.blogspot.com", name: "催眠曲", comment: "lullaby？這博客確實很催眠，一打開就讓人昏昏欲睡，文章內容平淡無奇，讀者真的是在浪費時間。" },
+            { link: "worksyao.blogspot.com", name: "艺术试水", comment: "這位作者大概是覺得自己是藝術家，但這些作品看上去更像是初學者的試水作，缺乏靈感和專業度。" },
+            { link: "wand1e.blogspot.com", name: "魔法旅馆", comment: "博客名讓人聯想到某種魔法世界，但內容卻像是從某個老舊的自助旅館裡搜集來的無聊故事，一點吸引力都沒有。" },
+            { link: "karmensky.blogspot.com", name: "哲学空壳", comment: "這名字聽起來倒是很哲學，但內容卻一點深度都沒有，像是在堆砌詞語來掩蓋思想的匱乏。" },
+            { link: "zzyfishandcat.blogspot.com", name: "鱼猫日记", comment: "Fish and Cat? 名字聽起來挺有趣，但內容卻和魚貓沒啥關係，反而像是某個喜歡自說自話的人的私人日記。" },
+            { link: "goupwardsspiral.blogspot.com", name: "下沉螺旋", comment: "博客名裡有向上螺旋，但內容卻讓人感覺在無止境地下沉。文章缺乏邏輯和結構，像是一堆隨意堆砌的文字。" },
+            { link: "beijingsubwayline15.blogspot.com", name: "地铁随笔", comment: "這博客名字好像是為了迷惑人，內容無趣至極，像是坐在地鐵上無聊到快睡著的乘客的隨筆。" },
+            { link: "david-zhang-test.github.io", name: "新手练习", comment: "GitHub上的博客通常技術含量挺高，但這個看起來像是剛學會怎麼搭建網站的小白的練習作業，內容無聊而乏味。" },
+            { link: "techleaf.xyz", name: "科技叶", comment: "這個名字倒是挺有科技感，但內容卻像是抄來的技術文章，缺乏創新和個性，看完只會讓人翻白眼。" }
+        ];
+
+        const tableBody = document.querySelector('table');
+        
+        blogData.forEach((blog) => {
+            const row = tableBody.insertRow();
+            const cell = row.insertCell(0);
+            
+            cell.innerHTML = `
+                <a href="http://${blog.link}" class="blog-link" target="_blank" title="${blog.comment}">${blog.link.split('.')[0]}</a>
+                <span class="blog-name">${blog.name}</span>
+            `;
+        });
+    </script>
+</body>
+</html>
