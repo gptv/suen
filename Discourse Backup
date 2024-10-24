@@ -1,0 +1,313 @@
+#!/bin/bash
+
+# Add this near the top of the script, after the shebang
+env
+
+# Set PATH explicitly
+export PATH="/opt/homebrew/bin:/usr/local/bin:/opt/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
+# Set rclone path
+RCLONE="/opt/homebrew/bin/rclone"
+
+# Debug information
+echo "Script started at: $(date)"
+echo "Current working directory: $(pwd)"
+echo "Current user: $(whoami)"
+echo "PATH: $PATH"
+echo "rclone path: $RCLONE"
+echo "rsync path: $(which rsync)"
+
+# Set log file path
+LOG_FILE="$HOME/discourse_backup.log"
+
+# Telegram bot settings
+BOT_TOKEN=""
+CHAT_ID=""
+
+# Function to send a message via Telegram
+send_telegram_message() {
+  local message=$1
+  curl -s -X POST "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
+       -d chat_id="$CHAT_ID" \
+       -d text="$message"
+}
+
+# Function to log messages and notify via Telegram with log levels
+log_and_notify() {
+  local level=$1
+  local message=$2
+  echo "$(date) [$level]: $message" >> $LOG_FILE
+  send_telegram_message "[$level]: $message"
+}
+
+# Function to check and refresh rclone token
+check_and_refresh_token() {
+  if ! $RCLONE about $REMOTE_NAME &>/dev/null; then
+    log_and_notify "WARNING" "rclone token may have expired, attempting to refresh..."
+    if $RCLONE config reconnect forumbackup: --auto-confirm; then
+      log_and_notify "INFO" "rclone token refreshed successfully"
+    else
+      log_and_notify "ERROR" "Failed to refresh rclone token automatically"
+      return 1
+    fi
+  fi
+  return 0
+}
+
+# Health check function
+health_check() {
+  # Check if rclone is available
+  if command -v $RCLONE &> /dev/null; then
+      log_and_notify "INFO" "rclone available, version: $($RCLONE --version | head -n 1)"
+  else
+      log_and_notify "ERROR" "rclone command not found. Please ensure rclone is correctly installed and added to PATH."
+      exit 1
+  fi
+
+  # Check disk space
+  local free_space=$(df -h "$LOCAL_BACKUP_DIR" | awk 'NR==2 {print $4}')
+  log_and_notify "INFO" "Available disk space: $free_space"
+
+  # Check network connection
+  if ping -c 3 $VPS_HOST &> /dev/null; then
+      log_and_notify "INFO" "VPS connection is normal"
+  else
+      log_and_notify "ERROR" "Cannot connect to VPS. Exiting."
+      exit 1
+  fi
+
+  if ping -c 3 drive.google.com &> /dev/null; then
+      log_and_notify "INFO" "Google Drive connection is normal"
+  else
+      log_and_notify "ERROR" "Cannot connect to Google Drive. Exiting."
+      exit 1
+  fi
+
+  # Check rclone configuration
+  if ! check_and_refresh_token; then
+    log_and_notify "ERROR" "rclone token refresh failed. Please manually run 'rclone config reconnect forumbackup:' to update the token."
+    exit 1
+  fi
+}
+
+# VPS connection settings
+VPS_USER=""
+VPS_HOST=""
+VPS_PASSWORD=""
+VPS_BACKUP_DIR="/var/discourse/shared/standalone/backups/default"  # Official backup path on VPS
+LOCAL_BACKUP_DIR="$HOME/discourse_backups"
+REMOTE_NAME="forumbackup:/ForumBackup"  # Use folder ID
+
+# Maximum retry attempts for download and upload
+MAX_RETRIES=3
+
+# Execute health check
+health_check
+
+# Ensure local backup directory exists
+mkdir -p $LOCAL_BACKUP_DIR
+
+# Start backup process
+log_and_notify "INFO" "Starting backup check process..."
+
+# Function for retry logic
+retry_action() {
+    local action=$1
+    local retries=$2
+
+    for i in $(seq 1 $retries); do
+        if $action; then
+            return 0
+        else
+            log_and_notify "WARNING" "Attempt $i failed."
+            sleep 5
+        fi
+    done
+    return 1
+}
+
+# Get the latest backup from VPS
+get_latest_backup() {
+    LATEST_BACKUP=$(sshpass -p "$VPS_PASSWORD" ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "ls -t $VPS_BACKUP_DIR/*.tar.gz | head -n 1")
+    if [ -z "$LATEST_BACKUP" ]; then
+        log_and_notify "ERROR" "Failed to get the latest backup filename from VPS."
+        return 1
+    else
+        LATEST_BACKUP_FILE=$(basename $LATEST_BACKUP)
+        log_and_notify "INFO" "Latest backup on VPS: $LATEST_BACKUP_FILE"
+        return 0
+    fi
+}
+
+if ! retry_action get_latest_backup $MAX_RETRIES; then
+    log_and_notify "ERROR" "Failed to get the latest backup filename from VPS after $MAX_RETRIES attempts. Exiting."
+    exit 1
+fi
+
+# Function for download with resume capability
+download_with_resume() {
+  local remote_file=$1
+  local local_file=$2
+
+  echo "Attempting to use scp to download the file"
+  
+  sshpass -p "$VPS_PASSWORD" scp -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST:$remote_file $local_file
+
+  if [ $? -eq 0 ]; then
+    return 0
+  else
+    echo "scp command failed with exit code: $?"
+    return 1
+  fi
+}
+
+# Function for upload monitoring
+upload_with_monitoring() {
+  local source=$1
+  local dest=$2
+  local start_time=$(date +%s)
+  local file_size=$(stat -f%z "$source")
+
+  before_rclone_operation
+  $RCLONE copy "$source" "$dest" --progress &
+  local pid=$!
+
+  while kill -0 $pid 2>/dev/null; do
+    sleep 10
+    local current_size=$($RCLONE size "$dest/$LATEST_BACKUP_FILE" --json | grep -o '"bytes":[0-9]*' | cut -d':' -f2)
+    local elapsed_time=$(($(date +%s) - start_time))
+    if [ "$file_size" -ne 0 ]; then
+      local progress=$((current_size * 100 / file_size))
+      local speed=$((current_size / elapsed_time))
+      log_and_notify "INFO" "Upload progress: ${progress}%, Speed: ${speed} B/s"
+    else
+      log_and_notify "WARNING" "Unable to calculate progress: file size is 0"
+    fi
+  done
+
+  wait $pid
+  local exit_status=$?
+  if [ $exit_status -ne 0 ]; then
+    log_and_notify "ERROR" "rclone copy failed with exit status $exit_status"
+    return 1
+  fi
+  return 0
+}
+
+# Function to call before any rclone operation
+before_rclone_operation() {
+  if ! check_and_refresh_token; then
+    log_and_notify "ERROR" "rclone token refresh failed before operation. Exiting."
+    exit 1
+  fi
+}
+
+# Function for download with resume capability and retry logic
+download_with_resume_and_retry() {
+  local remote_file=$1
+  local local_file=$2
+  local max_retries=3
+  local retry_count=0
+
+  while [ $retry_count -lt $max_retries ]; do
+    if download_with_resume "$remote_file" "$local_file"; then
+      log_and_notify "INFO" "Download completed successfully."
+      return 0
+    else
+      retry_count=$((retry_count + 1))
+      log_and_notify "WARNING" "Download attempt $retry_count failed. Retrying in 30 seconds..."
+      sleep 30
+    fi
+  done
+
+  log_and_notify "ERROR" "Download failed after $max_retries attempts."
+  return 1
+}
+
+# After starting the download
+if [ ! -f "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE" ] || [ ! -s "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE" ]; then
+    log_and_notify "INFO" "Downloading the latest backup from VPS..."
+    if download_with_resume_and_retry "$VPS_BACKUP_DIR/$LATEST_BACKUP_FILE" "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE"; then
+        if [ -f "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE" ] && [ -s "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE" ]; then
+            log_and_notify "INFO" "Download successful and file is not empty."
+        else
+            log_and_notify "ERROR" "Download completed but file is missing or empty."
+            exit 1
+        fi
+    else
+        log_and_notify "ERROR" "Download failed after multiple attempts."
+        exit 1
+    fi
+else
+    log_and_notify "INFO" "Backup $LATEST_BACKUP_FILE already exists locally and is non-empty. No need to download."
+fi
+
+# Add a check before uploading
+if [ -f "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE" ]; then
+    log_and_notify "INFO" "Uploading the latest backup to Google Drive..."
+    before_rclone_operation
+    if ! $RCLONE lsf "$REMOTE_NAME" --format "p" | grep -q "^$LATEST_BACKUP_FILE$"; then
+        upload_with_monitoring "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE" "$REMOTE_NAME" &
+        upload_pid=$!
+    else
+        log_and_notify "INFO" "Backup $LATEST_BACKUP_FILE already exists on Google Drive. Skipping upload."
+    fi
+else
+    log_and_notify "ERROR" "Local backup file not found: $LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE"
+    exit 1
+fi
+
+# Wait for upload to complete
+[ -n "$upload_pid" ] && wait $upload_pid
+
+# Verify file integrity
+local_md5=$(md5 -q "$LOCAL_BACKUP_DIR/$LATEST_BACKUP_FILE")
+before_rclone_operation
+remote_md5=$($RCLONE md5sum "$REMOTE_NAME/$LATEST_BACKUP_FILE" | cut -d ' ' -f 1)
+
+if [ -z "$local_md5" ] || [ -z "$remote_md5" ]; then
+    log_and_notify "ERROR" "Failed to calculate MD5 sum. Local MD5: $local_md5, Remote MD5: $remote_md5"
+    exit 1
+elif [ "$local_md5" != "$remote_md5" ]; then
+    log_and_notify "ERROR" "Backup file integrity check failed. Local MD5: $local_md5, Remote MD5: $remote_md5"
+    exit 1
+else
+    log_and_notify "INFO" "Backup file integrity verified."
+fi
+
+# Clean up old backups on Google Drive
+log_and_notify "INFO" "Cleaning up old backups on Google Drive..."
+before_rclone_operation
+BACKUP_FILES=$($RCLONE lsf "$REMOTE_NAME" --format "p")
+LATEST_BACKUP=$(echo "$BACKUP_FILES" | sort -r | head -n 1)
+
+echo "$BACKUP_FILES" | while read file; do
+    if [ "$file" != "$LATEST_BACKUP" ]; then
+        before_rclone_operation
+        if $RCLONE delete "$REMOTE_NAME/$file"; then
+            log_and_notify "INFO" "Deleted old backup: $file"
+        else
+            log_and_notify "ERROR" "Failed to delete old backup: $file"
+        fi
+    fi
+done
+
+# Verify that only one file remains on Google Drive
+before_rclone_operation
+REMAINING_FILES=$($RCLONE lsf "$REMOTE_NAME" --format "p" | wc -l)
+if [ "$REMAINING_FILES" -ne 1 ]; then
+    log_and_notify "ERROR" "Multiple files still exist on Google Drive. Please check manually."
+    exit 1
+fi
+
+log_and_notify "INFO" "Google Drive cleanup complete. Only the latest backup retained: $LATEST_BACKUP"
+
+# Clean up local backups, keeping only the most recent file
+log_and_notify "INFO" "Cleaning up local backups, keeping only the latest one..."
+cd $LOCAL_BACKUP_DIR || { log_and_notify "ERROR" "Unable to change to local backup directory"; exit 1; }
+ls -t | tail -n +2 | xargs rm -f
+log_and_notify "INFO" "Local cleanup complete. Only the latest local backup is retained."
+
+log_and_notify "INFO" "Backup process completed."
+
+exit 0
