@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="北大附中 孙玉磊 語文">
-    <meta name="keywords" content="北大附中, 孙玉磊, 語文, 成绩, 职业">
+    <meta name="description" content="北大附中 孙玉磊 導師 語文">
+    <meta name="keywords" content="北大附中, 孙玉磊, 導師，語文, 成绩, 职业">
     <link rel="icon" href="https://github.com/gptv/suen/blob/main/Suen-links/Avatar-small.jpeg?raw=true" type="image/jpeg">
     <title>家校谈</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -12,6 +12,7 @@
         @font-face {
             font-family: 'FangZhengKaiTi';
             src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
+            font-display: swap;
         }
         body {
             font-family: 'FangZhengKaiTi', 'Noto Serif SC', serif;
@@ -88,13 +89,107 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            gap: 30px;
         }
         section {
             background-color: #fff;
-            margin-bottom: 30px;
-            padding: 20px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        #section4 .link-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        #section4 .link-button,
+        #section5 .link-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+        }
+        #section4 .link-button {
+            background-color: #e0f2f1;
+            color: #004d40;
+            padding: 15px 30px;
+            text-decoration: none;
+            border: 3px solid #ffa000;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            font-size: 1.2em;
+            font-weight: bold;
+            min-width: 120px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #section4 .link-button:hover {
+            background-color: #ffa000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 3em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 15px;
+            }
+            section {
+                padding: 20px;
+            }
+            #section4 .link-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                margin: 20px 0;
+                width: 100%;
+            }
+            #section4 .link-button {
+                width: 90%;
+                max-width: 280px;
+                padding: 12px 20px;
+                font-size: 1.1em;
+            }
+            section {
+                padding: 20px 15px;
+            }
+        }
+        @media (max-width: 360px) {
+            #section4 .link-button {
+                width: 85%;
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+        }
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+            section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            .link-button {
+                border: 1px solid #000;
+                color: #000;
+            }
         }
     </style>
 </head>
@@ -118,28 +213,31 @@
         </section>
 
         <section id="section3">
-            <h2>3. 听课</h2>
-            <p>真读书家庭已罕见，偶尔分享有意义有意思文字或故事，自是语文。</p>
-            <p>《唐诗鉴赏辞典》《唐宋词鉴赏辞典》，无事乱翻，有事当砖。</p>
-            <p>真题王道：海淀或本校日常成题考题并无意义。语文分数即便高三也多起伏。</p>
-            <p class="highlight">默写8分，网站 <a href="https://mf.bdfzer.com" target="_blank">mf.bdfzer.com</a> 周周进益，以书以写。</p>
-        </section>
-
-        <section id="section4">
-            <h2>4. 职业</h2>
+            <h2>3. 职业</h2>
             <p>好高中好大学就好工作之路，不再通畅。有考研规划者，大学其实不再极端重要，莫焦虑。</p>
             <p>AI海啸之下，万物基于AI。</p>
             <p>正确的给压力姿势，是选校和职业。</p>
         </section>
 
-        <section id="section5">
-            <h2>5. 考试与作文</h2>
+
+        <section id="section4">
+            <h2>4. 当知</h2>
             <div class="link-container">
-                <a href="https://blog.bdfzer.com/2024/01/blog-post_22.html" class="link-button" target="_blank">谈谈考试</a>
-                <a href="https://blog.bdfzer.com/2024/11/blog-post_10.html" class="link-button" target="_blank">谈谈本次考试</a>
+                <a href="https://blog.bdfzer.com/2024/11/blog-post_10.html" class="link-button" target="_blank">谈谈考试</a>
                 <a href="https://blog.bdfzer.com/2024/01/blog-post_21.html" class="link-button" target="_blank">说说作文</a>
             </div>
         </section>
+
+        <section id="section5">
+            <h2>5. 可行</h2>
+            <p>真题王道：海淀或本校日常成题考题并无意义。</p>
+            <p>真读书难：分享有意义且有意思文字即是语文。</p>
+            <p><a href="https://pkuschool.yuque.com/qrvbic/books?#" target="_blank">《唐诗鉴赏辞典》《唐宋词鉴赏辞典》。</a></p> 
+            <p><a href="https://sites.google.com/view/pkuschool/%E9%AB%98%E8%80%83%E7%9C%9F%E9%A1%8C/%E6%96%87%E8%A8%80%E6%96%87?authuser=0" target="_blank">史记列传/先秦诸子。</a></p> 
+            <p>习字：5分？不止。在没有书法课的时候要自己来。</p>
+            <p class="highlight">默写8分，网站 <a href="https://mf.bdfzer.com" target="_blank">mf.bdfzer.com</a> 周周进益，以高考范围习字。</p>
+        </section>
+
 
         <div class="footer">
             <p>© 2024 <a href="mailto:daoshi@i.pkuschool.edu.cn" target="_blank">Suen</a> | 北大附中</p>
