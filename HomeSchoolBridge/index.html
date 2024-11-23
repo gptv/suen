@@ -191,12 +191,61 @@
                 color: #000;
             }
         }
+        header {
+            margin-bottom: 40px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .qr-code {
+            max-width: 120px;
+            padding: 8px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .qr-code:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .qr-code {
+                max-width: 100px;
+            }
+
+            h1 {
+                margin: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>家校谈</h1>
+            <div class="header-content">
+                <h1>家校谈</h1>
+                <div class="qr-code">
+                    <img src="https://raw.githubusercontent.com/gptv/suen/refs/heads/main/HomeSchoolBridge/code.png" alt="QR Code" />
+                </div>
+            </div>
         </header>
 
         <section id="section1">
