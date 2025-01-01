@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="北大附中 孙玉磊 語文">
+    <meta name="keywords" content="北大附中, 孙玉磊, 語文">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="北大附中 - 孙玉磊">
+    <meta property="og:description" content="北大附中 孙玉磊 語文相關內容">
+    <meta property="og:image" content="https://github.com/gptv/suen/blob/main/Suen-links/Avatar-small.jpeg?raw=true">
+    <meta property="og:url" content="https://bdfz.net">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://github.com/gptv/suen/blob/main/Suen-links/Avatar-small.jpeg?raw=true" type="image/jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <title>pkuschool-links</title>
+    <style>
+        /* General Button Styles */
+        .frutiger-button {
+            cursor: pointer;
+            position: relative;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            text-shadow: 1px 1px #000a;
+            background: linear-gradient(to right, #006caa, #00c3ff);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .frutiger-button:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .frutiger-button:active {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+        }
+
+        .inner {
+            position: relative;
+            inset: 0;
+            padding: 1em;
+            border-radius: 6px;
+            background: radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%),
+                linear-gradient(to bottom, #00526a, #009dcd);
+            overflow: hidden;
+            transition: inherit;
+        }
+
+        .inner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(-65deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 130%;
+                opacity: 1;
+            }
+            100% {
+                background-position: -166%;
+                opacity: 0;
+            }
+        }
+
+        .top-white {
+            position: absolute;
+            border-radius: inherit;
+            inset: 0 -8em;
+            background: radial-gradient(
+                circle at 50% -270%,
+                rgba(255, 255, 255, 0.9) 45%,
+                rgba(255, 255, 255, 0.5) 60%,
+                transparent 60%
+            );
+            transition: inherit;
+        }
+
+        .inner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            transition: inherit;
+            box-shadow: inset 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .frutiger-button:active .inner::after {
+            box-shadow: inset 0 2px 8px -2px rgba(0, 0, 0, 0.5);
+        }
+
+        .text {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-weight: bold;
+            transition: inherit;
+        }
+
+        /* Countdown Container Styles */
+        .countdown-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            max-width: 300px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #0a9396, #94d2bd);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #001219;
+        }
+
+        .countdown-display {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        #current-time { background-color: rgba(0, 95, 115, 0.3); }
+        #year-progress { background-color: rgba(10, 147, 150, 0.3); }
+        #sophomore-countdown { background-color: rgba(148, 210, 189, 0.3); }
+        #graduation-countdown { background-color: rgba(233, 216, 166, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <img src="slogo.png" alt="Logo" class="logo">
+        <div id="current-time" class="countdown-item">
+            <div class="countdown-display"></div>
+        </div>
+        <div id="year-progress" class="countdown-item">
+            <h2 class="countdown-title">2024年度剩餘</h2>
+            <div class="countdown-display"></div>
+        </div>
+        <div id="sophomore-countdown" class="countdown-item">
+            <h2 class="countdown-title">高二倒計時</h2>
+            <div class="countdown-display"></div>
+        </div>
+        <div id="graduation-countdown" class="countdown-item">
+            <h2 class="countdown-title">高中畢業倒計時</h2>
+            <div class="countdown-display"></div>
+        </div>
+
+        <!-- 添加新的按鈕 -->
+        <button class="frutiger-button">
+            <div class="inner">
+                <div class="top-white"></div>
+                <span class="text">立即了解更多</span>
+            </div>
+        </button>
+    </div>
+</body>
+</html>
