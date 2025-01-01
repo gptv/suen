@@ -87,6 +87,7 @@
         #freshman-graduation-countdown { color: #ff6b6b; }
         #sophomore-graduation-countdown { color: #4ecdc4; }
         #year-progress { color: #45aaf2; }
+        #gaokao-countdown { color: #ff6b6b; }
         #human-timer { color: #00b894; }
 
         /* 响应式设计 */
@@ -190,7 +191,11 @@
             <div class="countdown-display"></div>
         </div>
         <div id="year-progress" class="countdown-item">
-            <h2 class="countdown-title">2024年度剩餘</h2>
+            <h2 class="countdown-title">2025年度剩餘</h2>
+            <div class="countdown-display"></div>
+        </div>
+        <div id="gaokao-countdown" class="countdown-item">
+            <h2 class="countdown-title">距離2025年高考倒計時</h2>
             <div class="countdown-display"></div>
         </div>
         <div id="human-timer" class="countdown-item">
@@ -215,12 +220,14 @@
                 freshmanGraduation: document.querySelector('#freshman-graduation-countdown .countdown-display'),
                 sophomoreGraduation: document.querySelector('#sophomore-graduation-countdown .countdown-display'),
                 yearProgress: document.querySelector('#year-progress .countdown-display'),
+                gaokaoCountdown: document.querySelector('#gaokao-countdown .countdown-display'),
                 humanTimer: document.querySelector('#human-timer .countdown-display')
             };
 
             const freshmanSophomoreEndTime = new Date('2025-07-15T23:59:59').getTime();
             const freshmanGraduationTime = new Date('2027-06-10T23:59:59').getTime();
             const sophomoreGraduationTime = new Date('2026-06-10T23:59:59').getTime();
+            const gaokao2025Time = new Date('2025-06-06T00:00:00').getTime();
             const humanOrigin = new Date().getTime() - (300000 * 365.25 * 24 * 60 * 60 * 1000);
 
             function updateCountdowns() {
@@ -230,6 +237,7 @@
                 updateSingleCountdown(freshmanGraduationTime, now.getTime(), countdownDisplays.freshmanGraduation, "高一畢業了！");
                 updateSingleCountdown(sophomoreGraduationTime, now.getTime(), countdownDisplays.sophomoreGraduation, "高二畢業了！");
                 updateYearProgress(now, countdownDisplays.yearProgress);
+                updateSingleCountdown(gaokao2025Time, now.getTime(), countdownDisplays.gaokaoCountdown, "高考來了！");
                 updateHumanTimer(now.getTime(), countdownDisplays.humanTimer);
 
                 document.querySelectorAll('.countdown-item').forEach((item, index) => {
