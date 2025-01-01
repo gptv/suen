@@ -204,7 +204,8 @@
             <a href="https://x.com/ieduer" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問x-Me">X-Me</a>
             <a href="https://s.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問同事">同事</a>
             <a href="https://h.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問家長">家長</a>
-            <a href="https://www.alipan.com/s/n3HJ3tY3nzZ" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問辭典">辭典</a>
+            <a href="https://labs.google/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Googlelabs">Googlelabs</a>
+            <a href="https://www.alipan.com/s/n3HJ3tY3nzZ" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問辭典等書">辭典等書</a>
             <a href="https://pkuschool.yuque.com/qrvbic" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問語雀">語雀</a>
         </div>
 
@@ -215,15 +216,11 @@
                 <div class="countdown-display"></div>
             </div>
             <div id="year-progress" class="countdown-item">
-                <h2 class="countdown-title">2024年度剩餘</h2>
+                <h2 class="countdown-title">2025年度剩餘</h2>
                 <div class="countdown-display"></div>
             </div>
-            <div id="sophomore-countdown" class="countdown-item">
-                <h2 class="countdown-title">高二倒計時</h2>
-                <div class="countdown-display"></div>
-            </div>
-            <div id="graduation-countdown" class="countdown-item">
-                <h2 class="countdown-title">高中畢業倒計時</h2>
+            <div id="gaokao-countdown" class="countdown-item">
+                <h2 class="countdown-title">距離2025年高考倒計時</h2>
                 <div class="countdown-display"></div>
             </div>
 
@@ -252,6 +249,7 @@
             <a href="https://www.zdic.net/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問漢典">漢典</a>
             <a href="https://ctext.org/zh" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問中國哲學書電子化計劃">中國哲學書電子化計劃</a>
             <a href="https://openai.com/news/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問OpenAI">OpenAI</a>
+            <a href="https://aistudio.google.com/prompts/new_chat" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Gemini">Gemini</a>
         </div>
     </div>
 
@@ -265,11 +263,9 @@
             const options = { timeZone: 'Asia/Shanghai', hour12: false };
             document.querySelector('#current-time .countdown-display').textContent = now.toLocaleTimeString('zh-CN', options);
 
-            const sophomoreTime = new Date('2025-07-15T00:00:00').getTime();
-            const graduationTime = new Date('2026-06-10T17:00:00').getTime();
+            const gaokaoTime = new Date('2025-06-06T00:00:00').getTime();
 
-            updateSingleCountdown(sophomoreTime, now.getTime(), document.querySelector('#sophomore-countdown .countdown-display'), "高二開始了！");
-            updateSingleCountdown(graduationTime, now.getTime(), document.querySelector('#graduation-countdown .countdown-display'), "高中畢業了！");
+            updateSingleCountdown(gaokaoTime, now.getTime(), document.querySelector('#gaokao-countdown .countdown-display'), "高考開始了！");
             updateYearProgress(now, document.querySelector('#year-progress .countdown-display'));
         }
 
@@ -292,7 +288,7 @@
         function updateYearProgress(now, display) {
             const yearStart = new Date(now.getFullYear(), 0, 1);
             const yearEnd = new Date(now.getFullYear() + 1, 0, 1);
-            const yearProgress = ((now - yearStart) / (yearEnd - yearStart)) * 100;
+            const yearProgress = ((now.getTime() - yearStart.getTime()) / (yearEnd.getTime() - yearStart.getTime())) * 100;
             display.textContent = `${(100 - yearProgress).toFixed(6)}%`;
         }
 
