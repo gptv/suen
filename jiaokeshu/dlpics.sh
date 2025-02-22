@@ -3,7 +3,7 @@
 # It is based on the image URL structure from the provided JSON data, designed for macOS.
 # Assumes necessary command-line tool (wget) is installed.
 # PDF generation and cleanup functionalities have been removed as per request.
-# ** Version 4.7: URL structure corrected to use 'assets_document.t' for all books based on JSON data analysis. **
+# ** Version 4.8: Corrected estimated time calculation to handle floating-point numbers and fix syntax error. **
 
 # ** Step 0: Check for required tools **
 command -v wget >/dev/null 2>&1 || { echo >&2 "Error: wget is not installed. Please install it (e.g., 'brew install wget' on macOS or 'sudo apt-get install wget' on Debian/Ubuntu)."; exit 1; }
@@ -73,7 +73,11 @@ for book_index in "${!book_ids[@]}"; do
       if [ "$downloaded_count" -gt 0 ]; then
         average_time_per_page=$(awk "BEGIN {printf \"%.2f\", ($current_time - $book_start_time) / $downloaded_count}")
         estimated_remaining_pages=300 # Maximum page limit, adjust if needed, or remove if you have better stop condition
-        estimated_remaining_time_seconds=$(( $(echo "$estimated_remaining_pages * $average_time_per_page" | bc) ))
+
+        # Corrected calculation using bc for floating-point, then printf to round to integer string
+        estimated_remaining_time_seconds_float=$(echo "$estimated_remaining_pages * $average_time_per_page" | bc)
+        estimated_remaining_time_seconds=$(printf "%.0f" "$estimated_remaining_time_seconds_float")
+
 
         if [ "$estimated_remaining_time_seconds" -gt 0 ]; then
           estimated_minutes=$((estimated_remaining_time_seconds / 60))
