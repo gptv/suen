@@ -2153,3 +2153,1024 @@
         }
     ]
 }
+
+
+
+{
+    "id": "b8e9a3fe-dae7-49c0-86cb-d146f883fd8e",
+    "global_title": {
+        "zh-CN": "普通高中教科书·语文必修 上册"
+    },
+    "global_description": {},
+    "global_keywords": {},
+    "global_label": {
+        "zh-CN": [
+            "zxx",
+            "普通高中教科书语文必修上册",
+            "2cbuPWM3oXGSBI80OFKOSa",
+            "x_document"
+        ]
+    },
+    "custom_properties": {
+        "preview": {
+            "Slide6": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/6.jpg",
+            "Slide5": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/5.jpg",
+            "Slide8": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/8.jpg",
+            "Slide7": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/7.jpg",
+            "Slide2": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/2.jpg",
+            "Slide1": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/1.jpg",
+            "Slide4": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/4.jpg",
+            "Slide3": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/3.jpg",
+            "Slide9": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/9.jpg",
+            "Slide17": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/17.jpg",
+            "Slide16": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/16.jpg",
+            "Slide15": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/15.jpg",
+            "Slide14": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/14.jpg",
+            "Slide13": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/13.jpg",
+            "Slide12": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/12.jpg",
+            "Slide11": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/11.jpg",
+            "Slide10": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/10.jpg",
+            "Slide19": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/19.jpg",
+            "Slide18": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/18.jpg",
+            "Slide42": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/42.jpg",
+            "Slide41": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/41.jpg",
+            "Slide40": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/40.jpg",
+            "Slide49": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/49.jpg",
+            "Slide48": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/48.jpg",
+            "Slide47": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/47.jpg",
+            "Slide46": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/46.jpg",
+            "Slide45": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/45.jpg",
+            "Slide44": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/44.jpg",
+            "Slide43": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/43.jpg",
+            "Slide31": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/31.jpg",
+            "Slide30": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/30.jpg",
+            "Slide39": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/39.jpg",
+            "Slide38": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/38.jpg",
+            "Slide37": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/37.jpg",
+            "Slide36": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/36.jpg",
+            "Slide35": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/35.jpg",
+            "Slide34": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/34.jpg",
+            "Slide33": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/33.jpg",
+            "Slide32": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/32.jpg",
+            "Slide20": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/20.jpg",
+            "Slide28": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/28.jpg",
+            "Slide27": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/27.jpg",
+            "Slide26": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/26.jpg",
+            "Slide25": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/25.jpg",
+            "Slide24": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/24.jpg",
+            "Slide23": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/23.jpg",
+            "Slide22": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/22.jpg",
+            "Slide21": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/21.jpg",
+            "Slide29": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/29.jpg"
+        },
+        "auto_fill_thumb": true,
+        "ext_properties": {
+            "sub_catalog": "dzjc",
+            "library_id": "9c623f0a-3437-498e-8148-9745e38c95a6",
+            "catalog_type": "tchMaterial"
+        },
+        "study_time": 1540,
+        "sys_resource_space": 158620643,
+        "resolution": "794*1123",
+        "res_sort": 3586,
+        "height": "1123",
+        "sys_trans_status": "TRANSCODED",
+        "format": "pdf",
+        "is_top": 0,
+        "size": 30676012,
+        "width": "794",
+        "global_resource_id": "b8e9a3fe-dae7-49c0-86cb-d146f883fd8e",
+        "thumbnails": [
+            "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/1.jpg?v=1725011448268"
+        ],
+        "providers": [
+            "ce5c90c5-1780-414c-9f0a-26fe1807ccb8"
+        ]
+    },
+    "resource_type_code": "assets_document",
+    "creator": "10006945",
+    "language": "zh-CN",
+    "provider": "ce5c90c5-1780-414c-9f0a-26fe1807ccb8",
+    "create_time": "2022-09-29T19:29:25.101+0800",
+    "update_time": "2024-08-31T17:47:57.347+0800",
+    "tag_list": [
+        {
+            "tag_id": "ac92c18a-58c8-41da-86a5-f44afe3a90f7",
+            "tag_name": "电子教材",
+            "tag_dimension_id": "5036342742",
+            "order_num": 0
+        },
+        {
+            "tag_id": "2cbuPWM3oXGSBI80OFKOSa",
+            "tag_name": "教材",
+            "tag_dimension_id": "tagView",
+            "order_num": 196
+        },
+        {
+            "tag_id": "44bee8bc-54e6-11ed-9c34-850ba61fa9f4",
+            "tag_name": "统编版",
+            "tag_dimension_id": "zxxbb",
+            "order_num": 224
+        },
+        {
+            "tag_id": "eae5dc6a-147b-11ed-ab76-54d6327ace99",
+            "tag_name": "必修 上册",
+            "tag_dimension_id": "zxxcc",
+            "order_num": 285
+        },
+        {
+            "tag_id": "7765be87-36aa-4db8-998b-9638c14534de",
+            "tag_name": "高中年级",
+            "tag_dimension_id": "zxxnj",
+            "order_num": 19
+        },
+        {
+            "tag_id": "e7bbcefe-0590-11ed-9c79-92fc3b3249d5",
+            "tag_name": "高中",
+            "tag_dimension_id": "zxxxd",
+            "order_num": 2
+        },
+        {
+            "tag_id": "6a749654-0772-11ed-ac74-092ab92074e6",
+            "tag_name": "语文",
+            "tag_dimension_id": "zxxxk",
+            "order_num": 0
+        }
+    ],
+    "status": "ONLINE",
+    "create_container_id": "cb9a4539-848a-453f-8205-39230f157a7d",
+    "resource_type_code_name": "文档",
+    "ti_items": [
+        {
+            "ti_md5": "",
+            "ti_size": 127944631,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image"
+            ],
+            "ti_file_flag": "image",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "154"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "30676012"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "folder",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "dbae73e3a5f6dacd5776ec9def8026da",
+            "ti_size": 30676012,
+            "ti_storage": "https://r1-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/b8e9a3fe-dae7-49c0-86cb-d146f883fd8e.pkg/普通高中教科书 语文 必修 上册_1725097589060.pdf",
+            "ti_storages": [
+                "https://r1-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/b8e9a3fe-dae7-49c0-86cb-d146f883fd8e.pkg/普通高中教科书 语文 必修 上册_1725097589060.pdf",
+                "https://r2-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/b8e9a3fe-dae7-49c0-86cb-d146f883fd8e.pkg/普通高中教科书 语文 必修 上册_1725097589060.pdf",
+                "https://r3-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/b8e9a3fe-dae7-49c0-86cb-d146f883fd8e.pkg/普通高中教科书 语文 必修 上册_1725097589060.pdf"
+            ],
+            "ti_file_flag": "source",
+            "ti_is_source_file": true,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "154"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "30676012"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "pdf",
+            "lc_ti_format": "pdf",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "dbae73e3a5f6dacd5776ec9def8026da",
+            "ti_size": 127944631,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image"
+            ],
+            "ti_file_flag": "thumbnail",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "154"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "30676012"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "folder",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "c66333cc7a3010cec37073b80a379e93",
+            "ti_size": 3008530,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/1.jpg",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/1.jpg",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/1.jpg",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006625292/transcode/image/1.jpg"
+            ],
+            "ti_file_flag": "thumbnail_1",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "jpg",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        }
+    ],
+    "resource_container_cp": {
+        "version_visible": "RELEASE",
+        "resource_source": "CREATE"
+    },
+    "online_time": "2022-09-29T19:29:25.131+0800",
+    "chapter_ids": [],
+    "chapter_paths": [],
+    "teachmeterial_ids": [],
+    "tag_paths": [
+        "f5261ccc-b7a5-42f4-b015-610dcec58c60/ac92c18a-58c8-41da-86a5-f44afe3a90f7/e7bbcefe-0590-11ed-9c79-92fc3b3249d5/6a749654-0772-11ed-ac74-092ab92074e6/44bee8bc-54e6-11ed-9c34-850ba61fa9f4/7765be87-36aa-4db8-998b-9638c14534de/eae5dc6a-147b-11ed-ab76-54d6327ace99"
+    ],
+    "container_id": "cb9a4539-848a-453f-8205-39230f157a7d",
+    "tenant_id": "1",
+    "resource_structure": {
+        "chapter_tree": {}
+    },
+    "smart_link": {
+        "smart_link": "https://x-link.ykt.eduyun.cn/smart_links/205811401932814?qrEventName=smartlink&contentId=b8e9a3fe-dae7-49c0-86cb-d146f883fd8e&contentType=assets_document"
+    },
+    "version_id": "b8e9a3fe-dae7-49c0-86cb-d146f883fd8e",
+    "title": "普通高中教科书·语文必修 上册",
+    "label": [
+        "zxx",
+        "普通高中教科书语文必修上册",
+        "2cbuPWM3oXGSBI80OFKOSa",
+        "x_document"
+    ],
+    "provider_list": [
+        {
+            "name": "智慧中小学",
+            "id": "ce5c90c5-1780-414c-9f0a-26fe1807ccb8",
+            "type": "provider"
+        }
+    ]
+}
+
+
+{
+    "id": "3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3",
+    "global_title": {
+        "zh-CN": "普通高中教科书·语文选择性必修 上册"
+    },
+    "global_description": {},
+    "global_keywords": {},
+    "global_label": {
+        "zh-CN": [
+            "zxx",
+            "普通高中教科书语文选择性必修上册",
+            "2cbuPWM3oXGSBI80OFKOSa",
+            "x_document"
+        ]
+    },
+    "custom_properties": {
+        "preview": {
+            "Slide6": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/6.jpg",
+            "Slide5": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/5.jpg",
+            "Slide8": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/8.jpg",
+            "Slide7": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/7.jpg",
+            "Slide2": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/2.jpg",
+            "Slide1": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/1.jpg",
+            "Slide4": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/4.jpg",
+            "Slide3": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/3.jpg",
+            "Slide9": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/9.jpg",
+            "Slide17": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/17.jpg",
+            "Slide16": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/16.jpg",
+            "Slide15": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/15.jpg",
+            "Slide14": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/14.jpg",
+            "Slide13": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/13.jpg",
+            "Slide12": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/12.jpg",
+            "Slide11": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/11.jpg",
+            "Slide10": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/10.jpg",
+            "Slide19": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/19.jpg",
+            "Slide18": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/18.jpg",
+            "Slide42": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/42.jpg",
+            "Slide41": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/41.jpg",
+            "Slide40": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/40.jpg",
+            "Slide49": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/49.jpg",
+            "Slide48": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/48.jpg",
+            "Slide47": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/47.jpg",
+            "Slide46": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/46.jpg",
+            "Slide45": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/45.jpg",
+            "Slide44": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/44.jpg",
+            "Slide43": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/43.jpg",
+            "Slide31": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/31.jpg",
+            "Slide30": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/30.jpg",
+            "Slide39": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/39.jpg",
+            "Slide38": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/38.jpg",
+            "Slide37": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/37.jpg",
+            "Slide36": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/36.jpg",
+            "Slide35": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/35.jpg",
+            "Slide34": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/34.jpg",
+            "Slide33": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/33.jpg",
+            "Slide32": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/32.jpg",
+            "Slide20": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/20.jpg",
+            "Slide28": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/28.jpg",
+            "Slide27": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/27.jpg",
+            "Slide26": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/26.jpg",
+            "Slide25": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/25.jpg",
+            "Slide24": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/24.jpg",
+            "Slide23": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/23.jpg",
+            "Slide22": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/22.jpg",
+            "Slide21": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/21.jpg",
+            "Slide29": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/29.jpg"
+        },
+        "auto_fill_thumb": false,
+        "ext_properties": {
+            "sub_catalog": "dzjc",
+            "library_id": "9c623f0a-3437-498e-8148-9745e38c95a6",
+            "catalog_type": "tchMaterial"
+        },
+        "study_time": 1140,
+        "sys_resource_space": 142821234,
+        "resolution": "794*1123",
+        "res_sort": 3576,
+        "height": "1123",
+        "sys_trans_status": "TRANSCODED",
+        "format": "pdf",
+        "is_top": 0,
+        "size": 40647570,
+        "width": "794",
+        "global_resource_id": "3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3",
+        "thumbnails": [
+            "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3.pkg/thumbnails/1.png"
+        ],
+        "providers": [
+            "ce5c90c5-1780-414c-9f0a-26fe1807ccb8"
+        ]
+    },
+    "resource_type_code": "assets_document",
+    "creator": "10006945",
+    "language": "zh-CN",
+    "provider": "ce5c90c5-1780-414c-9f0a-26fe1807ccb8",
+    "create_time": "2022-09-29T19:29:28.255+0800",
+    "update_time": "2024-08-31T17:50:23.820+0800",
+    "tag_list": [
+        {
+            "tag_id": "ac92c18a-58c8-41da-86a5-f44afe3a90f7",
+            "tag_name": "电子教材",
+            "tag_dimension_id": "5036342742",
+            "order_num": 0
+        },
+        {
+            "tag_id": "2cbuPWM3oXGSBI80OFKOSa",
+            "tag_name": "教材",
+            "tag_dimension_id": "tagView",
+            "order_num": 196
+        },
+        {
+            "tag_id": "44bee8bc-54e6-11ed-9c34-850ba61fa9f4",
+            "tag_name": "统编版",
+            "tag_dimension_id": "zxxbb",
+            "order_num": 224
+        },
+        {
+            "tag_id": "eae5f7b8-147b-11ed-ab76-54d6327ace99",
+            "tag_name": "选择性必修 上册",
+            "tag_dimension_id": "zxxcc",
+            "order_num": 284
+        },
+        {
+            "tag_id": "7765be87-36aa-4db8-998b-9638c14534de",
+            "tag_name": "高中年级",
+            "tag_dimension_id": "zxxnj",
+            "order_num": 19
+        },
+        {
+            "tag_id": "e7bbcefe-0590-11ed-9c79-92fc3b3249d5",
+            "tag_name": "高中",
+            "tag_dimension_id": "zxxxd",
+            "order_num": 2
+        },
+        {
+            "tag_id": "6a749654-0772-11ed-ac74-092ab92074e6",
+            "tag_name": "语文",
+            "tag_dimension_id": "zxxxk",
+            "order_num": 0
+        }
+    ],
+    "status": "ONLINE",
+    "create_container_id": "cb9a4539-848a-453f-8205-39230f157a7d",
+    "resource_type_code_name": "文档",
+    "ti_items": [
+        {
+            "ti_md5": "",
+            "ti_size": 101824454,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image"
+            ],
+            "ti_file_flag": "image",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "114"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "40647570"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "folder",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "be188b7b0b87d99166c4a0666fd1bd2d",
+            "ti_size": 40647570,
+            "ti_storage": "https://r1-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3.pkg/普通高中教科书 语文 选择性必修 上册_1725097589882.pdf",
+            "ti_storages": [
+                "https://r1-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3.pkg/普通高中教科书 语文 选择性必修 上册_1725097589882.pdf",
+                "https://r2-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3.pkg/普通高中教科书 语文 选择性必修 上册_1725097589882.pdf",
+                "https://r3-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3.pkg/普通高中教科书 语文 选择性必修 上册_1725097589882.pdf"
+            ],
+            "ti_file_flag": "source",
+            "ti_is_source_file": true,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "114"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "40647570"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "pdf",
+            "lc_ti_format": "pdf",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "be188b7b0b87d99166c4a0666fd1bd2d",
+            "ti_size": 101824454,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image"
+            ],
+            "ti_file_flag": "thumbnail",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "114"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "40647570"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "folder",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "ac1d886521c8de838d70f9e5877c72d9",
+            "ti_size": 2783406,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/1.jpg",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/1.jpg",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/1.jpg",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006626158/transcode/image/1.jpg"
+            ],
+            "ti_file_flag": "thumbnail_1",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "jpg",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        }
+    ],
+    "resource_container_cp": {
+        "version_visible": "RELEASE",
+        "resource_source": "CREATE"
+    },
+    "online_time": "2023-10-24T15:10:55.428+0800",
+    "chapter_ids": [],
+    "chapter_paths": [],
+    "teachmeterial_ids": [],
+    "tag_paths": [
+        "f5261ccc-b7a5-42f4-b015-610dcec58c60/ac92c18a-58c8-41da-86a5-f44afe3a90f7/e7bbcefe-0590-11ed-9c79-92fc3b3249d5/6a749654-0772-11ed-ac74-092ab92074e6/44bee8bc-54e6-11ed-9c34-850ba61fa9f4/7765be87-36aa-4db8-998b-9638c14534de/eae5f7b8-147b-11ed-ab76-54d6327ace99"
+    ],
+    "container_id": "cb9a4539-848a-453f-8205-39230f157a7d",
+    "tenant_id": "1",
+    "resource_structure": {
+        "chapter_tree": {}
+    },
+    "smart_link": {
+        "smart_link": "https://x-link.ykt.eduyun.cn/smart_links/205811401932814?qrEventName=smartlink&contentId=3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3&contentType=assets_document"
+    },
+    "version_id": "3b7a3baf-4e1e-4380-b2cc-3bf330d00cc3",
+    "title": "普通高中教科书·语文选择性必修 上册",
+    "label": [
+        "zxx",
+        "普通高中教科书语文选择性必修上册",
+        "2cbuPWM3oXGSBI80OFKOSa",
+        "x_document"
+    ],
+    "provider_list": [
+        {
+            "name": "智慧中小学",
+            "id": "ce5c90c5-1780-414c-9f0a-26fe1807ccb8",
+            "type": "provider"
+        }
+    ]
+}
+
+
+{
+    "id": "da694670-f25b-46a0-9c3f-a31f5a2f131a",
+    "global_title": {
+        "zh-CN": "普通高中教科书·语文选择性必修 中册"
+    },
+    "global_description": {},
+    "global_keywords": {},
+    "global_label": {
+        "zh-CN": [
+            "zxx",
+            "普通高中教科书语文选择性必修中册",
+            "2cbuPWM3oXGSBI80OFKOSa",
+            "x_document"
+        ]
+    },
+    "custom_properties": {
+        "preview": {
+            "Slide6": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/6.jpg",
+            "Slide5": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/5.jpg",
+            "Slide8": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/8.jpg",
+            "Slide7": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/7.jpg",
+            "Slide2": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/2.jpg",
+            "Slide1": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/1.jpg",
+            "Slide4": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/4.jpg",
+            "Slide3": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/3.jpg",
+            "Slide9": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/9.jpg",
+            "Slide17": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/17.jpg",
+            "Slide16": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/16.jpg",
+            "Slide15": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/15.jpg",
+            "Slide14": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/14.jpg",
+            "Slide13": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/13.jpg",
+            "Slide12": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/12.jpg",
+            "Slide11": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/11.jpg",
+            "Slide10": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/10.jpg",
+            "Slide19": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/19.jpg",
+            "Slide18": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/18.jpg",
+            "Slide42": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/42.jpg",
+            "Slide41": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/41.jpg",
+            "Slide40": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/40.jpg",
+            "Slide49": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/49.jpg",
+            "Slide48": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/48.jpg",
+            "Slide47": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/47.jpg",
+            "Slide46": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/46.jpg",
+            "Slide45": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/45.jpg",
+            "Slide44": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/44.jpg",
+            "Slide43": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/43.jpg",
+            "Slide31": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/31.jpg",
+            "Slide30": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/30.jpg",
+            "Slide39": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/39.jpg",
+            "Slide38": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/38.jpg",
+            "Slide37": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/37.jpg",
+            "Slide36": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/36.jpg",
+            "Slide35": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/35.jpg",
+            "Slide34": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/34.jpg",
+            "Slide33": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/33.jpg",
+            "Slide32": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/32.jpg",
+            "Slide20": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/20.jpg",
+            "Slide28": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/28.jpg",
+            "Slide27": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/27.jpg",
+            "Slide26": "https://r3-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/26.jpg",
+            "Slide25": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/25.jpg",
+            "Slide24": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/24.jpg",
+            "Slide23": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/23.jpg",
+            "Slide22": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/22.jpg",
+            "Slide21": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/21.jpg",
+            "Slide29": "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/29.jpg"
+        },
+        "auto_fill_thumb": true,
+        "ext_properties": {
+            "sub_catalog": "dzjc",
+            "library_id": "9c623f0a-3437-498e-8148-9745e38c95a6",
+            "catalog_type": "tchMaterial"
+        },
+        "study_time": 1380,
+        "sys_resource_space": 150019161,
+        "resolution": "794*1123",
+        "res_sort": 3571,
+        "height": "1123",
+        "sys_trans_status": "TRANSCODED",
+        "format": "pdf",
+        "is_top": 0,
+        "size": 30500093,
+        "width": "794",
+        "global_resource_id": "da694670-f25b-46a0-9c3f-a31f5a2f131a",
+        "thumbnails": [
+            "https://r1-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/1.jpg?v=1725011466766"
+        ],
+        "providers": [
+            "ce5c90c5-1780-414c-9f0a-26fe1807ccb8"
+        ]
+    },
+    "resource_type_code": "assets_document",
+    "creator": "10006945",
+    "language": "zh-CN",
+    "provider": "ce5c90c5-1780-414c-9f0a-26fe1807ccb8",
+    "create_time": "2022-09-29T19:29:29.812+0800",
+    "update_time": "2024-08-31T17:51:04.453+0800",
+    "tag_list": [
+        {
+            "tag_id": "ac92c18a-58c8-41da-86a5-f44afe3a90f7",
+            "tag_name": "电子教材",
+            "tag_dimension_id": "5036342742",
+            "order_num": 0
+        },
+        {
+            "tag_id": "2cbuPWM3oXGSBI80OFKOSa",
+            "tag_name": "教材",
+            "tag_dimension_id": "tagView",
+            "order_num": 196
+        },
+        {
+            "tag_id": "44bee8bc-54e6-11ed-9c34-850ba61fa9f4",
+            "tag_name": "统编版",
+            "tag_dimension_id": "zxxbb",
+            "order_num": 224
+        },
+        {
+            "tag_id": "eae5f88a-147b-11ed-ab76-54d6327ace99",
+            "tag_name": "选择性必修 中册",
+            "tag_dimension_id": "zxxcc",
+            "order_num": 283
+        },
+        {
+            "tag_id": "7765be87-36aa-4db8-998b-9638c14534de",
+            "tag_name": "高中年级",
+            "tag_dimension_id": "zxxnj",
+            "order_num": 19
+        },
+        {
+            "tag_id": "e7bbcefe-0590-11ed-9c79-92fc3b3249d5",
+            "tag_name": "高中",
+            "tag_dimension_id": "zxxxd",
+            "order_num": 2
+        },
+        {
+            "tag_id": "6a749654-0772-11ed-ac74-092ab92074e6",
+            "tag_name": "语文",
+            "tag_dimension_id": "zxxxk",
+            "order_num": 0
+        }
+    ],
+    "status": "ONLINE",
+    "create_container_id": "cb9a4539-848a-453f-8205-39230f157a7d",
+    "resource_type_code_name": "文档",
+    "ti_items": [
+        {
+            "ti_md5": "",
+            "ti_size": 119519068,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image"
+            ],
+            "ti_file_flag": "image",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "138"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "30500093"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "folder",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "0c30fb10fddeb7889eac54251c494182",
+            "ti_size": 30500093,
+            "ti_storage": "https://r1-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/da694670-f25b-46a0-9c3f-a31f5a2f131a.pkg/普通高中教科书 语文 选择性必修 中册_1725097590788.pdf",
+            "ti_storages": [
+                "https://r1-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/da694670-f25b-46a0-9c3f-a31f5a2f131a.pkg/普通高中教科书 语文 选择性必修 中册_1725097590788.pdf",
+                "https://r2-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/da694670-f25b-46a0-9c3f-a31f5a2f131a.pkg/普通高中教科书 语文 选择性必修 中册_1725097590788.pdf",
+                "https://r3-ndr-doc-private.ykt.cbern.com.cn/edu_product/esp/assets/da694670-f25b-46a0-9c3f-a31f5a2f131a.pkg/普通高中教科书 语文 选择性必修 中册_1725097590788.pdf"
+            ],
+            "ti_file_flag": "source",
+            "ti_is_source_file": true,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "138"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "30500093"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "pdf",
+            "lc_ti_format": "pdf",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "0c30fb10fddeb7889eac54251c494182",
+            "ti_size": 119519068,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image"
+            ],
+            "ti_file_flag": "thumbnail",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "requirements": [
+                    {
+                        "name": "width",
+                        "type": "QUOTA",
+                        "value": "794"
+                    },
+                    {
+                        "name": "pagesize",
+                        "type": "QUOTA",
+                        "value": "138"
+                    },
+                    {
+                        "name": "height",
+                        "type": "QUOTA",
+                        "value": "1123"
+                    },
+                    {
+                        "name": "FileSize",
+                        "type": "QUOTA",
+                        "value": "30500093"
+                    },
+                    {
+                        "name": "displaymode",
+                        "type": "QUOTA",
+                        "value": "vertical"
+                    }
+                ],
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "folder",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        },
+        {
+            "ti_md5": "7f75c265f32051127b42047befaa43c0",
+            "ti_size": 2760971,
+            "ti_storage": "cs_path:${ref-path}/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/1.jpg",
+            "ti_storages": [
+                "https://r1-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/1.jpg",
+                "https://r2-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/1.jpg",
+                "https://r3-ndr-private.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/1725006627037/transcode/image/1.jpg"
+            ],
+            "ti_file_flag": "thumbnail_1",
+            "ti_is_source_file": false,
+            "custom_properties": {
+                "identification": true
+            },
+            "ti_printable": false,
+            "ti_format": "jpg",
+            "lc_ti_format": "image/jpg",
+            "language": "zh-CN"
+        }
+    ],
+    "resource_container_cp": {
+        "version_visible": "RELEASE",
+        "resource_source": "CREATE"
+    },
+    "online_time": "2022-09-29T19:29:29.844+0800",
+    "chapter_ids": [],
+    "chapter_paths": [],
+    "teachmeterial_ids": [],
+    "tag_paths": [
+        "f5261ccc-b7a5-42f4-b015-610dcec58c60/ac92c18a-58c8-41da-86a5-f44afe3a90f7/e7bbcefe-0590-11ed-9c79-92fc3b3249d5/6a749654-0772-11ed-ac74-092ab92074e6/44bee8bc-54e6-11ed-9c34-850ba61fa9f4/7765be87-36aa-4db8-998b-9638c14534de/eae5f88a-147b-11ed-ab76-54d6327ace99"
+    ],
+    "container_id": "cb9a4539-848a-453f-8205-39230f157a7d",
+    "tenant_id": "1",
+    "resource_structure": {
+        "chapter_tree": {}
+    },
+    "smart_link": {
+        "smart_link": "https://x-link.ykt.eduyun.cn/smart_links/205811401932814?qrEventName=smartlink&contentId=da694670-f25b-46a0-9c3f-a31f5a2f131a&contentType=assets_document"
+    },
+    "version_id": "da694670-f25b-46a0-9c3f-a31f5a2f131a",
+    "title": "普通高中教科书·语文选择性必修 中册",
+    "label": [
+        "zxx",
+        "普通高中教科书语文选择性必修中册",
+        "2cbuPWM3oXGSBI80OFKOSa",
+        "x_document"
+    ],
+    "provider_list": [
+        {
+            "name": "智慧中小学",
+            "id": "ce5c90c5-1780-414c-9f0a-26fe1807ccb8",
+            "type": "provider"
+        }
+    ]
+}
