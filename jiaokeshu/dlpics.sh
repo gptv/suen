@@ -3,7 +3,7 @@
 # It is based on the image URL structure from the provided JSON data, designed for macOS.
 # Assumes necessary command-line tool (wget) is installed.
 # PDF generation and cleanup functionalities have been removed as per request.
-# ** Version 4.5: Improved error handling, removed consecutive error limit, added file size output, and estimated time (basic). **
+# ** Version 4.6: Improved error handling, wget -S for server headers, more specific error message. **
 
 # ** Step 0: Check for required tools **
 command -v wget >/dev/null 2>&1 || { echo >&2 "Error: wget is not installed. Please install it (e.g., 'brew install wget' on macOS or 'sudo apt-get install wget' on Debian/Ubuntu)."; exit 1; }
@@ -87,13 +87,13 @@ for book_index in "${!book_ids[@]}"; do
       fi
       echo -ne "下载第 ${slide_num} 页 for ${book_title}. 预计剩余时间: ${estimated_remaining_time}...\r"
 
-      # Use wget to download the image
-      wget -q -O "slide_${slide_num}.jpg" "$url"
+      # Use wget to download the image with -S for headers
+      wget -q -S -O "slide_${slide_num}.jpg" "$url"
       wget_status=$?
       if [ "$wget_status" -ne 0 ]; then
         echo "" # Newline after progress indicator
-        echo "Error downloading image $slide_num for ${book_title}. wget exited with status $wget_status. URL: $url. Assuming end of book or network issue."
-        break # Break inner loop if download fails - assuming end of pages
+        echo "Error downloading image $slide_num for ${book_title}. wget exited with status $wget_status (Server Request Rejected). URL: $url."
+        break # Break inner loop on download failure - assuming end of pages or server issue
       else
         file_size=$(du -h "slide_${slide_num}.jpg" | awk '{print $1}')
         echo "" # Newline after progress indicator
