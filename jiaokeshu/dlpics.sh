@@ -3,7 +3,7 @@
 # It is based on the image URL structure from the provided JSON data, designed for macOS.
 # Assumes necessary command-line tool (wget) is installed.
 # PDF generation and cleanup functionalities have been removed as per request.
-# ** Version 4.4: Book list corrected to include all 5 DISTINCT books with correct JSON data. **
+# ** Version 4.5: Improved error handling, removed consecutive error limit, added file size output, and estimated time (basic). **
 
 # ** Step 0: Check for required tools **
 command -v wget >/dev/null 2>&1 || { echo >&2 "Error: wget is not installed. Please install it (e.g., 'brew install wget' on macOS or 'sudo apt-get install wget' on Debian/Ubuntu)."; exit 1; }
@@ -32,6 +32,9 @@ declare -a book_titles=(
 )
 
 # ** Step 2: Loop through books **
+start_time=$(date +%s) # Script start time
+total_estimated_time=0
+
 for book_index in "${!book_ids[@]}"; do
   book_id="${book_ids[book_index]}"
   book_timestamp="${book_timestamps[book_index]}"
@@ -49,8 +52,10 @@ for book_index in "${!book_ids[@]}"; do
 
   # ** Step 2.3: Loop to download images **
   page_num=1
-  consecutive_errors=0
-  max_consecutive_errors=5 # Stop after 5 consecutive download failures
+  downloaded_count=0
+  book_start_time=$(date +%s)
+  last_download_time=0
+  estimated_remaining_time="N/A"
 
   while true; do
     # Calculate server number (r1, r2, r3 will be used in rotation)
@@ -64,18 +69,37 @@ for book_index in "${!book_ids[@]}"; do
 
     # Check if the image already exists
     if [ ! -f "slide_${slide_num}.jpg" ]; then
-      # Use wget to download the image
-      wget -q -O "slide_${slide_num}.jpg" "$url" # -q for quiet output
-      if [ $? -ne 0 ]; then
-        echo "Error downloading image $slide_num for ${book_title}. wget exited with status $?. Assuming end of book or network issue."
-        consecutive_errors=$((consecutive_errors + 1))
-        if [ "$consecutive_errors" -ge "$max_consecutive_errors" ]; then
-          echo "Too many consecutive errors. Stopping download for ${book_title}."
-          break # Break inner loop if too many errors
+      current_time=$(date +%s)
+      if [ "$downloaded_count" -gt 0 ]; then
+        average_time_per_page=$(awk "BEGIN {printf \"%.2f\", ($current_time - $book_start_time) / $downloaded_count}")
+        estimated_remaining_pages=300 # Maximum page limit, adjust if needed, or remove if you have better stop condition
+        estimated_remaining_time_seconds=$(( $(echo "$estimated_remaining_pages * $average_time_per_page" | bc) ))
+
+        if [ "$estimated_remaining_time_seconds" -gt 0 ]; then
+          estimated_minutes=$((estimated_remaining_time_seconds / 60))
+          estimated_seconds=$((estimated_remaining_time_seconds % 60))
+          estimated_remaining_time="${estimated_minutes}m ${estimated_seconds}s"
+        else
+          estimated_remaining_time="Calculating..."
         fi
       else
-        consecutive_errors=0 # Reset error counter on successful download
-        echo "Downloaded image $slide_num for ${book_title}."
+        estimated_remaining_time="Calculating..."
+      fi
+      echo -ne "下载第 ${slide_num} 页 for ${book_title}. 预计剩余时间: ${estimated_remaining_time}...\r"
+
+      # Use wget to download the image
+      wget -q -O "slide_${slide_num}.jpg" "$url"
+      wget_status=$?
+      if [ "$wget_status" -ne 0 ]; then
+        echo "" # Newline after progress indicator
+        echo "Error downloading image $slide_num for ${book_title}. wget exited with status $wget_status. URL: $url. Assuming end of book or network issue."
+        break # Break inner loop if download fails - assuming end of pages
+      else
+        file_size=$(du -h "slide_${slide_num}.jpg" | awk '{print $1}')
+        echo "" # Newline after progress indicator
+        echo "Downloaded image $slide_num for ${book_title}. Size: ${file_size}."
+        downloaded_count=$((downloaded_count + 1))
+        last_download_time=$(date +%s)
       fi
     else
       echo "Image $slide_num for ${book_title} already downloaded, skipping."
@@ -88,14 +112,23 @@ for book_index in "${!book_ids[@]}"; do
     fi
   done
 
+  book_end_time=$(date +%s)
+  book_download_duration=$((book_end_time - book_start_time))
+  total_estimated_time=$((total_estimated_time + book_download_duration))
+
   # ** Step 2.4: Return to the script's directory **
   cd .. # Go back to the directory where the script started, relative to book_image_dir
 
 done # ** End of book loop **
 
-# ** Step 3: Output completion message **
+end_time=$(date +%s)
+total_duration=$((end_time - start_time))
+minutes=$((total_duration / 60))
+seconds=$((total_duration % 60))
+
 echo "Image downloads for all books are complete."
 echo "Images are saved in their respective book_images directories."
+echo "Total download time: ${minutes}m ${seconds}s"
 
 # ** Script usage instructions **
 # (Same as before, but PDF generation step is removed)
