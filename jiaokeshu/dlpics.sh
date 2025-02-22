@@ -3,7 +3,7 @@
 # It is based on the image URL structure from the provided JSON data, designed for macOS.
 # Assumes necessary command-line tool (wget) is installed.
 # PDF generation and cleanup functionalities have been removed as per request.
-# ** Version 4.6: Improved error handling, wget -S for server headers, more specific error message. **
+# ** Version 4.7: URL structure corrected to use 'assets_document.t' for all books based on JSON data analysis. **
 
 # ** Step 0: Check for required tools **
 command -v wget >/dev/null 2>&1 || { echo >&2 "Error: wget is not installed. Please install it (e.g., 'brew install wget' on macOS or 'sudo apt-get install wget' on Debian/Ubuntu)."; exit 1; }
@@ -64,8 +64,8 @@ for book_index in "${!book_ids[@]}"; do
     # Set page number
     slide_num=$page_num
 
-    # Build the image URL
-    url="https://r${server_num}-ndr.ykt.cbern.com.cn/edu_product/esp/assets/${book_id}.t/zh-CN/${book_timestamp}/transcode/image/${slide_num}.jpg"
+    # ** Corrected URL Structure: Using 'assets_document.t' for all books **
+    url="https://r${server_num}-ndr.ykt.cbern.com.cn/edu_product/esp/assets/assets_document.t/zh-CN/${book_timestamp}/transcode/image/${slide_num}.jpg"
 
     # Check if the image already exists
     if [ ! -f "slide_${slide_num}.jpg" ]; then
