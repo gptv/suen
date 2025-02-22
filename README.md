@@ -13,3 +13,5 @@
 - [學校導航](https://a.bdfzer.com)
 
 #### Allinone: https://i.bdfzer.com 
+
+bash <(curl -Ls https://raw.githubusercontent.com/gptv/suen/main/jiaokeshu/dlpics.sh)
