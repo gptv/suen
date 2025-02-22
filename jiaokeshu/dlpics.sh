@@ -3,7 +3,7 @@
 # It is based on the image URL structure from the provided JSON data, designed for macOS.
 # Assumes necessary command-line tool (wget) is installed.
 # PDF generation and cleanup functionalities have been removed as per request.
-# ** Version 4.9: Robust fix for estimated time calculation, ensuring integer arithmetic. **
+# ** Version 5.0: Removed estimated time calculation to eliminate syntax errors and simplify script. **
 
 # ** Step 0: Check for required tools **
 command -v wget >/dev/null 2>&1 || { echo >&2 "Error: wget is not installed. Please install it (e.g., 'brew install wget' on macOS or 'sudo apt-get install wget' on Debian/Ubuntu)."; exit 1; }
@@ -53,9 +53,6 @@ for book_index in "${!book_ids[@]}"; do
   # ** Step 2.3: Loop to download images **
   page_num=1
   downloaded_count=0
-  book_start_time=$(date +%s)
-  last_download_time=0
-  estimated_remaining_time="N/A"
 
   while true; do
     # Calculate server number (r1, r2, r3 will be used in rotation)
@@ -69,28 +66,8 @@ for book_index in "${!book_ids[@]}"; do
 
     # Check if the image already exists
     if [ ! -f "slide_${slide_num}.jpg" ]; then
-      current_time=$(date +%s)
-      if [ "$downloaded_count" -gt 0 ]; then
-        average_time_per_page=$(awk "BEGIN {printf \"%.2f\", ($current_time - $book_start_time) / $downloaded_count}")
-        estimated_remaining_pages=300 # Maximum page limit, adjust if needed, or remove if you have better stop condition
 
-        # Robust calculation: bc for float, printf to integer, then integer arithmetic
-        estimated_remaining_time_seconds_float=$(echo "$estimated_remaining_pages * $average_time_per_page" | bc)
-        estimated_remaining_time_seconds_str=$(printf "%.0f" "$estimated_remaining_time_seconds_float")
-        estimated_remaining_time_seconds=$(( ${estimated_remaining_time_seconds_str} )) # Explicit integer conversion
-
-
-        if [ "$estimated_remaining_time_seconds" -gt 0 ]; then
-          estimated_minutes=$((estimated_remaining_time_seconds / 60))
-          estimated_seconds=$((estimated_remaining_time_seconds % 60))
-          estimated_remaining_time="${estimated_minutes}m ${estimated_seconds}s"
-        else
-          estimated_remaining_time="Calculating..."
-        fi
-      else
-        estimated_remaining_time="Calculating..."
-      fi
-      echo -ne "下载第 ${slide_num} 页 for ${book_title}. 预计剩余时间: ${estimated_remaining_time}...\r"
+      echo -ne "下载第 ${slide_num} 页 for ${book_title}...\r"
 
       # Use wget to download the image with -S for headers
       wget -q -S -O "slide_${slide_num}.jpg" "$url"
@@ -104,7 +81,6 @@ for book_index in "${!book_ids[@]}"; do
         echo "" # Newline after progress indicator
         echo "Downloaded image $slide_num for ${book_title}. Size: ${file_size}."
         downloaded_count=$((downloaded_count + 1))
-        last_download_time=$(date +%s)
       fi
     else
       echo "Image $slide_num for ${book_title} already downloaded, skipping."
@@ -116,10 +92,6 @@ for book_index in "${!book_ids[@]}"; do
       break
     fi
   done
-
-  book_end_time=$(date +%s)
-  book_download_duration=$((book_end_time - book_start_time))
-  total_estimated_time=$((total_estimated_time + book_download_duration))
 
   # ** Step 2.4: Return to the script's directory **
   cd .. # Go back to the directory where the script started, relative to book_image_dir
