@@ -14,4 +14,4 @@
 
 #### Allinone: https://i.bdfzer.com 
 
-高中語文五本教材腳本：bash <(curl -Ls https://raw.githubusercontent.com/gptv/suen/main/jiaokeshu/dlpics.sh)
+高中語文五本教材腳本：bash <(curl -Ls https://raw.githubusercontent.com/gptv/suen/main/jiaokeshu/dl.sh)
