@@ -22,11 +22,13 @@
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "o84pb5g49k");
+    
     </script>
     <style>
         @font-face {
             font-family: 'KangXiDictionary';
-            src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
+        src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
+        font-display: swap;
         }
 
         :root {
@@ -94,7 +96,7 @@
             border-radius: 15px;
             padding: 15px;
             text-align: center;
-            backdrop-filter: blur(5px);
+            
             width: 100%;
         }
 
@@ -278,15 +280,19 @@
     </div>
 
     <script>
+    document.addEventListener("DOMContentLoaded", function() {
         function updateTimeAndCountdowns() {
             const now = new Date();
             const options = { timeZone: 'Asia/Shanghai', hour12: false };
-            document.querySelector('#current-time .countdown-display').textContent = now.toLocaleTimeString('zh-CN', options);
+            const currentTimeDisplay = document.querySelector('#current-time .countdown-display');
+            const gaokaoDisplay = document.querySelector('#gaokao-countdown .countdown-display');
+            const yearProgressDisplay = document.querySelector('#year-progress .countdown-display');
+            currentTimeDisplay.textContent = now.toLocaleTimeString('zh-CN', options);
 
             const gaokaoTime = new Date('2025-06-06T00:00:00').getTime();
 
-            updateSingleCountdown(gaokaoTime, now.getTime(), document.querySelector('#gaokao-countdown .countdown-display'), "高考開始了！");
-            updateYearProgress(now, document.querySelector('#year-progress .countdown-display'));
+            updateSingleCountdown(gaokaoTime, now.getTime(), gaokaoDisplay, "高考開始了！");
+            updateYearProgress(now, yearProgressDisplay);
         }
 
         function updateSingleCountdown(targetTime, nowTime, display, endMessage) {
@@ -297,10 +303,11 @@
                 return;
             }
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            const MS_IN_DAY = 86400000, MS_IN_HOUR = 3600000, MS_IN_MINUTE = 60000;
+            const days = Math.floor(timeLeft / MS_IN_DAY);
+            const hours = Math.floor((timeLeft % MS_IN_DAY) / MS_IN_HOUR);
+            const minutes = Math.floor((timeLeft % MS_IN_HOUR) / MS_IN_MINUTE);
+            const seconds = Math.floor((timeLeft % MS_IN_MINUTE) / 1000);
 
             display.textContent = `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
         }
@@ -336,8 +343,12 @@
             updateHumanTimer();
         }
 
-        setInterval(updateAllTimers, 1000);
-        updateAllTimers();
+        function timerLoop() {
+            updateAllTimers();
+            requestAnimationFrame(timerLoop);
+        }
+        timerLoop();
+    });
     </script>
 </body>
 </html>
