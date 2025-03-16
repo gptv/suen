@@ -77,13 +77,18 @@
 
 <body>
     <div class="container">
-        <!-- 使用 GitHub Raw URL 加載大圖；若需要多尺寸 srcset，可再自行加入 -->
-        <img src="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar.jpeg" 
-             alt="Avatar" 
-             class="Avatar" 
-             loading="lazy">
+        <img
+        src="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar.jpeg"
+        srcset="
+          https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg 480w,
+          https://raw.githubusercontent.com/gptv/suen/main/images/Avatar.jpeg 800w
+        "
+        sizes="(max-width: 480px) 50vw, 100vw"
+        alt="Avatar"
+        class="avatar"
+        loading="lazy"
+      />
         <div class="links">
-            <!-- 以下連結根據你的需求保持不變 -->
             <a href="https://forum.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問彣彰典冊">彣彰典冊</a>
             <a href="https://blog.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無何有鄉">無何有鄉</a>
             <a href="https://sites.google.com/view/pkuschool/info" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高中語文">高中語文</a>
