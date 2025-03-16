@@ -16,7 +16,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;  // 添加此行以垂直居中
+            justify-content: center;  /* 添加此行以垂直居中 */
         }
 
         .container {
@@ -30,7 +30,7 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.18);
-            animation: glow 3s infinite;  // 將動畫應用到 container
+            animation: glow 3s infinite;  /* 將動畫應用到 container */
         }
 
         table {
@@ -46,11 +46,11 @@
         }
 
         td:first-child {
-            border-radius: 5px 0 0 5px;  // 添加左側圓角
+            border-radius: 5px 0 0 5px;  /* 添加左側圓角 */
         }
 
         td:last-child {
-            border-radius: 0 5px 5px 0;  // 添加右側圓角
+            border-radius: 0 5px 5px 0;  /* 添加右側圓角 */
         }
 
         tr {
@@ -63,8 +63,8 @@
         }
 
         .blog-link, .blog-name {
-            display: inline-block;  // 使鏈接和名字在同一行
-            vertical-align: middle;  // 垂直對齊
+            display: inline-block;  /* 使鏈接和名字在同一行 */
+            vertical-align: middle;  /* 垂直對齊 */
         }
 
         .blog-link {
@@ -74,7 +74,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            margin-right: 10px;  // 在鏈接和名字之間添加小間距
+            margin-right: 10px;  /* 在鏈接和名字之間添加小間距 */
         }
 
         .blog-link::after {
@@ -106,7 +106,7 @@
             100% { box-shadow: 0 0 5px #ffd700; }
         }
 
-        // 刪除 .top-border 相關樣式
+        /* 刪除 .top-border 相關樣式 */
 
         @media (max-width: 768px) {
             .container {
