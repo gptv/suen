@@ -7,12 +7,8 @@
     <title>SUEN-Links</title>
     <meta name="description" content="北大附中 孙玉磊 語文">
     <meta name="keywords" content="北大附中, 孙玉磊, 語文">
-
-    <!-- 直接使用 GitHub Raw 作為 favicon -->
-    <link rel="icon" 
-          href="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg" 
-          type="image/jpeg">
-
+    <!-- 從 Suen-links 資料夾到 images 資料夾，使用 ../images/ -->
+    <link rel="icon" href="../images/Avatar-small.jpeg" type="image/jpeg">
     <style>
         :root {
             --primary-color: white;
@@ -21,8 +17,8 @@
         }
 
         body {
-            /* 背景圖片：直接使用 GitHub Raw URL */
-            background-image: url('https://raw.githubusercontent.com/gptv/suen/main/images/background.jpg');
+            /* 背景圖片也採用相對路徑 */
+            background-image: url('../images/background.jpg');
             background-size: cover;
             background-position: center;
             margin: 0;
@@ -43,7 +39,6 @@
             border: 3px solid var(--primary-color);
             margin-bottom: 15px;
         }
-
         .links {
             display: flex;
             flex-direction: column;
@@ -77,13 +72,13 @@
 
 <body>
     <div class="container">
-        <!-- 使用 GitHub Raw URL 加載大圖；若需要多尺寸 srcset，可再自行加入 -->
-        <img src="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar.jpeg" 
+        <!-- 修改圖片引用為相對路徑 -->
+        <img src="../images/Avatar.jpeg" 
+             srcset="../images/Avatar-small.jpeg 1x, ../images/Avatar.jpeg 2x" 
              alt="Avatar" 
              class="avatar" 
              loading="lazy">
         <div class="links">
-            <!-- 以下連結根據你的需求保持不變 -->
             <a href="https://forum.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問彣彰典冊">彣彰典冊</a>
             <a href="https://blog.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無何有鄉">無何有鄉</a>
             <a href="https://sites.google.com/view/pkuschool/info" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高中語文">高中語文</a>
