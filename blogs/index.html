@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文字</title>
+    <title>彣字</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/noto-serif-sc/1.0.0/noto-serif-sc.min.css" rel="stylesheet">
     <style>
         body {
@@ -11,8 +11,8 @@
             line-height: 1.6;
             margin: 0;
             padding: 10px;
-            background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
-            color: #e0e0e0;
+            background: linear-gradient(135deg, #001b30 0%, #003153 100%);
+            color: #f0f8ff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -33,11 +33,11 @@
             flex: 0 0 40%;
             padding: 0.8rem;
             text-align: center;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 49, 83, 0.6);
             border-radius: 10px;
-            box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.37);
+            box-shadow: 0 6px 24px 0 rgba(0, 29, 51, 0.5);
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(0, 119, 200, 0.3);
             animation: glow 3s infinite;
             height: auto;
             overflow-y: visible;
@@ -59,7 +59,7 @@
 
         .blog-item {
             padding: 6px;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 67, 113, 0.4);
             border-radius: 5px;
             transition: all 0.3s ease;
             display: flex;
@@ -69,19 +69,22 @@
 
         .blog-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(72, 202, 255, 0.3);
+            background: rgba(0, 83, 140, 0.5);
         }
 
         .blog-link {
             cursor: help;
             text-decoration: none;
-            color: #00ffff;
+            color: #b8e4ff;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             margin-bottom: 2px;
             display: inline-block;
             font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
         }
 
         .blog-link::after {
@@ -91,7 +94,7 @@
             left: 0;
             width: 100%;
             height: 1px;
-            background-color: #00ffff;
+            background-color: #5ddbff;
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 0.3s ease;
@@ -102,17 +105,25 @@
             transform-origin: left;
         }
 
+        .blog-link:hover {
+            color: #5ddbff;
+            text-shadow: 0 0 8px rgba(93, 219, 255, 0.4);
+        }
+
         .blog-name {
-            color: #ff69b4;
+            color: #ffce94;
             font-weight: bold;
             display: block;
             font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes glow {
-            0% { box-shadow: 0 0 4px #ffd700; }
-            50% { box-shadow: 0 0 15px #ffd700; }
-            100% { box-shadow: 0 0 4px #ffd700; }
+            0% { box-shadow: 0 0 4px rgba(72, 202, 255, 0.6); }
+            50% { box-shadow: 0 0 15px rgba(72, 202, 255, 0.8); }
+            100% { box-shadow: 0 0 4px rgba(72, 202, 255, 0.6); }
         }
 
         /* Responsive design for different screen sizes */
