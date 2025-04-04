@@ -33,10 +33,10 @@
     <!-- === End Clarity Script === -->
 
     <style>
-        /* Added HuWenMingChaoTi Font */
+        /* === Font Loading === */
         @font-face {
           font-family: 'HuWenMingChaoTi';
-          /* Path confirmed based on user feedback (index.html is in 'allinone', fonts are in '../fonts') */
+          /* Path confirmed based on user feedback & build script copy */
           src: url('../fonts/HuWenMingChaoTi.woff2') format('woff2'),
                url('../fonts/HuWenMingChaoTi.woff') format('woff');
           font-weight: normal;
@@ -52,6 +52,10 @@
             --background-gradient: linear-gradient(135deg, #001219, #005f73);
             --text-color: #e9ecef;
             --dark-text-color: #001219;
+            /* Define colors for progress bars, can use existing palette */
+            --progress-bg-day: rgba(173, 232, 244, 0.3); /* Light Blueish */
+            --progress-bg-week: rgba(144, 224, 239, 0.3); /* Slightly different Light Blueish */
+            --progress-fill-gradient: var(--primary-gradient); /* Reuse primary gradient */
         }
 
         /* Global Reset */
@@ -63,8 +67,6 @@
 
         /* Body Styling */
         body {
-            /* Added 'HuWenMingChaoTi' as the preferred font. */
-            /* Remove from here if it's not the global default font. */
             font-family: 'HuWenMingChaoTi', 'Noto Sans TC', 'NotoSansCJKsc', 'Helvetica Neue', Arial, sans-serif;
             background: var(--background-gradient);
             color: var(--text-color);
@@ -130,16 +132,81 @@
         }
 
         .countdown-display {
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* Default size, overridden below where needed */
             font-weight: bold;
             color: var(--text-color);
         }
 
         /* Specific Countdown Item Backgrounds */
-        #current-time { background-color: rgba(0, 95, 115, 0.3); }
+        #current-time { background-color: rgba(0, 95, 115, 0.35); }
         #year-progress { background-color: rgba(10, 147, 150, 0.3); }
         #gaokao-countdown { background-color: rgba(148, 210, 189, 0.3); }
         #human-timer { background-color: rgba(233, 216, 166, 0.3); }
+        /* --- Added Backgrounds for Progress Bars --- */
+        #day-progress { background-color: var(--progress-bg-day); }
+        #week-progress { background-color: var(--progress-bg-week); }
+        /* --- End Added Backgrounds --- */
+
+        /* Adjust Font Sizes */
+        #gaokao-countdown .countdown-display,
+        #human-timer .countdown-display {
+            font-size: 1.4rem;
+            line-height: 1.3;
+        }
+
+        /* Style Simplified Time Display */
+        #current-time .countdown-display span {
+            display: block;
+            line-height: 1.4;
+            color: var(--text-color);
+        }
+        #current-time .countdown-display span:not(:last-child) {
+             margin-bottom: 5px;
+        }
+        #current-time-clock {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 8px !important;
+        }
+        #current-date-gregorian {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* --- Progress Bar Styles --- */
+        .progress-item .countdown-display { /* Override default if it interferes */
+             display: none; /* Hide the default display area for progress items */
+        }
+        .progress-bar-container {
+            width: 90%; /* Adjust width as needed */
+            height: 28px; /* Increased height */
+            background-color: rgba(0, 0, 0, 0.25); /* Darker background for contrast */
+            border-radius: 15px;
+            margin: 5px auto 0; /* Center and space from title */
+            position: relative;
+            overflow: hidden; /* Keep fill within bounds */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+        }
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%; /* Initial width, updated by JS */
+            background: var(--progress-fill-gradient); /* Use defined gradient */
+            border-radius: 15px; /* Match container radius */
+            transition: width 0.5s ease-out; /* Smooth animation */
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3); /* Inner shadow for depth */
+        }
+        .progress-bar-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-color); /* Match other display text */
+            font-size: 0.95rem; /* Adjust size */
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+        /* --- End Progress Bar Styles --- */
 
         /* Link Button Styling */
         .link-button {
@@ -198,21 +265,28 @@
             .container {
                 flex-direction: column;
             }
-
             .column {
                 width: 100%;
                 margin-bottom: 20px;
                 max-width: none;
             }
-
             .countdown-container {
                  max-width: 90%;
             }
-
             .logo {
                 max-width: 60px;
             }
         }
+         @media (max-width: 480px) {
+            #gaokao-countdown .countdown-display,
+            #human-timer .countdown-display {
+                 font-size: 1.2rem;
+            }
+             #current-time-clock { font-size: 1.5rem; }
+             #current-date-gregorian { font-size: 1.0rem; }
+             .progress-bar-container { height: 22px; }
+             .progress-bar-text { font-size: 0.8rem; }
+         }
     </style>
 </head>
 <body>
@@ -242,9 +316,13 @@
         <!-- Middle Countdown Column -->
         <div class="column countdown-container">
             <img src="https://raw.githubusercontent.com/gptv/suen/main/images/slogo.png" alt="Logo" class="logo">
-            <!-- Current Time -->
+
+            <!-- Simplified Current Time / Date -->
             <div id="current-time" class="countdown-item">
-                <div class="countdown-display" aria-live="polite"></div>
+                 <div class="countdown-display">
+                     <span id="current-time-clock">--:--:--</span>
+                     <span id="current-date-gregorian">----年--月--日 ---</span>
+                 </div>
             </div>
             <!-- Year Progress -->
             <div id="year-progress" class="countdown-item">
@@ -260,6 +338,24 @@
             <div id="human-timer" class="countdown-item">
                 <h2 class="countdown-title">生民以來</h2>
                 <div class="countdown-display" id="humanTime" aria-live="polite"></div>
+            </div>
+            <!-- Day Progress -->
+            <div id="day-progress" class="countdown-item progress-item">
+                <h2 class="countdown-title">今日已逝</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="day-progress-fill"></div>
+                    <span class="progress-bar-text" id="day-progress-text"></span>
+                </div>
+                <!-- Removed the default .countdown-display for progress items -->
+            </div>
+            <!-- Week Progress -->
+            <div id="week-progress" class="countdown-item progress-item">
+                <h2 class="countdown-title">本週已逝</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="week-progress-fill"></div>
+                    <span class="progress-bar-text" id="week-progress-text"></span>
+                </div>
+                <!-- Removed the default .countdown-display for progress items -->
             </div>
         </div>
 
@@ -292,13 +388,19 @@
     <!-- JavaScript for Timers -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Cache DOM elements for performance
-        const currentTimeDisplay = document.querySelector('#current-time .countdown-display');
+        // --- Cache DOM elements ---
         const gaokaoDisplay = document.querySelector('#gaokao-countdown .countdown-display');
         const yearProgressDisplay = document.querySelector('#year-progress .countdown-display');
         const humanTimeDisplay = document.getElementById('humanTime');
+        const clockDisplay = document.getElementById('current-time-clock');
+        const gregorianDateDisplay = document.getElementById('current-date-gregorian');
+        // --- Cache Progress Bar Elements ---
+        const dayProgressFill = document.getElementById('day-progress-fill');
+        const dayProgressText = document.getElementById('day-progress-text');
+        const weekProgressFill = document.getElementById('week-progress-fill');
+        const weekProgressText = document.getElementById('week-progress-text');
 
-        // Time constants
+        // --- Constants ---
         const MS_IN_SECOND = 1000;
         const MS_IN_MINUTE = 60 * MS_IN_SECOND;
         const MS_IN_HOUR = 60 * MS_IN_MINUTE;
@@ -306,19 +408,26 @@
         const MS_IN_YEAR_APPROX = 365.25 * MS_IN_DAY;
         const MS_IN_TEN_THOUSAND_YEARS = 10000 * MS_IN_YEAR_APPROX;
 
-        // Target dates/times
-        const gaokaoTime = new Date('2025-06-06T00:00:00').getTime(); // NOTE: Update this annually if needed
-        const humanOriginApprox = Date.now() - (300000 * MS_IN_YEAR_APPROX); // Approximation
+        const gaokaoTime = new Date('2025-06-06T00:00:00').getTime();
+        const humanOriginApprox = Date.now() - (300000 * MS_IN_YEAR_APPROX);
 
-        // Timezone options
         const timeOptions = { timeZone: 'Asia/Shanghai', hour12: false };
+        const dateOptions = { timeZone: 'Asia/Shanghai', year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
 
-        function updateCurrentTime(now) {
-            currentTimeDisplay.textContent = now.toLocaleTimeString('zh-CN', timeOptions);
+        // --- Update Functions ---
+        function updateClockAndDate(now) {
+            if (clockDisplay) {
+               clockDisplay.textContent = now.toLocaleTimeString('zh-CN', timeOptions);
+            }
+            if (gregorianDateDisplay) {
+                gregorianDateDisplay.textContent = now.toLocaleDateString('zh-CN', dateOptions);
+            }
         }
 
         function updateSingleCountdown(targetTime, nowTime, display, endMessage) {
+            if (!display) return;
             const timeLeft = targetTime - nowTime;
+
             if (timeLeft <= 0) {
                 display.textContent = endMessage;
                 return;
@@ -331,6 +440,7 @@
         }
 
         function updateYearProgress(now, display) {
+             if (!display) return;
             const currentYear = now.getFullYear();
             const yearStart = new Date(currentYear, 0, 1).getTime();
             const nextYearStart = new Date(currentYear + 1, 0, 1).getTime();
@@ -341,7 +451,8 @@
             display.textContent = `${remainingPercentage.toFixed(6)}%`;
         }
 
-        function updateHumanTimer(nowTime) {
+        function updateHumanTimer(nowTime, display) {
+             if (!display) return;
             const timeSinceHumanOrigin = nowTime - humanOriginApprox;
             const tenThousandYears = Math.floor(timeSinceHumanOrigin / MS_IN_TEN_THOUSAND_YEARS);
             const remainingTime = timeSinceHumanOrigin % MS_IN_TEN_THOUSAND_YEARS;
@@ -349,28 +460,67 @@
             const hours = Math.floor((remainingTime % MS_IN_DAY) / MS_IN_HOUR);
             const minutes = Math.floor((remainingTime % MS_IN_HOUR) / MS_IN_MINUTE);
             const seconds = Math.floor((remainingTime % MS_IN_MINUTE) / MS_IN_SECOND);
-            humanTimeDisplay.textContent =
+            display.textContent =
                 `${tenThousandYears} 万年 ${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
         }
 
-        // Unified update function
-        function updateAllTimers() {
-            const now = new Date(); // Get current time once per frame
+        // --- Functions for Progress Bars ---
+         function updateDayProgress(now, fillEl, textEl) {
+            if (!fillEl || !textEl) return;
+            const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+            // const endOfDay = startOfDay + MS_IN_DAY; // Not needed for calculation
+            const elapsedMs = now.getTime() - startOfDay;
+            const progress = Math.min(100, (elapsedMs / MS_IN_DAY) * 100); // Ensure progress doesn't exceed 100
+            fillEl.style.width = `${progress.toFixed(2)}%`;
+            textEl.textContent = `${progress.toFixed(2)}%`;
+        }
+
+        function updateWeekProgress(now, fillEl, textEl) {
+            if (!fillEl || !textEl) return;
+            // Calculate start of the week (assuming Monday is the first day)
+            const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, ... 6 = Saturday
+            // Calculate offset to get to Monday. If Sunday (0), offset is 6 days back. Otherwise, offset is (currentDay - 1) days back.
+            const offsetToMonday = (currentDay === 0) ? 6 : currentDay - 1;
+            const mondayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate() - offsetToMonday);
+            mondayStart.setHours(0, 0, 0, 0); // Set to beginning of Monday
+            const startOfWeekTime = mondayStart.getTime();
+
+            const totalMsInWeek = 7 * MS_IN_DAY;
+            const elapsedMsWeek = now.getTime() - startOfWeekTime; // Milliseconds passed since start of Monday
+
+            const progress = Math.min(100, (elapsedMsWeek / totalMsInWeek) * 100); // Ensure progress doesn't exceed 100
+
+            fillEl.style.width = `${progress.toFixed(2)}%`;
+            textEl.textContent = `${progress.toFixed(2)}%`;
+        }
+        // --- End Functions for Progress Bars ---
+
+        // --- Main Update Loop ---
+        function updateAllDisplays() {
+            const now = new Date();
             const nowTime = now.getTime();
-            updateCurrentTime(now);
+
+            // Update clock and date
+            updateClockAndDate(now);
+
+            // Update countdowns and progress
             updateSingleCountdown(gaokaoTime, nowTime, gaokaoDisplay, "高考已開始！");
             updateYearProgress(now, yearProgressDisplay);
-            updateHumanTimer(nowTime);
+            updateHumanTimer(nowTime, humanTimeDisplay);
+
+            // --- Update Progress Bars ---
+            updateDayProgress(now, dayProgressFill, dayProgressText);
+            updateWeekProgress(now, weekProgressFill, weekProgressText);
+            // --- End Update Progress Bars ---
         }
 
-        // Efficient update loop using requestAnimationFrame
         function timerLoop() {
-            updateAllTimers();
-            requestAnimationFrame(timerLoop); // Schedule next update
+            updateAllDisplays();
+            requestAnimationFrame(timerLoop);
         }
 
-        // Start the timers
-        timerLoop();
+        // --- Initial Setup & Start ---
+        timerLoop(); // Start the main update loop
     });
     </script>
 </body>
