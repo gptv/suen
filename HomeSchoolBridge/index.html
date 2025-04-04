@@ -1,96 +1,133 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN"> <!-- More specific language code -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="北大附中 孙玉磊 導師 語文">
-    <meta name="keywords" content="北大附中, 孙玉磊, 導師，語文, 成绩, 职业">
-    <link rel="icon" href="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg" type="image/jpeg">
+    <meta name="description" content="北大附中 孙玉磊 導師 語文 - 家校沟通与学习建议"> <!-- Enhanced description -->
+    <!-- <meta name="keywords" content="北大附中, 孙玉磊, 導師，語文, 成绩, 职业"> Keywords meta tag is largely ignored -->
+    <meta name="robots" content="index, follow"> <!-- Standard robots meta -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="家校谈 - 北大附中 孙玉磊">
+    <meta property="og:description" content="关于成绩、日常、职业规划及学习资源的相关探讨">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/jiaxiaotan.html"> <!-- Replace with actual page URL -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg"> <!-- OG image -->
+
+    <!-- Favicon / Icons -->
+    <link rel="icon" href="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg" type="image/jpeg"> <!-- Provided icon -->
+    <!-- Recommended: Add standard favicons in root directory -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <title>家校谈</title>
+
+    <!-- === Microsoft Clarity Analytics Script === -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "o84pb5g49k");
+    </script>
+    <!-- === End Clarity Script === -->
+
+    <!-- Google Fonts: Noto Serif SC -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* === Font Loading === */
+        /* Removed incorrect @font-face for FangZhengKaiTi */
+
         @font-face {
-            font-family: 'FangZhengKaiTi';
-            src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
-            font-display: swap;
+          font-family: 'HuWenMingChaoTi';
+          /* IMPORTANT: Verify this path ('../fonts/') is correct relative to THIS HTML file's location. */
+          src: url('../fonts/HuWenMingChaoTi.woff2') format('woff2'),
+               url('../fonts/HuWenMingChaoTi.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap; /* Good for performance */
         }
+        /* === End Font Loading === */
+
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
         body {
-            font-family: 'FangZhengKaiTi', 'Noto Serif SC', serif;
-            background-color: #e0f2f1;
-            color: #004d40;
+            /* Updated font stack */
+            font-family: 'HuWenMingChaoTi', 'Noto Serif SC', serif;
+            background-color: #e0f2f1; /* Light teal background */
+            color: #004d40; /* Dark teal text */
             line-height: 1.8;
             text-align: center;
-            font-size: 18px;
+            font-size: 18px; /* Base font size */
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Ensure footer stays at bottom */
         }
+
+        /* Headings */
         h1, h2 {
-            font-family: 'FangZhengKaiTi', 'Noto Serif SC', serif;
+            /* Updated font stack */
+            font-family: 'HuWenMingChaoTi', 'Noto Serif SC', serif;
         }
+
         h1 {
             font-size: 4em;
-            color: #00695c;
+            color: #00695c; /* Medium teal */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin: 0; /* Reset margin if needed */
         }
+
         h2 {
             font-size: 2.4em;
             margin-bottom: 25px;
             padding-bottom: 15px;
+            display: inline-block; /* Prevent border spanning full width */
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
         }
-        #section1 h2 { color: #d32f2f; border-bottom: 2px solid #d32f2f; }
-        #section2 h2 { color: #1976d2; border-bottom: 2px solid #1976d2; }
-        #section3 h2 { color: #388e3c; border-bottom: 2px solid #388e3c; }
-        #section4 h2 { color: #ffa000; border-bottom: 2px solid #ffa000; }
-        #section5 h2 { color: #7b1fa2; border-bottom: 2px solid #7b1fa2; }
+
+        /* Specific Section Heading Colors & Borders */
+        #section1 h2 { color: #d32f2f; border-bottom-color: #d32f2f; } /* Red */
+        #section2 h2 { color: #1976d2; border-bottom-color: #1976d2; } /* Blue */
+        #section3 h2 { color: #388e3c; border-bottom-color: #388e3c; } /* Green */
+        #section4 h2 { color: #ffa000; border-bottom-color: #ffa000; } /* Amber */
+        #section5 h2 { color: #7b1fa2; border-bottom-color: #7b1fa2; } /* Purple */
+
+        /* Paragraph Styling */
         p {
             margin-bottom: 20px;
             font-size: 1.2em;
             font-weight: normal;
         }
+
+        /* Highlighted Text */
         .highlight {
             font-size: 1.3em;
             font-weight: bold;
-            color: #00695c;
+            color: #00695c; /* Match H1 color */
         }
-        #section5 .link-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        #section5 .link-button {
-            background-color: #e0f2f1;
-            color: #004d40;
-            padding: 10px 30px;
-            text-decoration: none;
-            border: 2px solid #004d40;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-size: 1.1em;
-            min-width: 120px;
-        }
-        #section5 .link-button:hover {
-            background-color: #004d40;
-            color: #e0f2f1;
-        }
-        a {
-            color: #00695c;
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #004d40;
-        }
+
+        /* Main Container */
         .container {
-            flex: 1;
+            flex: 1; /* Allows footer to be pushed down */
             display: flex;
             flex-direction: column;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            gap: 30px;
+            gap: 30px; /* Space between header/sections/footer */
         }
+
+        /* Section Styling */
         section {
             background-color: #fff;
             padding: 30px;
@@ -98,101 +135,96 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         section:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         }
-        #section4 .link-container {
+
+        /* Link Container Styling (Section 4 & 5) */
+        .link-container {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin: 30px 0;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Allow buttons to wrap */
         }
-        #section4 .link-button,
-        #section5 .link-button {
-            display: inline-flex;
+
+        /* General Link Button Styling */
+        .link-button {
+            display: inline-flex; /* Good for aligning text */
             align-items: center;
             justify-content: center;
+            padding: 10px 20px; /* Base padding */
+            text-decoration: none;
+            border-radius: 8px; /* Slightly more rounded */
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+            font-weight: bold;
+            min-width: 120px;
+            text-align: center;
             white-space: nowrap;
-            user-select: none;
+            user-select: none; /* Prevent text selection */
+            cursor: pointer;
+            border: 2px solid transparent; /* Base border */
         }
+
+        /* Section 4 Specific Button Styles */
         #section4 .link-button {
             background-color: #e0f2f1;
             color: #004d40;
             padding: 15px 30px;
-            text-decoration: none;
-            border: 3px solid #ffa000;
-            border-radius: 8px;
-            transition: all 0.3s;
+            border-color: #ffa000; /* Use border-color */
             font-size: 1.2em;
-            font-weight: bold;
-            min-width: 120px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
         #section4 .link-button:hover {
             background-color: #ffa000;
+            border-color: #ffa000;
             color: #fff;
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
-        @media (max-width: 768px) {
-            body {
-                font-size: 16px;
-            }
-            h1 {
-                font-size: 3em;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            .container {
-                padding: 15px;
-            }
-            section {
-                padding: 20px;
-            }
-            #section4 .link-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                margin: 20px 0;
-                width: 100%;
-            }
-            #section4 .link-button {
-                width: 90%;
-                max-width: 280px;
-                padding: 12px 20px;
-                font-size: 1.1em;
-            }
-            section {
-                padding: 20px 15px;
-            }
+
+        /* Section 5 Specific Button Styles */
+        #section5 .link-container {
+             gap: 20px; /* Smaller gap for these buttons */
         }
-        @media (max-width: 360px) {
-            #section4 .link-button {
-                width: 85%;
-                padding: 10px 15px;
-                font-size: 1em;
-            }
+        #section5 .link-button {
+            background-color: #e0f2f1;
+            color: #004d40;
+            padding: 10px 30px;
+            border-color: #004d40; /* Use border-color */
+            font-size: 1.1em;
+            font-weight: normal; /* Normal weight */
         }
-        @media print {
-            body {
-                background-color: white;
-                color: black;
-            }
-            section {
-                box-shadow: none;
-                border: 1px solid #ddd;
-                break-inside: avoid;
-            }
-            .link-button {
-                border: 1px solid #000;
-                color: #000;
-            }
+
+        #section5 .link-button:hover {
+            background-color: #004d40;
+            border-color: #004d40;
+            color: #e0f2f1;
         }
+
+        /* General Link Styling */
+        a {
+            color: #00695c; /* Match H1 color */
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004d40; /* Darker teal on hover */
+        }
+        /* Ensure buttons don't inherit underline */
+        .link-button, .link-button:hover {
+             text-decoration: none;
+        }
+
+        /* Header Layout */
         header {
             margin-bottom: 40px;
+            padding-top: 20px; /* Add some space above */
         }
 
         .header-content {
@@ -200,6 +232,7 @@
             align-items: center;
             justify-content: center;
             gap: 30px;
+            flex-wrap: wrap; /* Allow wrapping if needed */
         }
 
         .qr-code {
@@ -214,26 +247,117 @@
         .qr-code img {
             width: 100%;
             height: auto;
-            display: block;
+            display: block; /* Remove extra space below image */
         }
 
         .qr-code:hover {
             transform: scale(1.05);
         }
 
+        /* Footer Styling - Using footer tag */
+        footer { /* Changed from .footer */
+            margin-top: auto; /* Pushes footer to bottom if content is short */
+            padding: 20px 0;
+            border-top: 1px solid #b2dfdb; /* Lighter teal border */
+            font-size: 1em;
+            color: #00695c; /* Match H1/link color */
+        }
+        footer p {
+             margin-bottom: 0; /* Remove default p margin in footer */
+        }
+        footer a {
+             font-weight: bold;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Slightly smaller base font */
+            }
+            h1 {
+                font-size: 2.8em; /* Adjusted H1 size */
+            }
+            h2 {
+                font-size: 1.8em; /* Adjusted H2 size */
+            }
+            p { font-size: 1.1em; }
+            .highlight { font-size: 1.2em; }
+
+            .container {
+                padding: 15px;
+                gap: 20px; /* Reduced gap */
+            }
+            section {
+                padding: 20px;
+                border-radius: 10px; /* Slightly smaller radius */
+            }
+            header { margin-bottom: 20px; }
             .header-content {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
             }
-
             .qr-code {
                 max-width: 100px;
             }
-
-            h1 {
-                margin: 0;
+            .link-container {
+                gap: 15px;
+                margin: 20px 0;
             }
+            #section4 .link-container {
+                flex-direction: column;
+                align-items: center; /* Center buttons when stacked */
+            }
+            .link-button {
+                 width: 90%;
+                 max-width: 300px; /* Limit max width */
+                 padding: 12px 20px;
+                 font-size: 1em;
+            }
+            #section4 .link-button {
+                 font-size: 1.1em; /* Keep section 4 buttons slightly larger */
+            }
+        }
+
+        @media (max-width: 480px) {
+             h1 { font-size: 2.2em; }
+             h2 { font-size: 1.6em; }
+             p { font-size: 1em; }
+             .link-button {
+                 width: 95%;
+                 max-width: none; /* Remove max-width on very small screens */
+             }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                font-size: 12pt; /* Set base print size */
+                line-height: 1.4;
+            }
+            header, footer, .qr-code {
+                display: none; /* Hide header, footer, QR code when printing */
+            }
+            .container {
+                max-width: 100%;
+                padding: 0;
+                gap: 15px;
+            }
+            section {
+                box-shadow: none;
+                border: 1px solid #ccc; /* Simple border for print */
+                border-radius: 0;
+                padding: 15px;
+                break-inside: avoid; /* Try to prevent sections breaking across pages */
+                margin-bottom: 15px;
+            }
+            h1, h2 { text-shadow: none; color: black; }
+            h2 { border-bottom: 1px solid #000; font-size: 1.8em; }
+            p { font-size: 1.1em; margin-bottom: 10px;}
+            .highlight { color: black; font-weight: bold; }
+            a { color: black; text-decoration: underline; }
+            .link-container { display: none; } /* Hide buttons in print */
         }
     </style>
 </head>
@@ -243,14 +367,16 @@
             <div class="header-content">
                 <h1>家校谈</h1>
                 <div class="qr-code">
-                    <img src="https://raw.githubusercontent.com/gptv/suen/main/images/code.png" alt="QR Code" />
+                    <!-- Added alt text -->
+                    <img src="https://raw.githubusercontent.com/gptv/suen/main/images/code.png" alt="QR Code for related content" />
                 </div>
             </div>
         </header>
 
         <section id="section1">
             <h2>1. 成绩</h2>
-            <p>排位：可找导师，究诘数字背后的真实意义。要分<a href="https://blog.bdfzer.com/2024/05/blog-post_24.html" target="_blank">故事</a>。</p>
+            <!-- Added rel attribute -->
+            <p>排位：可找导师，究诘数字背后的真实意义。要分<a href="https://blog.bdfzer.com/2024/05/blog-post_24.html" target="_blank" rel="noopener noreferrer">故事</a>。</p>
             <p>意义：真真不大。本班/标准分/海淀/北京。排名的真实意义，只是昨日我与今日我。</p>
         </section>
 
@@ -268,12 +394,12 @@
             <p>正确的给压力姿势，是选校和职业。</p>
         </section>
 
-
         <section id="section4">
             <h2>4. 当知</h2>
             <div class="link-container">
-                <a href="https://blog.bdfzer.com/2024/11/blog-post_10.html" class="link-button" target="_blank">谈谈考试</a>
-                <a href="https://blog.bdfzer.com/2024/01/blog-post_21.html" class="link-button" target="_blank">说说作文</a>
+                 <!-- Added rel attribute -->
+                <a href="https://blog.bdfzer.com/2024/11/blog-post_10.html" class="link-button" target="_blank" rel="noopener noreferrer">谈谈考试</a>
+                <a href="https://blog.bdfzer.com/2024/01/blog-post_21.html" class="link-button" target="_blank" rel="noopener noreferrer">说说作文</a>
             </div>
         </section>
 
@@ -281,16 +407,18 @@
             <h2>5. 可行</h2>
             <p>真题王道：海淀或本校日常成题考题并无意义。</p>
             <p>真读书难：分享有意义且有意思文字即是语文。</p>
-            <p><a href="https://pkuschool.yuque.com/qrvbic/books?#" target="_blank">《唐诗鉴赏辞典》《唐宋词鉴赏辞典》。</a></p> 
-            <p><a href="https://sites.google.com/view/pkuschool/%E9%AB%98%E8%80%83%E7%9C%9F%E9%A1%8C/%E6%96%87%E8%A8%80%E6%96%87?authuser=0" target="_blank">史记列传/先秦诸子。</a></p> 
+             <!-- Added rel attribute -->
+            <p><a href="https://pkuschool.yuque.com/qrvbic/books?#" target="_blank" rel="noopener noreferrer">《唐诗鉴赏辞典》《唐宋词鉴赏辞典》。</a></p>
+            <p><a href="https://sites.google.com/view/pkuschool/%E9%AB%98%E8%80%83%E7%9C%9F%E9%A1%8C/%E6%96%87%E8%A8%80%E6%96%87?authuser=0" target="_blank" rel="noopener noreferrer">史记列传/先秦诸子。</a></p>
             <p>习字：5分？不止。在没有书法课的时候要自己来。</p>
-            <p class="highlight">默写8分，网站 <a href="https://mf.bdfzer.com" target="_blank">mf.bdfzer.com</a> 周周进益，以高考范围习字。</p>
+            <p> | <a href="https://gk.bdfz.net" target="_blank">AI高考</a> 🦁 | <a href="https://kz.bdfz.net" target="_blank">AI論語</a> 🐭 | <a href="https://hlm.bdfz.net" target="_blank">AI紅樓</a> 🐌 | <a href="https://mf.bdfz.net" target="_blank">高考默寫</a> 🦉 | <a href="https://kw.bdfz.net" target="_blank">AI課文</a>🪲  </p>
         </section>
 
-
-        <div class="footer">
-            <p>© 2024 <a href="mailto:daoshi@i.pkuschool.edu.cn" target="_blank">Suen</a> | 北大附中</p>
-        </div>
+        <!-- Changed div to footer -->
+        <footer>
+             <!-- Added rel attribute -->
+            <p>© 2025 <a href="mailto:daoshi@i.pkuschool.edu.cn" target="_blank" rel="noopener noreferrer">Suen</a> | 北大附中</p>
+        </footer>
     </div>
 </body>
 </html>

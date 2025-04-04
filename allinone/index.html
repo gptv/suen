@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant"> <!-- Consider zh-CN or zh-Hans if primary content/audience is Simplified Chinese -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="北大附中 孙玉磊 語文">
-    <meta name="keywords" content="北大附中, 孙玉磊, 語文">
+    <meta name="description" content="北大附中 孙玉磊 語文相關內容與資源連結">
     <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="北大附中 - 孙玉磊">
-    <meta property="og:description" content="北大附中 孙玉磊 語文相關內容">
-    <meta property="og:image" content="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg">
-    <meta property="og:url" content="https://bdfz.net">
+    <meta property="og:description" content="北大附中 孙玉磊 語文相關內容與資源連結">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg"> <!-- Consider self-hosting or CDN -->
+    <meta property="og:url" content="https://bdfz.net"> <!-- Verify canonical URL -->
     <meta property="og:type" content="website">
-    <link rel="icon" href="https://raw.githubusercontent.com/gptv/suen/main/images/Avatar-small.jpeg" type="image/jpeg">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Favicon / Icons -->
+    <!-- Ensure these files exist at the specified paths -->
+    <link rel="icon" href="/favicon.ico" sizes="any"> <!-- Recommended: Place favicon.ico in root -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <title>pkuschool-links</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <title>BDFZ-SUEN</title>
+
+    <!-- === Microsoft Clarity Analytics Script === -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "o84pb5g49k");
-    
     </script>
+    <!-- === End Clarity Script === -->
+
     <style>
+        /* === Font Loading === */
         @font-face {
-            font-family: 'KangXiDictionary';
-        src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
-        font-display: swap;
+            font-family: 'NotoSansCJKsc';
+            src: url('https://cdn.jsdelivr.net/gh/googlefonts/noto-cjk@main/Sans/OTF/Chinese-Simplified/NotoSansCJKsc-Regular.otf') format('opentype');
+            font-display: swap;
         }
 
+        /* Added HuWenMingChaoTi Font */
+        @font-face {
+          font-family: 'HuWenMingChaoTi';
+          /* Path confirmed based on user feedback (index.html is in 'allinone', fonts are in '../fonts') */
+          src: url('../fonts/HuWenMingChaoTi.woff2') format('woff2'),
+               url('../fonts/HuWenMingChaoTi.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap; /* Added for performance */
+        }
+        /* === End Font Loading === */
+
+        /* CSS Variables */
         :root {
             --primary-gradient: linear-gradient(135deg, #005f73, #0a9396);
             --secondary-gradient: linear-gradient(135deg, #94d2bd, #e9d8a6);
@@ -39,14 +61,18 @@
             --dark-text-color: #001219;
         }
 
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body Styling */
         body {
-            font-family: 'Noto Sans TC', 'KangXiDictionary', 'Helvetica Neue', Arial, sans-serif;
+            /* Added 'HuWenMingChaoTi' as the preferred font. */
+            /* Remove from here if it's not the global default font. */
+            font-family: 'HuWenMingChaoTi', 'Noto Sans TC', 'NotoSansCJKsc', 'Helvetica Neue', Arial, sans-serif;
             background: var(--background-gradient);
             color: var(--text-color);
             min-height: 100vh;
@@ -56,6 +82,7 @@
             padding: 20px;
         }
 
+        /* Main Container Layout */
         .container {
             display: flex;
             justify-content: space-between;
@@ -65,11 +92,12 @@
             gap: 20px;
         }
 
+        /* Column Styling */
         .column {
             flex: 1;
             padding: 20px;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px); /* Performance consideration */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
@@ -81,6 +109,7 @@
             background: var(--secondary-gradient);
         }
 
+        /* Countdown Container (Middle Column) */
         .countdown-container {
             display: flex;
             flex-direction: column;
@@ -96,7 +125,6 @@
             border-radius: 15px;
             padding: 15px;
             text-align: center;
-            
             width: 100%;
         }
 
@@ -114,11 +142,13 @@
             color: var(--text-color);
         }
 
+        /* Specific Countdown Item Backgrounds */
         #current-time { background-color: rgba(0, 95, 115, 0.3); }
         #year-progress { background-color: rgba(10, 147, 150, 0.3); }
-        #sophomore-countdown { background-color: rgba(148, 210, 189, 0.3); }
-        #graduation-countdown { background-color: rgba(233, 216, 166, 0.3); }
+        #gaokao-countdown { background-color: rgba(148, 210, 189, 0.3); }
+        #human-timer { background-color: rgba(233, 216, 166, 0.3); }
 
+        /* Link Button Styling */
         .link-button {
             background: var(--primary-gradient);
             border-radius: 10px;
@@ -140,6 +170,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /* Footer Styling */
         .footer {
             text-align: center;
             font-size: 0.9rem;
@@ -161,6 +192,7 @@
             color: #94d2bd;
         }
 
+        /* Logo Styling */
         .logo {
             max-width: 80px;
             width: 100%;
@@ -168,6 +200,7 @@
             margin-bottom: 15px;
         }
 
+        /* Responsive Design */
         @media (max-width: 1000px) {
             .container {
                 flex-direction: column;
@@ -176,41 +209,33 @@
             .column {
                 width: 100%;
                 margin-bottom: 20px;
+                max-width: none;
+            }
+
+            .countdown-container {
+                 max-width: 90%;
             }
 
             .logo {
                 max-width: 60px;
             }
-
-            .countdown-container {
-                max-width: 100%;
-            }
-        }
-
-        .image-link {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .image-link img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
         }
     </style>
 </head>
 <body>
+    <!-- Container -->
     <div class="container">
-        <!-- 左列 -->
+
+        <!-- Left Column (Links) -->
         <div class="column left-column">
-            <a href="https://gk.bdfz.net" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="kongzi">AI高考</a>
+            <a href="https://gk.bdfz.net" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="高考">AI高考</a>
+            <a href="https://mf.bdfz.net" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高考詩文">高考默寫</a>
             <a href="https://kz.bdfz.net" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="AI論語">AI論語</a>
             <a href="https://hlm.bdfz.net" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="AI紅樓夢">AI紅樓夢</a>
             <a href="https://kw.bdfz.net" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="AI課文">AI課文</a>
-            <a href="https://stats.uptimerobot.com/EAH8csLsdP" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="Status page">Statuspage</a>
+            <a href="https://stats.uptimerobot.com/EAH8csLsdP" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="Status page">網站狀態</a>
             <a href="https://forum.rdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問彣彰典冊">彣彰典冊</a>
             <a href="https://sites.google.com/view/pkuschool/info" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高中語文">高中語文</a>
-            <a href="https://mf.bdfzer.com" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問高考詩文">高考默寫</a>
             <a href="https://homelink-41t.pages.dev/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問家長">家長</a>
             <a href="https://matters.town/@eduer" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問舊地心思">舊地心思</a>
             <a href="https://gptv.github.io" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無餘而說">無餘而說</a>
@@ -221,30 +246,31 @@
             <a href="https://blog.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問無何有鄉">無何有鄉</a>
         </div>
 
-        <!-- 中間倒計時 -->
+        <!-- Middle Countdown Column -->
         <div class="column countdown-container">
             <img src="https://raw.githubusercontent.com/gptv/suen/main/images/slogo.png" alt="Logo" class="logo">
+            <!-- Current Time -->
             <div id="current-time" class="countdown-item">
-                <div class="countdown-display"></div>
+                <div class="countdown-display" aria-live="polite"></div>
             </div>
+            <!-- Year Progress -->
             <div id="year-progress" class="countdown-item">
                 <h2 class="countdown-title">2025年度剩餘</h2>
-                <div class="countdown-display"></div>
+                <div class="countdown-display" aria-live="polite"></div>
             </div>
+            <!-- Gaokao Countdown -->
             <div id="gaokao-countdown" class="countdown-item">
-                <h2 class="countdown-title">距離2025年高考倒計時</h2>
-                <div class="countdown-display"></div>
+                <h2 class="countdown-title">2025高考倒計時</h2>
+                <div class="countdown-display" aria-live="polite"></div>
             </div>
-
-            <!-- 修改人类诞生计时器 -->
+            <!-- Human Existence Timer -->
             <div id="human-timer" class="countdown-item">
                 <h2 class="countdown-title">生民以來</h2>
-                <div class="countdown-display" id="humanTime"></div>
+                <div class="countdown-display" id="humanTime" aria-live="polite"></div>
             </div>
-
         </div>
 
-        <!-- 右列 -->
+        <!-- Right Column (Links) -->
         <div class="column right-column">
             <a href="https://pkuschool.yuque.com/infodesk/sbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生手册">學生手冊</a>
             <a href="https://pkuschool.yuque.com/infodesk/handbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生事务手册">學生事務手冊</a>
@@ -261,82 +287,96 @@
             <a href="https://www.duxiu.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問讀秀">讀秀</a>
             <a href="https://pkuschool.yuque.com/qrvbic" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問語雀">語雀</a>
             <a href="https://openai.com/news/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問OpenAI">OpenAI</a>
-            <a href="https://aistudio.google.com/prompts/new_chat" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Gemini">Gemini</a>         
+            <a href="https://aistudio.google.com/prompts/new_chat" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問Gemini">Gemini</a>
        </div>
     </div>
 
-    <div class="footer">
+    <!-- Footer Section -->
+    <footer class="footer">
         <p>© 2025 <a href="https://bdfz.net" target="_blank">SUEN</a></p>
-    </div>
+    </footer>
 
+    <!-- JavaScript for Timers -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        function updateTimeAndCountdowns() {
-            const now = new Date();
-            const options = { timeZone: 'Asia/Shanghai', hour12: false };
-            const currentTimeDisplay = document.querySelector('#current-time .countdown-display');
-            const gaokaoDisplay = document.querySelector('#gaokao-countdown .countdown-display');
-            const yearProgressDisplay = document.querySelector('#year-progress .countdown-display');
-            currentTimeDisplay.textContent = now.toLocaleTimeString('zh-CN', options);
+        // Cache DOM elements for performance
+        const currentTimeDisplay = document.querySelector('#current-time .countdown-display');
+        const gaokaoDisplay = document.querySelector('#gaokao-countdown .countdown-display');
+        const yearProgressDisplay = document.querySelector('#year-progress .countdown-display');
+        const humanTimeDisplay = document.getElementById('humanTime');
 
-            const gaokaoTime = new Date('2025-06-06T00:00:00').getTime();
+        // Time constants
+        const MS_IN_SECOND = 1000;
+        const MS_IN_MINUTE = 60 * MS_IN_SECOND;
+        const MS_IN_HOUR = 60 * MS_IN_MINUTE;
+        const MS_IN_DAY = 24 * MS_IN_HOUR;
+        const MS_IN_YEAR_APPROX = 365.25 * MS_IN_DAY;
+        const MS_IN_TEN_THOUSAND_YEARS = 10000 * MS_IN_YEAR_APPROX;
 
-            updateSingleCountdown(gaokaoTime, now.getTime(), gaokaoDisplay, "高考開始了！");
-            updateYearProgress(now, yearProgressDisplay);
+        // Target dates/times
+        const gaokaoTime = new Date('2025-06-06T00:00:00').getTime(); // NOTE: Update this annually if needed
+        const humanOriginApprox = Date.now() - (300000 * MS_IN_YEAR_APPROX); // Approximation
+
+        // Timezone options
+        const timeOptions = { timeZone: 'Asia/Shanghai', hour12: false };
+
+        function updateCurrentTime(now) {
+            currentTimeDisplay.textContent = now.toLocaleTimeString('zh-CN', timeOptions);
         }
 
         function updateSingleCountdown(targetTime, nowTime, display, endMessage) {
             const timeLeft = targetTime - nowTime;
-
             if (timeLeft <= 0) {
                 display.textContent = endMessage;
                 return;
             }
-
-            const MS_IN_DAY = 86400000, MS_IN_HOUR = 3600000, MS_IN_MINUTE = 60000;
             const days = Math.floor(timeLeft / MS_IN_DAY);
             const hours = Math.floor((timeLeft % MS_IN_DAY) / MS_IN_HOUR);
             const minutes = Math.floor((timeLeft % MS_IN_HOUR) / MS_IN_MINUTE);
-            const seconds = Math.floor((timeLeft % MS_IN_MINUTE) / 1000);
-
+            const seconds = Math.floor((timeLeft % MS_IN_MINUTE) / MS_IN_SECOND);
             display.textContent = `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
         }
 
         function updateYearProgress(now, display) {
-            const yearStart = new Date(now.getFullYear(), 0, 1);
-            const yearEnd = new Date(now.getFullYear() + 1, 0, 1);
-            const yearProgress = ((now.getTime() - yearStart.getTime()) / (yearEnd.getTime() - yearStart.getTime())) * 100;
-            display.textContent = `${(100 - yearProgress).toFixed(6)}%`;
+            const currentYear = now.getFullYear();
+            const yearStart = new Date(currentYear, 0, 1).getTime();
+            const nextYearStart = new Date(currentYear + 1, 0, 1).getTime();
+            const totalMsInYear = nextYearStart - yearStart;
+            const elapsedMs = now.getTime() - yearStart;
+            const progress = (elapsedMs / totalMsInYear) * 100;
+            const remainingPercentage = 100 - progress;
+            display.textContent = `${remainingPercentage.toFixed(6)}%`;
         }
 
-        // 修改人类诞生计时器函数
-        const humanOrigin = new Date().getTime() - (300000 * 365.25 * 24 * 60 * 60 * 1000);
-
-        function updateHumanTimer() {
-            const now = new Date().getTime();
-            const timeSinceHumanOrigin = now - humanOrigin;
-
-            const tenThousandYears = Math.floor(timeSinceHumanOrigin / (10000 * 365.25 * 24 * 60 * 60 * 1000));
-            const remainingTime = timeSinceHumanOrigin % (10000 * 365.25 * 24 * 60 * 60 * 1000);
-
-            const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-            document.getElementById('humanTime').textContent = 
+        function updateHumanTimer(nowTime) {
+            const timeSinceHumanOrigin = nowTime - humanOriginApprox;
+            const tenThousandYears = Math.floor(timeSinceHumanOrigin / MS_IN_TEN_THOUSAND_YEARS);
+            const remainingTime = timeSinceHumanOrigin % MS_IN_TEN_THOUSAND_YEARS;
+            const days = Math.floor(remainingTime / MS_IN_DAY);
+            const hours = Math.floor((remainingTime % MS_IN_DAY) / MS_IN_HOUR);
+            const minutes = Math.floor((remainingTime % MS_IN_HOUR) / MS_IN_MINUTE);
+            const seconds = Math.floor((remainingTime % MS_IN_MINUTE) / MS_IN_SECOND);
+            humanTimeDisplay.textContent =
                 `${tenThousandYears} 万年 ${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
         }
 
+        // Unified update function
         function updateAllTimers() {
-            updateTimeAndCountdowns();
-            updateHumanTimer();
+            const now = new Date(); // Get current time once per frame
+            const nowTime = now.getTime();
+            updateCurrentTime(now);
+            updateSingleCountdown(gaokaoTime, nowTime, gaokaoDisplay, "高考已開始！");
+            updateYearProgress(now, yearProgressDisplay);
+            updateHumanTimer(nowTime);
         }
 
+        // Efficient update loop using requestAnimationFrame
         function timerLoop() {
             updateAllTimers();
-            requestAnimationFrame(timerLoop);
+            requestAnimationFrame(timerLoop); // Schedule next update
         }
+
+        // Start the timers
         timerLoop();
     });
     </script>

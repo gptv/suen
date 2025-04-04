@@ -5,102 +5,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pkus-Links</title>
-    <meta name="description" content="北大附中">
-    <meta name="keywords" content="北大附中">
-    <link rel="icon" href="https://raw.githubusercontent.com/gptv/suen/main/images/slogo.png" type="image/png">
+    <meta name="description" content="北大附中常用链接"> <!-- 更具体的描述 -->
+    <!-- <meta name="keywords" content="北大附中"> Keywords meta tag is largely ignored -->
     <meta name="author" content="孙玉磊">
+    <meta name="robots" content="index, follow"> <!-- Standard robots meta -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pkus-Links - 北大附中">
+    <meta property="og:description" content="北大附中常用链接导航">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/pkus-links.html"> <!-- Replace with actual page URL -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/gptv/suen/main/images/slogo.png"> <!-- OG image -->
+
+    <!-- Favicon / Icons -->
+    <link rel="icon" href="https://raw.githubusercontent.com/gptv/suen/main/images/slogo.png" type="image/png"> <!-- Provided icon -->
+    <!-- Recommended: Add standard favicons in root directory -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- === Microsoft Clarity Analytics Script === -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "o84pb5g49k");
+    </script>
+    <!-- === End Clarity Script === -->
+
     <style>
+        /* === Font Loading === */
+        @font-face {
+          font-family: 'HuWenMingChaoTi';
+          /* IMPORTANT: Verify this path ('../fonts/') is correct relative to THIS HTML file's location. */
+          src: url('../fonts/HuWenMingChaoTi.woff2') format('woff2'),
+               url('../fonts/HuWenMingChaoTi.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap; /* Good for performance */
+        }
+        /* === End Font Loading === */
+
+        /* CSS Variables */
         :root {
             --primary-color: white;
-            --background-color: rgba(0, 0, 0, 0.7);
-            --hover-color: rgba(0, 0, 0, 0.9);
+            --link-bg: rgba(0, 0, 0, 0.7);
+            --link-hover-bg: rgba(0, 0, 0, 0.9);
+            --container-bg: rgba(0, 0, 0, 0.5); /* Background for the container */
         }
 
-        body {
-            background-image: url('https://raw.githubusercontent.com/gptv/suen/main/images/pkus.png');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+        /* Global Reset */
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            /* Added HuWenMingChaoTi, Arial is fallback */
+            font-family: 'HuWenMingChaoTi', Arial, sans-serif;
             color: var(--primary-color);
             text-align: center;
+            background-image: url('https://raw.githubusercontent.com/gptv/suen/main/images/pkus.png');
+            background-size: cover; /* Better scaling */
+            background-position: center center; /* Center the background */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keep background fixed */
+            margin: 0;
+            padding: 20px; /* Add some padding to body */
             min-height: 100vh;
-            display: flex;
+            display: flex; /* Enable flexbox for centering */
             flex-direction: column;
-            justify-content: center;
+            justify-content: center; /* Vertical centering */
+            align-items: center; /* Horizontal centering */
         }
 
+        /* Main Container - Using main tag */
         .container {
-            padding: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 500px; /* Max width for the container */
+            padding: 40px 20px; /* Adjusted padding */
+            background-color: var(--container-bg);
+            border-radius: 15px; /* Added border radius */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
         }
 
+        /* Avatar Styling */
         .avatar {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             border: 3px solid var(--primary-color);
-            margin-bottom: 15px;
+            margin: 0 auto 20px auto; /* Center using auto margins, increased bottom margin */
             object-fit: cover;
-            display: inline-block; /* 確保圖片顯示為行內塊級元素 */
+            display: block; /* Changed to block for auto margin centering */
+            transition: transform 0.3s ease; /* Add hover effect */
         }
+        .avatar:hover {
+             transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        /* Links Container */
         .links {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 12px; /* Slightly increased gap */
         }
 
+        /* Link Button Styling */
         .link-button {
-            display: block;
-            width: 300px;
+            display: block; /* Ensure it takes full width defined */
+            width: 100%; /* Button takes full width of its container (.links) */
+            max-width: 320px; /* Max width for buttons */
             padding: 15px;
-            background-color: var(--background-color);
+            background-color: var(--link-bg);
             color: var(--primary-color);
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em; /* Slightly adjusted font size */
             border-radius: 10px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
         }
 
         .link-button:hover {
-            background-color: var(--hover-color);
+            background-color: var(--link-hover-bg);
+            transform: translateY(-2px); /* Lift effect on hover */
         }
 
+        /* Responsive Design */
         @media (max-width: 600px) {
             body {
-                background-size: cover;
-                background-position: center;
-                background-attachment: scroll;
+                /* background-size: cover; already set */
+                /* background-position: center; already set */
+                background-attachment: scroll; /* Allow background to scroll on mobile */
+                padding: 10px; /* Reduce body padding */
             }
 
             .container {
-                background-color: rgba(0, 0, 0, 0.5);
+                padding: 30px 15px; /* Reduce container padding */
+                /* background-color: var(--container-bg); already set */
             }
 
             .avatar {
                 width: 80px;
                 height: 80px;
+                margin-bottom: 15px; /* Adjust margin */
             }
 
             .link-button {
-                width: 90%;
+                width: 100%; /* Ensure buttons take full available width */
+                max-width: none; /* Remove max-width constraint */
                 font-size: 1em;
                 padding: 12px;
-            }
-
-            body {
-                background-attachment: scroll;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="https://raw.githubusercontent.com/gptv/suen/main/images/slogo.png" alt="Avatar" class="avatar" loading="lazy">
+    <!-- Changed div to main -->
+    <main class="container">
+        <img src="https://raw.githubusercontent.com/gptv/suen/main/images/slogo.png" alt="Avatar Logo" class="avatar" loading="lazy">
         <div class="links">
             <a href="https://pkuschool.yuque.com/infodesk/sbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生手册">學生手冊</a>
             <a href="https://pkuschool.yuque.com/infodesk/handbook" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問学生事务手册">學生事務手冊</a>
@@ -109,16 +176,13 @@
             <a href="https://www.office.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問M365">M365</a>
             <a href="https://www.pkuschool.edu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問北大附中官網">北大附中官網</a>
             <a href="https://www.duxiu.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問讀秀">讀秀</a>
-            <a href="https://c.bdfzer.com/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問日常計時">日常計時</a>
             <a href="https://pkuschool.yuque.com/xqt6kg/gq1l46/wgq3l8qg6inpcuvx?singleDoc#GG6v" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問校曆">校曆</a>
             <a href="https://www.bjhdedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問海淀區教委">海淀區教委</a>
             <a href="https://jw.beijing.gov.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問北京市教委">北京市教委</a>
             <a href="http://www.moe.gov.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問教育部">教育部</a>
             <a href="https://basic.smartedu.cn/" class="link-button" target="_blank" rel="noopener noreferrer" aria-label="訪問中小學智慧教育">中小學智慧教育</a>
         </div>
-    </div>
-
-    </script>
+    </main>
+    <!-- Removed stray </script> tag -->
 </body>
-
 </html>
